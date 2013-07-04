@@ -9,18 +9,18 @@ using EfesBetGUI.Model;
 
 namespace EfesBetGUI.ViewModel
 {
-    class SahibiKonukViewModel:INotifyPropertyChanged
+    class OwnGuestViewModel:INotifyPropertyChanged
     {
-        SahibiKonukModel sk = new SahibiKonukModel();
+        OwnGuestModel sk = new OwnGuestModel();
         /// <summary>
         /// this is the constructor pupulating the Guest and host in the datagrid
         /// </summary>
-        public SahibiKonukViewModel()
+        public OwnGuestViewModel()
         {
             PopulateSahibiKonuk();
         }
-        private ObservableCollection<SahibiKonuk> _sahibiKonukList;
-        public ObservableCollection<SahibiKonuk> SahibiKonukList
+        private ObservableCollection<OddsResult> _sahibiKonukList;
+        public ObservableCollection<OddsResult> SahibiKonukList
         {
             get
             {

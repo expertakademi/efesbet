@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\App.xaml
-2-160167192
+3-1703434378
 
-9-828410392
+112123648234
 12-1547151337
-MainWindow.xaml;Theme\Generic.xaml;
+MainWindow.xaml;Theme\Generic.xaml;View\UserControls\DateTimeMonth.xaml;
 
-False
+True
 

@@ -55,9 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Entity\SahibiKonuk.cs" />
-    <Compile Include="Model\SahibiKonukModel.cs" />
-    <Compile Include="ViewModel\SahibiKonukViewModel.cs" />
+    <Compile Include="Entity\OddsResult.cs" />
+    <Compile Include="Model\OwnGuestModel.cs" />
+    <Compile Include="ViewModel\DateTimeMonthUCViewModel.cs" />
+    <Compile Include="ViewModel\OwnGuestViewModel.cs" />
+    <Compile Include="View\UserControls\DateTimeMonth.xaml.cs">
+      <DependentUpon>DateTimeMonth.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -71,6 +75,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Theme\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\DateTimeMonth.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

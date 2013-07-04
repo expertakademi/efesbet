@@ -20,15 +20,15 @@ namespace EfesBetGUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        SahibiKonukViewModel vmSK = new SahibiKonukViewModel();
+        OwnGuestViewModel vmSK = new OwnGuestViewModel();
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();//
             this.Height = SystemParameters.MaximizedPrimaryScreenHeight;
             this.Width = SystemParameters.MaximizedPrimaryScreenWidth;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             #region -- ViewModel --
-            vmSK = new SahibiKonukViewModel();
+            vmSK = new OwnGuestViewModel();
             this.DataContext = vmSK;            
             #endregion
         }

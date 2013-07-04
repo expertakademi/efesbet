@@ -2,9 +2,10 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vmSahibiKonuk="clr-namespace:EfesBetGUI.ViewModel"
+        xmlns:DateTimeUC="clr-namespace:EfesBetGUI.View.UserControls"
         Title="MainWindow" >    
     <Window.Resources>
-        <ResourceDictionary Source="Theme/Generic.xaml">            
+        <ResourceDictionary Source="Theme/Generic.xaml">       
         </ResourceDictionary>
     </Window.Resources>
     <Grid >        
@@ -36,32 +37,33 @@
                         <ColumnDefinition Width=".4*"></ColumnDefinition>
                         <ColumnDefinition Width=".6*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-
-                    <Button Grid.Column="0" Content="Today's time and date" Style="{StaticResource ResourceKey=RxButtonNew}"></Button>
+                    <Border Grid.Column="0" BorderBrush="LightGray" BorderThickness="8" CornerRadius="10"  >
+                        <DateTimeUC:DateTimeMonth></DateTimeUC:DateTimeMonth>
+                    </Border>
+                    
                     <StackPanel x:Name="spBrugge" Orientation="Vertical" Grid.Column="1" HorizontalAlignment="Stretch">
-                        <TextBox Name="txt" 
-                 Height="25" 
-                 HorizontalAlignment="Left" 
-                 Margin="5" 
-                 VerticalAlignment="Top" 
-                 HorizontalContentAlignment="Stretch" Width="200">
-                            <TextBox.Style>
-                                <Style TargetType="{x:Type TextBox}">
-                                    <Setter Property="Background">
-                                        <Setter.Value>
-                                            <VisualBrush Stretch="None" 
-                                         AlignmentX="Right"
-                                         AlignmentY="Center"
-                                         >
-                                                <VisualBrush.Visual>
-                                                    <Image Name="img" Source="Resource/search.png" />
-                                                </VisualBrush.Visual>
-                                            </VisualBrush>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </TextBox.Style>
-                        </TextBox>
+                        <Border x:Name="brdSearch" Style="{StaticResource ResourceKey=EfesBorderSearchTextBox}" 
+                                Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MaxWidth="600"
+                                 >
+                            <TextBox Name="tbSearch"  VerticalAlignment="Center" HorizontalAlignment="Left" 
+                                     Margin="2" HorizontalContentAlignment="Stretch" MaxWidth="300"
+                                     Width="{Binding ElementName=brdSearch,Path=ActualWidth}" >
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+                                        <Setter Property="Background">
+                                            <Setter.Value>
+                                                <VisualBrush Stretch="None" AlignmentX="Right" AlignmentY="Center">
+                                                    <VisualBrush.Visual>
+                                                        <Image Name="imgSearch" Source="Resource/search.png" />
+                                                    </VisualBrush.Visual>
+                                                </VisualBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                        </Border>
+                        
                         <TextBlock x:Name="lblClubBruggge" Text="Club Brugge Zulte-Waregem" FontWeight="Bold" Margin="5"></TextBlock>
                     </StackPanel>
                 </Grid>
@@ -75,7 +77,27 @@
                       ItemsSource="{Binding vmSahibiKonuk, Path=SahibiKonukList}"
                       ></DataGrid>
         </Border>
-        
+        <Border Grid.Column="0" Grid.Row="4" BorderBrush="WhiteSmoke" BorderThickness="2" CornerRadius="5" Margin="2">
+            <DataGrid x:Name="dgrdTotal" AutoGenerateColumns="True"                      
+                      Height="50"
+                      Width="400"
+                      
+                      >
+                
+            </DataGrid>
+        </Border>
+        <Grid x:Name="grdRight" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" >
+            <Border x:Name="brdRight" BorderBrush="LightGray" BorderThickness="5" CornerRadius="5" Margin="2">
+                <ListBox ItemsSource="{Binding SahibiKonukList}" Margin="2">
+                    <ListBox.ItemTemplate>
+                        <HierarchicalDataTemplate>
+                            <CheckBox Content="{Binding Konuk}" IsChecked="{Binding IsChecked}"/>
+                        </HierarchicalDataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Border>
+            
+        </Grid>
         <Grid x:Name="grdFooter" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" Background="Black">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width=".3*"></ColumnDefinition>

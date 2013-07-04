@@ -23,3 +23,6 @@ D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.Properties.Resources.resources
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csproj.GenerateResource.Cache
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\Theme\Generic.baml
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\UserControls\DateTimeMonth.baml
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\UserControls\DateTimeMonth.g.cs
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs

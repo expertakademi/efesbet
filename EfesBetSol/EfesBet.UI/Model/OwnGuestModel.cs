@@ -7,56 +7,56 @@ using EfesBetGUI.Entity;
 
 namespace EfesBetGUI.Model
 {
-    class SahibiKonukModel
+    class OwnGuestModel
     {
-        public ObservableCollection<SahibiKonuk> sahibikonukList;
-        public SahibiKonukModel()
+        public ObservableCollection<OddsResult> sahibikonukList;
+        public OwnGuestModel()
         {
-            sahibikonukList = new ObservableCollection<SahibiKonuk>()
+            sahibikonukList = new ObservableCollection<OddsResult>()
             {
-                new SahibiKonuk()
+                new OddsResult()
                 {
                     Kod=766565,
                     Sahibi="Aalborg",
                     Konuk="FC Koberhavn",
                     Altsecenekler="Tekli"
                 },
-                new SahibiKonuk()
+                new OddsResult()
                 {
                     Kod=766565,
                     Sahibi="Aalborg",
                     Konuk="FC Koberhavn",
                     Altsecenekler="Handicap(0:1)"
                 },
-                new SahibiKonuk()
+                new OddsResult()
                 {
                     Kod=766565,
                     Sahibi="Aalborg",
                     Konuk="FC Koberhavn",
                     Altsecenekler="Handicap(0:1)"
                 },
-                new SahibiKonuk()
+                new OddsResult()
                 {
                     Kod=766565,
                     Sahibi="Aalborg",
                     Konuk="FC Koberhavn",
                     Altsecenekler="Handicap(0:1)"
                 },
-               new SahibiKonuk()
+               new OddsResult()
                 {
                     Kod=766565,
                     Sahibi="Aalborg",
                     Konuk="FC Koberhavn",
                     Altsecenekler="Handicap(0:1)"
                 },
-                new SahibiKonuk()
+                new OddsResult()
                 {
                     Kod=766565,
                     Sahibi="Aalborg",
                     Konuk="FC Koberhavn",
                     Altsecenekler="Handicap(0:1)"
                 },
-                new SahibiKonuk()
+                new OddsResult()
                 {
                     Kod=766565,
                     Sahibi="Aalborg",

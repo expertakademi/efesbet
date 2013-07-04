@@ -1,0 +1,117 @@
+﻿<Window x:Class="skypee.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Skype" Height="517" Width="725" Background="#00AFF0" ResizeMode="NoResize"
+        Icon="img/ikon.png"> 
+    <Window.Resources>
+        <Style x:Key="Mavi" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Tohama" />
+            <Setter Property="Foreground" Value="#DDF0FB" />
+        </Style>
+        <Style x:Key="Btn" TargetType="Button">
+            <Setter Property="FontFamily" Value="Arial" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Foreground" Value="#DDF0FB" />
+            <Setter Property="Width" Value="104" />
+            <Setter Property="Height" Value="31" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Background" Value="#ECECEC" />
+            <Setter Property="Foreground" Value="#716D5B" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="4" BorderBrush="#CCC" BorderThickness="0.5" Background="#F2F0F3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextElement.FontWeight="Bold"></ContentPresenter>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#C6C9CA" TargetName="border" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF33962B"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="Std" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Foreground" Value="#DDF0FB" />
+            <Setter Property="FontFamily" Value="Tahoma" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Menu Height="20" VerticalAlignment="Top">
+            <MenuItem Header="_Skype">
+                <MenuItem Header="_Kapat" />
+            </MenuItem>
+            <MenuItem Header="Araçlar">
+                <MenuItem Header="Dil Değiştir"></MenuItem>
+                <Separator />
+                <MenuItem Header="Skype Wifi..." />
+                <Separator />
+                <MenuItem Header="Bağlantı Seçenekleri..." />
+                <MenuItem Header="Erişilebilirlik" />
+            </MenuItem>
+            <MenuItem Header="Yardım">
+                <MenuItem Header="Yardım Alın: Yanıtlar ve Destek" />
+                <Separator />
+                <MenuItem Header="Güncelleme Kontrolü Yap" />
+                <Separator />
+                <MenuItem Header="Gizlilik İlkesi" />
+                <MenuItem Header="Skype Hakkında" />
+            </MenuItem>
+        </Menu>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,45,0,0" Height="71">
+            <Image Source="img/logo.png" Width="137" Height="71" />
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Margin="25,145,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="55" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="55" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Skype Adı" Style="{StaticResource Std}" />
+                <TextBox Style="{StaticResource Stil}" Background="{StaticResource Gri}" Grid.Row="1" Template="{StaticResource Tip2}" />
+                <Grid Grid.Row="2" Margin="0,10,0,0">
+                    <TextBlock Text="Parola" Style="{StaticResource Std}" />
+                    <TextBlock Text="Oturum açamıyor musunuz?" Cursor="Hand" FontFamily="Tahoma" Foreground="#FFFFFF" FontSize="11" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+                </Grid>
+                <PasswordBox Style="{StaticResource Stil}" Background="{StaticResource Gri}" Grid.Row="3" Template="{StaticResource Tip2}" />
+                <CheckBox IsChecked="True" Grid.Row="4" />
+                <TextBlock Style="{StaticResource Mavi}" Grid.Row="4" Text="Skype başladığında oturum aç" Margin="20,0,0,0" />
+                <WrapPanel Grid.Row="5" Margin="0,10,0,0"> 
+                    <Button Name="login" Content="Oturum aç" Style="{StaticResource Btn}" Click="login_Click" />
+                    <TextBlock Text="veya" HorizontalAlignment="Left" Style="{StaticResource Mavi}" Margin="10" />
+                    <TextBlock Text="Bir hesap oluştur" Margin="0,8,0,0" Style="{StaticResource Std}" Cursor="Hand" />
+                </WrapPanel>
+                <TextBlock Text="Alternatif oturum açma yolları" Style="{StaticResource Std}" Grid.Row="0" Grid.Column="2" />
+                <WrapPanel Grid.Column="2" Grid.Row="1" Margin="0,20,0,0">
+                    <Image Cursor="Hand" Source="img/win.png" Width="19" Height="19" Margin="0,-1,7,0" />
+                    <TextBlock Cursor="Hand" Text="Microsoft hesabı" Style="{StaticResource Std}" Grid.Row="0" Grid.Column="1" />
+                    <TextBlock Text="Bir Messenger, Hotmail veya Outlook.com hesabı." Style="{StaticResource Mavi}" Margin="25,5,0,0" />
+                </WrapPanel>
+                <WrapPanel Grid.Column="2" Grid.Row="3" Grid.RowSpan="2" Margin="0,-10,0,0">
+                    <Image Cursor="Hand" Source="img/fb.png" Width="19" Height="19" Margin="0,-1,8,0" />
+                    <TextBlock Cursor="Hand" Text="Facebook" Style="{StaticResource Std}" Grid.Row="0" Grid.Column="1" />
+                </WrapPanel>
+            </Grid>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Image Height="100" Source="img/bulut.png" Width="720"/>
+        </StackPanel>
+    </Grid>
+</Window>   
+        

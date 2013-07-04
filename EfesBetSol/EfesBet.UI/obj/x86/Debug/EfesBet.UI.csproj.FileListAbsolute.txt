@@ -10,3 +10,16 @@ D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\MainWin
 D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.g.resources
 D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.Properties.Resources.resources
 D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csproj.GenerateResource.Cache
+C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.exe
+C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.pdb
+C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.exe
+C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.pdb
+C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csprojResolveAssemblyReference.cache
+C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\App.g.cs
+C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI_MarkupCompile.cache
+C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI_MarkupCompile.lref
+C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\MainWindow.baml
+C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.g.resources
+C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.Properties.Resources.resources
+C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csproj.GenerateResource.Cache

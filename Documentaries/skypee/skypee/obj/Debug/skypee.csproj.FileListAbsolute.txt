@@ -1,0 +1,17 @@
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\bin\Debug\skypee.exe.config
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\bin\Debug\skypee.exe
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\bin\Debug\skypee.pdb
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\anaEkran.baml
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\Kaynak1.baml
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\MainWindow.baml
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\App.baml
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\anaEkran.g.cs
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\MainWindow.g.cs
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\App.g.cs
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\skypee_MarkupCompile.cache
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\skypee.g.resources
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\skypee.Properties.Resources.resources
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\skypee.csproj.GenerateResource.Cache
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\skypee.exe
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\skypee.pdb
+C:\Users\Ali Kayahan\Desktop\C#\skypee\skypee\obj\Debug\skypee.csprojResolveAssemblyReference.cache

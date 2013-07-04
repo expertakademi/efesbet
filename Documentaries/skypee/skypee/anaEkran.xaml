@@ -1,0 +1,321 @@
+﻿<Window x:Class="skypee.anaEkran"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Efes Bet" Height="602" Width="1350">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="363"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="784"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36" />
+            <RowDefinition />
+            <RowDefinition Height="22"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Background="#000000" Grid.ColumnSpan="5">
+            <WrapPanel Margin="10,7,0,0" Cursor="Hand">
+                <Image Width="18" Height="22" Source="img/kasa.png" />
+                <TextBlock Style="{StaticResource Baslik1}" Text="Bakiyem" Margin="7,4,0,0" />
+                <Border Style="{StaticResource Combo1}" Margin="280,0,0,0">
+                    <TextBlock Style="{StaticResource Baslik1}" Text="Hepsi" />
+                </Border>
+                <Canvas>
+                    <Polygon Points="10,20 5,25, 0,20" Stroke="Black" Fill="Black" Margin="-20,-10,0,0" />
+                </Canvas>
+            </WrapPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Background="#000000" Grid.ColumnSpan="5">
+            <WrapPanel Margin="10,5,0,0" Cursor="Hand">
+                <TextBlock Style="{StaticResource Yazi1}" Text="Şirket Adı : " />
+                <TextBlock Style="{StaticResource Yazi1}" Text="deneme" />
+                <TextBlock Style="{StaticResource Yazi1}" Text="Bayi Adı : " Margin="30,0,0,0" />
+                <TextBlock Style="{StaticResource Yazi1}" Text="deneme" />
+                <TextBlock Style="{StaticResource Yazi1}" Text="Toplam Maç : " Margin="170,0,0,0" />
+                <TextBlock Style="{StaticResource Yazi1}" Text="17" />
+                <TextBlock Style="{StaticResource Yazi1}" Text="Toplam Bahis : " Margin="20,0,0,0" />
+                <TextBlock Style="{StaticResource Yazi1}" Text="215.539" />
+                <TextBlock Style="{StaticResource Yazi1}" Text="Toplam Lig : " Margin="20,0,0,0" />
+                <TextBlock Style="{StaticResource Yazi1}" Text="52" />
+                <TextBlock Style="{StaticResource Yazi1}" Text="Toplam Seçenek : " Margin="20,0,0,0" />
+                <TextBlock Style="{StaticResource Yazi1}" Text="1870" />
+            </WrapPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="5,10,5,5" Width="363" HorizontalAlignment="Left">
+            <WrapPanel Height="70">
+                <Border BorderBrush="#5B646D" CornerRadius="2" BorderThickness="2" Width="133" Height="57" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <WrapPanel Background="{StaticResource Siyah}">
+                    <Border Margin="5,6,5,5" Background="{StaticResource Gri}" BorderBrush="#EDEDED" CornerRadius="2" BorderThickness="1" Width="78" Height="41" HorizontalAlignment="Left">
+                        <TextBlock Text="11:34" FontFamily="Arial" FontSize="28" Margin="2,4" Foreground="#444" />
+                    </Border>
+                    <StackPanel Width="40">
+                        <TextBlock Style="{StaticResource Baslik1}" Text="Salı" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <TextBlock Style="{StaticResource Baslik1}" Text="30" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"  />
+                        <TextBlock Style="{StaticResource Baslik1}" Text="Mayıs" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Top"  />
+                    </StackPanel>
+                </WrapPanel>
+            </Border>
+                <WrapPanel Margin="5,-2,0,0" Width="217" Height="65" VerticalAlignment="Top">
+                    <TextBox Style="{StaticResource InputAna}" Text="Maç Ara.." Width="186" Height="26" />
+                    <Image Cursor="Hand" Source="img/ara.png" Width="30" Height="30" Margin="-2,0.2,0,0" />
+                    <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Width="217" Text="Club Brugge &amp; Zulte-Waregem" Style="{StaticResource Baslik1}" Foreground="#444" Margin="-2,14,0,0" />
+                </WrapPanel>
+            </WrapPanel>
+            <WrapPanel>
+                <Border Style="{StaticResource Border1}">
+                    <TextBlock TextAlignment="Center" Text="18.04 21:30" /> 
+                </Border>
+                <Border Style="{StaticResource Border1}">
+                    <TextBlock TextAlignment="Center" Text="892255" />
+                </Border>
+                <Border Style="{StaticResource Border1}">
+                    <TextBlock TextAlignment="Center" Text="Tekli" />
+                </Border>
+                <Border Style="{StaticResource Border1}">
+                    <TextBlock TextAlignment="Center" Text="Tekli" />
+                </Border>
+            </WrapPanel>
+            <WrapPanel Margin="0,10,0,0">
+                <Border Style="{StaticResource Border2}"> 
+                    <TextBlock TextAlignment="Center" Text="" />
+                </Border>
+                <Border Style="{StaticResource Border2}">
+                    <TextBlock TextAlignment="Center" Text="" />
+                </Border>
+                <Border Style="{StaticResource Border2}">
+                    <TextBlock TextAlignment="Center" Text="" />
+                </Border>
+                <Border Style="{StaticResource BorderM2}">
+                    <TextBlock TextAlignment="Center" Text="" />
+                </Border>
+                <Border Style="{StaticResource BorderM2}">
+                    <TextBlock TextAlignment="Center" Text="" />
+                </Border>
+                <Border Style="{StaticResource BorderM2}">
+                    <TextBlock TextAlignment="Center" Text="" />
+                </Border>
+                <Border Style="{StaticResource Border2}" Margin="0,5,4,0">
+                    <TextBlock TextAlignment="Center" Text="" />
+                </Border>
+                <Border Style="{StaticResource Border2}" Margin="0,5,4,0">
+                    <TextBlock TextAlignment="Center" Text="" />
+                </Border>
+                <Border Style="{StaticResource Border2}" Margin="0,5,4,0">
+                    <TextBlock TextAlignment="Center" Text="" />
+                </Border>
+            </WrapPanel>
+            <DataGrid AutoGenerateColumns="False" Style="{StaticResource Tablo1}" Width="352" HorizontalScrollBarVisibility="Hidden" Margin="0,10,0,0" Height="200" Name="macDetay">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Kod" Binding="{Binding kod}" Width="50" />
+                    <DataGridTextColumn Header="Ev Sahibi" Binding="{Binding evSahibi}" Width="97.5" />
+                    <DataGridTextColumn Header="Konuk" Binding="{Binding konuk}" Width="97.5" />
+                    <DataGridTextColumn Header="Alt Seçenekler" Binding="{Binding altSecenekler}" Width="105" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Background="#E7E7E7" Width="352" HorizontalAlignment="Left" Margin="0,1,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="25" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="42" />
+                    <ColumnDefinition Width="78" />
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="65" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Style="{StaticResource Baslik2}" Text="KB" />
+                <TextBlock Style="{StaticResource Baslik2}" Text="Max. Kaz" Grid.Column="1" />
+                <TextBlock Style="{StaticResource Baslik2}" Text="Sistem" Grid.Column="2" />
+                <TextBlock Grid.Column="3" />
+                <TextBlock Style="{StaticResource Baslik2}" Text="Tutar" Grid.Column="4" />
+                <TextBlock Style="{StaticResource Carpi}" Text="X" Grid.Column="5" />
+                <TextBox Width="40" Style="{StaticResource Input1}" Grid.Row="1" />
+                <TextBox Width="65" Style="{StaticResource Input1}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" />
+                <Image Source="img/tl.png" Width="6" Height="9" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,5,0" />
+                <Border Grid.Column="3" Grid.Row="0" Background="{StaticResource MaviBeyaz}" />
+                <TextBox Style="{StaticResource Input1}" Width="40" Grid.Row="1" Grid.Column="2" />
+                <TextBox Style="{StaticResource Input1}" Height="46" Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" />
+                <TextBox  Style="{StaticResource Input1}" Grid.Row="1" Grid.Column="4" Width="60"  />
+            </Grid>
+            <DataGrid AutoGenerateColumns="False" Style="{StaticResource Tablo1}" Width="352" HorizontalScrollBarVisibility="Hidden" Margin="0,2,0,0" Height="105" Name="kuponDetay">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="No" Binding="{Binding kod}" Width="30" />
+                    <DataGridTextColumn Header="Kod" Binding="{Binding kod}" Width="50" />
+                    <DataGridTextColumn Header="Ev Sahibi" Binding="{Binding evSahibi}" Width="75" />
+                    <DataGridTextColumn Header="Konuk" Binding="{Binding konuk}" Width="75" />
+                    <DataGridTextColumn Header="Tip" Binding="{Binding altSecenekler}" Width="30" />
+                    <DataGridTextColumn Header="Tahmin" Binding="{Binding kod}" Width="50" />
+                    <DataGridTextColumn Header="Oran" Binding="{Binding kod}" Width="45" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <GridSplitter HorizontalAlignment="Right" Grid.Row="1" 
+                  VerticalAlignment="Stretch" 
+                  Grid.Column="1" ResizeBehavior="PreviousAndNext"
+                  Width="5" Background="#EEEEEE"/>
+        <StackPanel  Grid.Column="2" Grid.Row="1">
+            <DataGrid AutoGenerateColumns="False" Style="{StaticResource Tablo1}" Width="770" HorizontalScrollBarVisibility="Hidden" Margin="0,10,0,0" Height="auto" Name="macListe" HorizontalAlignment="Center">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Kod" Binding="{Binding kod}" Width="50" />
+                    <DataGridTextColumn Header="Tarih" Binding="{Binding tarih}" Width="75" />
+                    <DataGridTextColumn Header="Ev Sahibi" Binding="{Binding evSahibi}" Width="115" />
+                    <DataGridTextColumn Header="Konuk" Binding="{Binding konuk}" Width="115" />
+                    <DataGridTextColumn Header="1" Binding="{Binding master1}" Width="35" />
+                    <DataGridTextColumn Header="X" Binding="{Binding master0}" Width="35" />
+                    <DataGridTextColumn Header="2" Binding="{Binding master2}" Width="35" />
+                    <DataGridTextColumn Header="T1" Binding="{Binding t1}" Width="30" />
+                    <DataGridTextColumn Header="TX" Binding="{Binding tx}" Width="30" />
+                    <DataGridTextColumn Header="T2" Binding="{Binding t2}" Width="30" />
+                    <DataGridTextColumn Header="+" Binding="{Binding alt}" Width="30" />
+                    <DataGridTextColumn Header="Min" Binding="{Binding min}" Width="40" />
+                    <DataGridTextColumn Header="Lig" Binding="{Binding lig}" Width="80" />
+                    <DataGridTextColumn Header="Durum" Binding="{Binding durum}" Width="80" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <GridSplitter HorizontalAlignment="Right" Grid.Row="1" 
+            VerticalAlignment="Stretch" 
+            Grid.Column="3" ResizeBehavior="PreviousAndNext"
+            Width="5" Background="#EEEEEE"/>
+            <StackPanel Grid.Column="4" Grid.Row="1" Margin="0,10,0,0" HorizontalAlignment="Center">
+            <Border Style="{StaticResource br1}">
+                <CheckBox Style="{StaticResource cb1}" Content="Tüm Ligler" />
+            </Border>    
+            <Border Style="{StaticResource br1}">
+                <CheckBox Style="{StaticResource cb1}" Content="Almayna Bundesliga" />
+            </Border>
+            <Border Style="{StaticResource br1}">
+                <CheckBox Style="{StaticResource cb1}" Content="Arjantin Ligi" />
+            </Border>
+            <Border Style="{StaticResource br1}">
+                <CheckBox Style="{StaticResource cb1}" Content="Çek Senet Ligi" />
+            </Border>
+            <Border Style="{StaticResource br1}">
+                <CheckBox Style="{StaticResource cb1}" Content="Danimarka Super Ligi" />
+            </Border>
+            <Border Style="{StaticResource br1}">
+                <CheckBox Style="{StaticResource cb1}" Content="Finlandiya Veikkausi" />
+            </Border>
+            <Border Style="{StaticResource br1}">
+                <CheckBox Style="{StaticResource cb1}" Content="Fransa 2. Ligi" />
+            </Border>
+            <Border Style="{StaticResource br1}">
+                <CheckBox Style="{StaticResource cb1}" Content="Hollanda 2. Ligi" />
+            </Border>
+            <Border Style="{StaticResource br1}">
+                <CheckBox Style="{StaticResource cb1}" Content="Norveç Adeccoliegen" />
+            </Border>
+            <Border Style="{StaticResource br1}">
+                <CheckBox Style="{StaticResource cb1}" Content="Almayna Bundesliga" />
+            </Border>
+            <Border Style="{StaticResource br1}">
+                <CheckBox Style="{StaticResource cb1}" Content="Arjantin Ligi" />
+            </Border>
+            <Border Style="{StaticResource br1}">
+                <CheckBox Style="{StaticResource cb1}" Content="Çek Senet Ligi" />
+            </Border>
+            <WrapPanel>
+                <Border Style="{StaticResource Filtre1}">
+                    <TextBlock HorizontalAlignment="Center" Foreground="#FFF" Text="0" />
+                </Border>
+                <Border Style="{StaticResource Filtre2}">
+                    <TextBlock HorizontalAlignment="Center" Foreground="#333" Text="2" />
+                </Border>
+                <Border Style="{StaticResource Filtre2}">
+                    <TextBlock HorizontalAlignment="Center" Foreground="#333" Text="8" />
+                </Border>
+                <Border Style="{StaticResource Filtre2}">
+                    <TextBlock HorizontalAlignment="Center" Foreground="#333" Text="16" />
+                </Border>
+                <Border Style="{StaticResource Filtre2}">
+                    <TextBlock HorizontalAlignment="Center" Foreground="#333" Text="24" />
+                </Border>
+                <Border Style="{StaticResource Filtre2}">
+                    <TextBlock HorizontalAlignment="Center" Foreground="#333" Text="36" />
+                </Border>
+                <Border Style="{StaticResource Filtre2}">
+                    <TextBlock HorizontalAlignment="Center" Foreground="#333" Text="48" />
+                </Border>
+                <Border Margin="0,5,0,0" Style="{StaticResource Filtre2}">
+                    <TextBlock HorizontalAlignment="Center" Foreground="#333" Text="72" />
+                </Border>
+            </WrapPanel>
+            <WrapPanel>
+                <Border Style="{StaticResource Filtre3}">
+                    <TextBlock HorizontalAlignment="Left" Text="Oynanan" />
+                </Border>
+                <Border Style="{StaticResource Filtre4}">
+                    <TextBlock Style="{StaticResource Yazi2}" Text="8236" />
+                </Border>
+                <Border Style="{StaticResource Filtre3}" Width="79">
+                    <TextBlock HorizontalAlignment="left" Text="200.436,00" />
+                </Border>
+                <Image Source="img/tl.png" Width="6" Height="9" Margin="-14,3,0,0" />
+            </WrapPanel>
+            <WrapPanel>
+                <Border Style="{StaticResource Filtre3}">
+                    <TextBlock HorizontalAlignment="Left" Text="Kazanan" />
+                </Border>
+                <Border Style="{StaticResource Filtre4}">
+                    <TextBlock Style="{StaticResource Yazi2}" Text="0" />
+                </Border>
+                <Border Style="{StaticResource Filtre3}" Width="79">
+                    <TextBlock HorizontalAlignment="left" Text="0" />
+                </Border>
+                <Image Source="img/tl.png" Width="6" Height="9" Margin="-14,3,0,0" />
+            </WrapPanel>
+            <WrapPanel>
+                <Border Style="{StaticResource Filtre3}">
+                    <TextBlock HorizontalAlignment="Left" Text="Devam" />
+                </Border>
+                <Border Style="{StaticResource Filtre4}">
+                    <TextBlock Style="{StaticResource Yazi2}" Text="8889" />
+                </Border>
+                <Border Style="{StaticResource Filtre3}" Width="79">
+                    <TextBlock HorizontalAlignment="Left" Text="80" />
+                </Border>
+                <Image Source="img/tl.png" Width="6" Height="9" Margin="-14,3,0,0" />
+            </WrapPanel>
+            <WrapPanel>
+                <Border Style="{StaticResource Filtre3}">
+                    <TextBlock HorizontalAlignment="Left" Text="Kaybeden" />
+                </Border>
+                <Border Style="{StaticResource Filtre4}">
+                    <TextBlock Style="{StaticResource Yazi2}" Text="2" />
+                </Border>
+                <Border Style="{StaticResource Filtre3}" Width="79">
+                    <TextBlock HorizontalAlignment="Left" Text="20" />
+                </Border>
+                <Image Source="img/tl.png" Width="6" Height="9" Margin="-14,3,0,0" />
+            </WrapPanel>
+            <WrapPanel>
+                <Border Style="{StaticResource Filtre3}">
+                    <TextBlock HorizontalAlignment="Left" Text="Silinen" />
+                </Border>
+                <Border Style="{StaticResource Filtre4}">
+                    <TextBlock Style="{StaticResource Yazi2}" Text="4" />
+                </Border>
+                <Border Style="{StaticResource Filtre3}" Width="79">
+                    <TextBlock HorizontalAlignment="Left" Text="4" />
+                </Border>
+                <Image Source="img/tl.png" Width="6" Height="9" Margin="-14,3,0,0" />
+            </WrapPanel>
+            <WrapPanel>
+                <Border Style="{StaticResource Filtre3}">
+                    <TextBlock HorizontalAlignment="Left" Text="İade Olan" />
+                </Border>
+                <Border Style="{StaticResource Filtre4}">
+                    <TextBlock Style="{StaticResource Yazi2}" Text="0" />
+                </Border>
+                <Border Style="{StaticResource Filtre3}" Width="79">
+                    <TextBlock HorizontalAlignment="Left" Text="0" />
+                </Border>
+                <Image Source="img/tl.png" Width="6" Height="9" Margin="-14,3,0,0" />
+            </WrapPanel>
+        </StackPanel>
+    </Grid>
+</Window>

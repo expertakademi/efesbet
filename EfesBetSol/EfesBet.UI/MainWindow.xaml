@@ -259,7 +259,7 @@
 
                 <ListView.View>
                     <GridView AllowsColumnReorder="false" 
-                              ColumnHeaderContainerStyle="{StaticResource EfesGrayGridViewHeader}"
+                              ColumnHeaderContainerStyle="{StaticResource EfesGrayGridViewHdr}"
                               >
 
                         <GridViewColumn Width="80" Header="Kod">
@@ -348,7 +348,7 @@
                     </ListView.ItemContainerStyle>
                     <ListView.View>
                         <GridView AllowsColumnReorder="false" 
-                              ColumnHeaderContainerStyle="{StaticResource EfesGrayGridViewHeader}"
+                              ColumnHeaderContainerStyle="{StaticResource EfesGrayGridViewHdr}"
                               >
 
                             <GridViewColumn Width="30" Header="No">
@@ -414,7 +414,7 @@
 
                 <ListView.View>
                     <GridView AllowsColumnReorder="false" 
-                              ColumnHeaderContainerStyle="{StaticResource EfesGrayGridViewHeader}"
+                              ColumnHeaderContainerStyle="{StaticResource EfesGrayGridViewHdr}"
                               >
 
                         <GridViewColumn Width="100" Header="Kod">

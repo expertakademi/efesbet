@@ -10,7 +10,6 @@ D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\MainWin
 D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.g.resources
 D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.Properties.Resources.resources
 D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csproj.GenerateResource.Cache
-<<<<<<< HEAD
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.exe
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.pdb
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.exe
@@ -42,4 +41,3 @@ C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\MainWindow
 C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.g.resources
 C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.Properties.Resources.resources
 C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csproj.GenerateResource.Cache
->>>>>>> 30ce25fbc3fc8f676a57e1d898b6d078795d6852

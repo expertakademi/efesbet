@@ -69,22 +69,320 @@
                 </Grid>
             </Grid>
         </Border>
-        
+        <Border Grid.Row="2" Grid.Column="0" BorderBrush="LightGray" BorderThickness="2" CornerRadius="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2" >
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" Background="White">
+                    <!--<Rectangle Width="100" Height="20" Fill="Blue" Stroke="Black" StrokeThickness="4" />-->
+                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
+                           x:Name="single1" Margin="5"  Width="80" Height="25"  >
+                        <Rectangle.BitmapEffect>
+                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
+                        </Rectangle.BitmapEffect>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
+                                <GradientStop Color="#E7E7E7" Offset="0"/>
+                                <GradientStop Color="#E7E7E7" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
+                           x:Name="single2" Margin="5"  Width="80" Height="25" >
+                        <Rectangle.BitmapEffect>
+                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
+                        </Rectangle.BitmapEffect>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
+                                <GradientStop Color="#E7E7E7" Offset="0"/>
+                                <GradientStop Color="#E7E7E7" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
+                           x:Name="single3" Margin="5"  Width="80" Height="25" >
+                        <Rectangle.BitmapEffect>
+                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
+                        </Rectangle.BitmapEffect>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
+                                <GradientStop Color="#E7E7E7" Offset="0"/>
+                                <GradientStop Color="#E7E7E7" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
+                           x:Name="single4" Margin="5"  Width="80" Height="25" >
+                        <Rectangle.BitmapEffect>
+                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
+                        </Rectangle.BitmapEffect>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
+                                <GradientStop Color="#E7E7E7" Offset="0"/>
+                                <GradientStop Color="#E7E7E7" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
+                           x:Name="single5" Margin="5"  Width="50" Height="25" >
+                        <Rectangle.BitmapEffect>
+                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
+                        </Rectangle.BitmapEffect>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
+                                <GradientStop Color="#E7E7E7" Offset="0"/>
+                                <GradientStop Color="#E7E7E7" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
+                           x:Name="single6" Margin="5"  Width="50" Height="25" >
+                        <Rectangle.BitmapEffect>
+                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
+                        </Rectangle.BitmapEffect>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
+                                <GradientStop Color="#E7E7E7" Offset="0"/>
+                                <GradientStop Color="#E7E7E7" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
+                           x:Name="single7" Margin="5"  Width="50" Height="25" >
+                        <Rectangle.BitmapEffect>
+                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
+                        </Rectangle.BitmapEffect>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
+                                <GradientStop Color="#E7E7E7" Offset="0"/>
+                                <GradientStop Color="#E7E7E7" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
+                           x:Name="single8" Margin="5"  Width="50" Height="25" >
+                        <Rectangle.BitmapEffect>
+                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
+                        </Rectangle.BitmapEffect>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
+                                <GradientStop Color="#0394E7" Offset="0"/>
+                                <GradientStop Color="#0394E7" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>                               
+                    </Rectangle>
+                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
+                           x:Name="single9" Margin="5"  Width="50" Height="25" >
+                        <Rectangle.BitmapEffect>
+                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
+                        </Rectangle.BitmapEffect>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
+                                <GradientStop Color="#0394E7" Offset="0"/>
+                                <GradientStop Color="#0394E7" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
+                           x:Name="single10" Margin="5"  Width="50" Height="25" >
+                        <Rectangle.BitmapEffect>
+                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
+                        </Rectangle.BitmapEffect>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
+                                <GradientStop Color="#0394E7" Offset="0"/>
+                                <GradientStop Color="#0394E7" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>                  
+                    
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
+                           x:Name="single11" Margin="5"  Width="50" Height="25" >
+                        <Rectangle.BitmapEffect>
+                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
+                        </Rectangle.BitmapEffect>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
+                                <GradientStop Color="#E7E7E7" Offset="0"/>
+                                <GradientStop Color="#E7E7E7" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
+                           x:Name="single12" Margin="5"  Width="50" Height="25" >
+                        <Rectangle.BitmapEffect>
+                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
+                        </Rectangle.BitmapEffect>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
+                                <GradientStop Color="#E7E7E7" Offset="0"/>
+                                <GradientStop Color="#E7E7E7" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
+                           x:Name="single13" Margin="5"  Width="50" Height="25" >
+                        <Rectangle.BitmapEffect>
+                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
+                        </Rectangle.BitmapEffect>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
+                                <GradientStop Color="#E7E7E7" Offset="0"/>
+                                <GradientStop Color="#E7E7E7" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+
+                </StackPanel>
+            </StackPanel>
+            
+            
+            
+        </Border>
         <Border Grid.Column="0" Grid.Row="3" BorderBrush="WhiteSmoke" BorderThickness="2" CornerRadius="5" Margin="2">
-            <DataGrid x:Name="dgrdSahibiKonuk" AutoGenerateColumns="True"                      
-                      Height="400"
-                      Width="400"
-                      ItemsSource="{Binding vmSahibiKonuk, Path=SahibiKonukList}"
-                      ></DataGrid>
+            <ListView ItemsSource="{Binding vmSahibiKonuk, Path=SahibiKonukList}" Margin="2">
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}"  >
+                        <Setter Property="Height" Value="24" />
+                        <Setter Property="Background" Value="WhiteSmoke" />
+                        <Setter Property="Foreground" Value="#000000" />
+                        <Setter Property="FontSize" Value="12" />
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="BorderBrush" Value="Gray" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+
+                <ListView.View>
+                    <GridView AllowsColumnReorder="false" 
+                              ColumnHeaderContainerStyle="{StaticResource EfesGrayGridViewHeader}"
+                              >
+
+                        <GridViewColumn Width="80" Header="Kod">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Kod}" HorizontalAlignment="Center"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="80" Header="Ev Sahibi">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Sahibi}" HorizontalAlignment="Center"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Konuk}" Width="100" Header="Konuk">
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Altsecenekler}" Width="150" Header="Altsecenekler">
+                        </GridViewColumn>
+                        
+                    </GridView>
+
+                </ListView.View>
+
+            </ListView>
         </Border>
         <Border Grid.Column="0" Grid.Row="4" BorderBrush="WhiteSmoke" BorderThickness="2" CornerRadius="5" Margin="2">
-            <DataGrid x:Name="dgrdTotal" AutoGenerateColumns="True"                      
-                      Height="50"
-                      Width="400"
-                      
-                      >
-                
-            </DataGrid>
+            <StackPanel Orientation="Vertical">
+                <ListView ItemsSource="{Binding vmSahibiKonuk, Path=MaxGooseList}" Margin="2">
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}"  >
+                            <Setter Property="Height" Value="24" />
+                            <Setter Property="Background" Value="WhiteSmoke" />
+                            <Setter Property="Foreground" Value="#000000" />
+                            <Setter Property="FontSize" Value="12" />
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="BorderThickness" Value="1" />
+                            <Setter Property="BorderBrush" Value="Gray" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="false" 
+                              ColumnHeaderContainerStyle="{StaticResource EfesBlueGridViewHeader}"
+                              >
+
+                            <GridViewColumn Width="30" Header="KB">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=KB}" HorizontalAlignment="Center"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="100" Header="Max Kaz">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding MaxGoose}" HorizontalAlignment="Center"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=System}" Width="50" Header="Sistem">
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=One_guest}" Width="80" Header=" ">
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Total}" Width="50" Header="Tutar">
+                            </GridViewColumn>
+
+                        </GridView>
+
+                    </ListView.View>
+
+                </ListView>
+                <ListView ItemsSource="{Binding vmSahibiKonuk, Path=RateEstimationGuestList}" Margin="2">
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}"  >
+                            <Setter Property="Height" Value="24" />
+                            <Setter Property="Background" Value="WhiteSmoke" />
+                            <Setter Property="Foreground" Value="#000000" />
+                            <Setter Property="FontSize" Value="12" />
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="BorderThickness" Value="1" />
+                            <Setter Property="BorderBrush" Value="Gray" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="false" 
+                              ColumnHeaderContainerStyle="{StaticResource EfesGrayGridViewHeader}"
+                              >
+
+                            <GridViewColumn Width="30" Header="No">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=No}" HorizontalAlignment="Center"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="70" Header="Kod">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Code}" HorizontalAlignment="Center"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Host}" Width="70" Header="Ev Sahivi">
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Guest}" Width="70" Header="Konuk">
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Tip}" Width="40" Header="Tip">
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Estimation}" Width="50" Header="Tahmin">
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Rate}" Width="50" Header="Oran">
+                            </GridViewColumn>
+
+                        </GridView>
+
+                    </ListView.View>
+
+                </ListView>
+            </StackPanel>
+            
         </Border>
         <Grid x:Name="grdRight" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" >
             <Border x:Name="brdRight" BorderBrush="LightGray" BorderThickness="5" CornerRadius="5" Margin="2">
@@ -98,6 +396,167 @@
             </Border>
             
         </Grid>
+        <Border x:Name="brdCenterGrid" BorderBrush="LightGray" BorderThickness="10" CornerRadius="5" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4">
+            <ListView ItemsSource="{Binding vmSahibiKonuk, Path=GuestHostTotalList}" Margin="2">
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}"  >
+                        <Setter Property="Height" Value="24" />
+                        <Setter Property="Background" Value="WhiteSmoke" />
+                        <Setter Property="Foreground" Value="#000000" />
+                        <Setter Property="FontSize" Value="12" />
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="BorderBrush" Value="Gray" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+
+                <ListView.View>
+                    <GridView AllowsColumnReorder="false" 
+                              ColumnHeaderContainerStyle="{StaticResource EfesGrayGridViewHeader}"
+                              >
+
+                        <GridViewColumn Width="100" Header="Kod">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Code}" HorizontalAlignment="Center"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="100" Header="Tarih">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding History}" HorizontalAlignment="Center"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Own}" Width="100" Header="Ev Sahibi">
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=One_guest}" Width="40" Header="1">
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=X_game}" Width="40" Header="X">
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Two_guest}" Width="40" Header="2">
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=T1_host}" Width="40" Header="T1">
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=TX_host}" Width="40" Header="TX">
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=T2_host}" Width="40" Header="T2">
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=TotalOptions}" Width="40" Header="+">
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=MinOption}" Width="40" Header="Min">
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=League}" Width="100" >
+                            <GridViewColumn.Header>Lig                              
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                    </GridView>
+
+                </ListView.View>
+
+            </ListView>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="4" BorderBrush="White" BorderThickness="5" CornerRadius="5">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="25" Height="25" Background="Black" CornerRadius="5" Margin="2">
+                        <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                    </Border>
+                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <TextBlock Text="8" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <TextBlock Text="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <TextBlock Text="24" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <TextBlock Text="36" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <TextBlock Text="48" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <TextBlock Text="72" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                            <TextBlock Text="Oynanan" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                        </Border>
+                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="5" Margin="2">
+                            <TextBlock Text="8236" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                            <TextBlock Text="200,834,00" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                            <TextBlock Text="Kazanan" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                        </Border>
+                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="5" Margin="2">
+                            <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                            <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                            <TextBlock Text="Devam" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                        </Border>
+                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="5" Margin="2">
+                            <TextBlock Text="8889" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                            <TextBlock Text="80" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                            <TextBlock Text="Kaybeden" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                        </Border>
+                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="5" Margin="2">
+                            <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                            <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                            <TextBlock Text="Silinen" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                        </Border>
+                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="5" Margin="2">
+                            <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                            <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                            <TextBlock Text="Lade Olan" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                        </Border>
+                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="5" Margin="2">
+                            <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                            <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Border>
         <Grid x:Name="grdFooter" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" Background="Black">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width=".3*"></ColumnDefinition>

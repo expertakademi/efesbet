@@ -17,6 +17,34 @@
         <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
         <Setter Property="Background" Value="WhiteSmoke"></Setter>
     </Style>
+    <Style x:Key="EfesGrayGridViewHeader" TargetType="{x:Type GridViewColumnHeader}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0.0" Color="#373638" />
+                    <GradientStop Offset="1.0" Color="#57595B" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Padding" Value="0, 0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    </Style>
+    <Style x:Key="EfesBlueGridViewHeader" TargetType="{x:Type GridViewColumnHeader}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0.0" Color="#0394E7" />
+                    <GradientStop Offset="1.0" Color="#0394E7" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Padding" Value="0, 0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    </Style>
     <Style x:Key="EfesBetDropDown" TargetType="ComboBox">
         <Setter Property="Background">
             <Setter.Value>

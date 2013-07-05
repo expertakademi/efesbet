@@ -11,13 +11,66 @@ namespace EfesBetGUI.ViewModel
 {
     class OwnGuestViewModel:INotifyPropertyChanged
     {
-        OwnGuestModel sk = new OwnGuestModel();
+        OwnGuestModel ownGuestModel = new OwnGuestModel();
+        GuestHostModel guestHostModel = new GuestHostModel();
+        MaxGooseModel maxGooseModel = new MaxGooseModel();
+        RateEstimationGuestModel rateEstimationGuestModel = new RateEstimationGuestModel();
         /// <summary>
         /// this is the constructor pupulating the Guest and host in the datagrid
         /// </summary>
         public OwnGuestViewModel()
         {
             PopulateSahibiKonuk();
+        }
+        private ObservableCollection<RateEstimationGuest> _rateEstimationGuestList;
+        public ObservableCollection<RateEstimationGuest> RateEstimationGuestList
+        {
+            get
+            {
+                return _rateEstimationGuestList;
+            }
+            set
+            {
+                if (_rateEstimationGuestList != value)
+                {
+                    _rateEstimationGuestList = value;
+                    OnPropertyChanged("RateEstimationGuestList");
+                }
+            }
+        }
+
+        private ObservableCollection<Goose> _maxGooseList;
+        public ObservableCollection<Goose> MaxGooseList
+        {
+            get
+            {
+                return _maxGooseList;
+            }
+            set
+            {
+                if (_maxGooseList != value)
+                {
+                    _maxGooseList = value;
+                    OnPropertyChanged("MaxGooseList");
+                }
+            }
+
+        }
+        private ObservableCollection<GuestHost> _guestHostList;
+        public ObservableCollection<GuestHost> GuestHostTotalList
+        {
+            get
+            {
+                return _guestHostList;
+            }
+            set
+            {
+                if (_guestHostList != value)
+                {
+                    _guestHostList = value;
+                    OnPropertyChanged("GuestHostTotalList");
+                }
+            }
         }
         private ObservableCollection<OddsResult> _sahibiKonukList;
         public ObservableCollection<OddsResult> SahibiKonukList
@@ -44,7 +97,11 @@ namespace EfesBetGUI.ViewModel
         private void PopulateSahibiKonuk()
         {
             //get the value of 
-            _sahibiKonukList = sk.sahibikonukList;
+            _sahibiKonukList = ownGuestModel.sahibikonukList;
+            _guestHostList = guestHostModel.guestHostList;
+            _maxGooseList = maxGooseModel.GooseList;
+            _rateEstimationGuestList = rateEstimationGuestModel.RateEstimationList;
+
         }
         #region INotifyPropertyChanged Members
 

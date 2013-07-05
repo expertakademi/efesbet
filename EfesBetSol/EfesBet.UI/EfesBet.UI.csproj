@@ -55,8 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entity\Goose.cs" />
+    <Compile Include="Entity\GuestHost.cs" />
     <Compile Include="Entity\OddsResult.cs" />
+    <Compile Include="Entity\RateEstimationGuest.cs" />
+    <Compile Include="Entity\RateEstimationHostGuest.cs" />
+    <Compile Include="Model\GuestHostModel.cs" />
+    <Compile Include="Model\MaxGooseModel.cs" />
     <Compile Include="Model\OwnGuestModel.cs" />
+    <Compile Include="Model\RateEstimationGuestModel.cs" />
     <Compile Include="ViewModel\DateTimeMonthUCViewModel.cs" />
     <Compile Include="ViewModel\OwnGuestViewModel.cs" />
     <Compile Include="View\UserControls\DateTimeMonth.xaml.cs">

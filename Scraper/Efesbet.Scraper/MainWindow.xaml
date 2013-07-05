@@ -1,23 +1,63 @@
 ﻿<Window x:Class="Efesbet.Scraper.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" FontSize="15">
-    <Grid>
+        xmlns:local="clr-namespace:Efesbet.Scraper"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <local:BoolToOppositeBoolConverter x:Key="BoolToOppositeBoolConverter_ValueConverter"/>
+        <local:ToStringConverter x:Key="ToStringConverter_ValueConverter"/>
+    </Window.Resources>
+    <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="45"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" Padding="0">Select a site:</Label>
+        <ComboBox Grid.Row="0" 
+                  ItemsSource="{Binding WebsiteList}"
+                  SelectedValue="{Binding SelectedWebsite}" 
+                  VerticalAlignment="Bottom"
+                  />
         
-        <Label>Select a site:</Label>
-        <ComboBox Grid.Column="1" Grid.Row="0">
-            
-        </ComboBox>
+        <RadioButton GroupName="Group1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" IsChecked="{Binding IsLiveMode}" Content="Live Mode" />
+        <RadioButton GroupName="Group1" Content="Normal Mode" Margin="100,0,0,0" VerticalAlignment="Bottom" Grid.Row="1" HorizontalAlignment="Left" Grid.Column="1" IsChecked="{Binding IsLiveMode, Converter={StaticResource BoolToOppositeBoolConverter_ValueConverter}}"/>
+
+        <Button Grid.Row="2" Content="Start Crawl" 
+                Height="23" 
+                HorizontalAlignment="Left" 
+                Name="btnStartCraw" 
+                VerticalAlignment="Bottom" 
+                Width="100"
+                Command="{Binding StartCrawlCommand}" />
+
+        <Button Grid.Row="2" Content="Stop" 
+                Height="23" 
+                Margin="120,0,0,0"
+                HorizontalAlignment="Left" 
+                Name="btnStop" 
+                VerticalAlignment="Bottom" 
+                Width="100"
+                Command="{Binding StopCommand}" />
+
+        <TextBox Grid.Row="4" Text="{Binding CrawlLog, Converter={StaticResource ToStringConverter_ValueConverter}}"
+                   ScrollViewer.VerticalScrollBarVisibility ="Auto"
+                   ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Stretch"
+                   BorderThickness="1"
+                   Padding="5"
+                     IsReadOnly="True"/>
+
+        <Label VerticalAlignment="Bottom" 
+               Grid.Row="3" 
+               Padding="0,0,0,5"
+               HorizontalAlignment="Left">History</Label>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Efesbet.Scraper.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,9 @@ namespace Efesbet.Scraper
         public MainWindow()
         {
             InitializeComponent();
+
+            ScraperViewModel scraperViewModel = new ScraperViewModel();
+            this.DataContext = scraperViewModel;   
         }
     }
 }

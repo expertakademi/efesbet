@@ -53,8 +53,6 @@ namespace Efesbet.Scraper.ViewModel
         const int RequestTimeout = 120000; //2 minutes
 
         int _crawlCounter = 0;
-        string _testUrl = "http://www.nicobet.com/hlbs_index.jsp?index=10";
-        
 
         #region PropertyChanged
         /// <summary>

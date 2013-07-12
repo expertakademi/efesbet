@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vmSahibiKonuk="clr-namespace:EfesBetGUI.ViewModel"
-        xmlns:DateTimeUC="clr-namespace:EfesBetGUI.View.UserControls"
+        xmlns:DateTimeUC="clr-namespace:EfesBetGUI.View.UserControls"        
         Title="MainWindow" >    
     <Window.Resources>
         <ResourceDictionary Source="Theme/Generic.xaml">       
@@ -11,25 +11,117 @@
     <Grid >        
         <Grid.RowDefinitions>
             <RowDefinition Height=".05*"></RowDefinition>
-            <RowDefinition Height=".1*"></RowDefinition>
+            <RowDefinition Height=".08*"></RowDefinition>
             <RowDefinition Height=".14*"></RowDefinition>
-            <RowDefinition Height=".3*"></RowDefinition>
+            <RowDefinition Height=".32*"></RowDefinition>
             <RowDefinition Height=".275*"></RowDefinition>
             <RowDefinition Height=".025*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="28*"></ColumnDefinition>
+            <ColumnDefinition Width="25*" x:Name="grdFirstCol"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>            
             <ColumnDefinition Width="56*"></ColumnDefinition>
-            <ColumnDefinition Width="16*"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="14*" x:Name="grdLastCol"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
-        <Grid x:Name="grdMenu" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Background="Black">
+        <GridSplitter HorizontalAlignment="Left" Grid.Row="1" Grid.RowSpan="4"
+                  VerticalAlignment="Stretch" 
+                  Grid.Column="1" ResizeBehavior="PreviousAndNext"
+                  Width="10" Background="#E7E7E7" x:Name="spLeft" />
+        <GridSplitter HorizontalAlignment="Right" x:Name="spRight" Grid.Row="1" Grid.RowSpan="4"
+                  VerticalAlignment="Stretch" 
+                  Grid.Column="3" ResizeBehavior="PreviousAndNext"
+                  Width="10" Background="#E7E7E7" >
+            
+        </GridSplitter>
+        <Grid x:Name="grdMenu" Grid.ColumnSpan="10" Background="Black" Margin="0,0,0,0" Height="35" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width=".3*"></ColumnDefinition>
                 <ColumnDefinition Width=".3*"></ColumnDefinition>
                 <ColumnDefinition Width=".4*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <Menu  Grid.ColumnSpan="10"  Height="35" x:Name="HeaderMenu1" Margin="2" VerticalAlignment="Center" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Foreground="White"  FontSize="12" >
+                <Menu.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="Black" Offset="0.528"/>
+                        <GradientStop Color="Black" Offset="0.01"/>
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="Black" Offset="1"/>
+                    </LinearGradientBrush>
+                </Menu.Background>
+                <Menu.BitmapEffect>
+                    <DropShadowBitmapEffect />
+                </Menu.BitmapEffect>
+
+
+                <MenuItem  Header="Bakiyem" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" Foreground="White" FontSize="14">
+                    <MenuItem.Icon>
+                        <Image Source="Resource/Images/Beki.png" Width="20" Height="20" />
+                    </MenuItem.Icon>
+                    <MenuItem.ItemsPanel>
+                        <ItemsPanelTemplate >
+                            <Grid Background="Black">
+                            </Grid>
+                        </ItemsPanelTemplate>
+                    </MenuItem.ItemsPanel>
+                    <MenuItem  Style="{StaticResource MenuStyleBakiyem}" Cursor="Hand" Foreground="White" FontSize="14"   Padding="0,0,10,0"  Height="30" >
+                    </MenuItem>
+                </MenuItem>
+
+
+
+
+                <MenuItem  Width="80" Background="Red"  BorderThickness="0" Cursor="Hand" VerticalAlignment="Center" Margin="280,0,0,0" Padding="0">
+
+                    <MenuItem.Icon>
+                        <Image Source="Resource/MenuHepsi.jpg" Height="20"    VerticalAlignment="Center"/>
+                    </MenuItem.Icon>
+
+                    <MenuItem.ItemsPanel >
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal" Background="Red"  />
+                        </ItemsPanelTemplate>
+                    </MenuItem.ItemsPanel>
+
+                    <MenuItem  Style="{StaticResource Submenu1}" Cursor="Hand" Width="80" Height="90" Padding="0" BorderThickness="0" />
+                    <MenuItem  Style="{StaticResource Submenu2}" Cursor="Hand"  Width="80" Height="90" Padding="0" BorderThickness="0" />
+                    <MenuItem  Style="{StaticResource Submenu3}" Cursor="Hand" Width="80" Height="90" Padding="0" BorderThickness="0" />
+
+
+
+                </MenuItem>
+
+                <MenuItem  Style="{StaticResource MenuStyleNormal}" Cursor="Hand" Foreground="White" FontSize="14"   Margin="350,0,0,0" Height="30" />
+                <MenuItem  Style="{StaticResource MenuStyleCanli}" Cursor="Hand" Foreground="White" FontSize="14"    Height="30" />
+                <MenuItem  Style="{StaticResource MenuStyleKupon}" Cursor="Hand" Foreground="White" FontSize="14"    Height="30" />
+                <MenuItem  Style="{StaticResource MenuStyleRapor}" Cursor="Hand" Foreground="White" FontSize="14"    Height="30" />
+                <MenuItem  Style="{StaticResource MenuStyleTools}" Cursor="Hand" Foreground="White" FontSize="14"  Height="30" x:Name="miAxleTools" />
+                <MenuItem  Style="{StaticResource MenuStyleAnnouce}" Cursor="Hand" Foreground="White" FontSize="14"   Height="30" />
+                <MenuItem  Style="{StaticResource MenuStylePrint}" Cursor="Hand" Foreground="White" FontSize="14"    Height="30" />
+                <MenuItem  Style="{StaticResource MenuStyleSetting}" Cursor="Hand" Foreground="White" FontSize="14"   Height="30" />
+
+            </Menu>
+
         </Grid>
+        <Grid Grid.Column="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*"></ColumnDefinition>
+                <ColumnDefinition Width=".5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+            <!--<ComboBox>
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="Resource/search.png" Height="40" Width="32"></Image>
+                            <TextBlock Text="Football"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>-->
+        </Grid>
+       
         <Border Grid.Column="0" Grid.Row="1" BorderBrush="WhiteSmoke" BorderThickness="2" CornerRadius="5" Margin="2">
             <Grid x:Name="grdBrugge" >
                 <Grid>
@@ -37,12 +129,21 @@
                         <ColumnDefinition Width=".4*"></ColumnDefinition>
                         <ColumnDefinition Width=".6*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Border Grid.Column="0" BorderBrush="LightGray" BorderThickness="8" CornerRadius="10"  >
-                        <DateTimeUC:DateTimeMonth></DateTimeUC:DateTimeMonth>
+                    <Border Grid.Column="0" BorderBrush="LightGray" BorderThickness="1" CornerRadius="10"  >
+                        <WrapPanel Background="{StaticResource Siyah}">
+                            <Border Margin="5,6,5,5" Background="White" BorderBrush="#EDEDED" CornerRadius="2" BorderThickness="1" Width="78" Height="41" HorizontalAlignment="Left">
+                                <TextBlock Text="11:34" FontFamily="Arial" FontSize="28" Margin="2,4" Foreground="#444" />
+                            </Border>
+                            <StackPanel Width="40">
+                                <TextBlock Style="{StaticResource EfesClockDateTime}" Text="Salı" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                                <TextBlock Style="{StaticResource EfesClockDateTime}" Text="30" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"  />
+                                <TextBlock Style="{StaticResource EfesClockDateTime}" Text="Mayıs" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Top"  />
+                            </StackPanel>
+                        </WrapPanel>
                     </Border>
                     
-                    <StackPanel x:Name="spBrugge" Orientation="Vertical" Grid.Column="1" HorizontalAlignment="Stretch">
-                        <Border x:Name="brdSearch" Style="{StaticResource ResourceKey=EfesBorderSearchTextBox}" 
+                    <StackPanel x:Name="spBrugge" Orientation="Vertical" Grid.Column="3" HorizontalAlignment="Stretch">
+                        <!--<Border x:Name="brdSearch" Style="{StaticResource ResourceKey=EfesBorderSearchTextBox}" 
                                 Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MaxWidth="600"
                                  >
                             <TextBox Name="tbSearch"  VerticalAlignment="Center" HorizontalAlignment="Left" 
@@ -64,177 +165,63 @@
                             </TextBox>
                         </Border>
                         
-                        <TextBlock x:Name="lblClubBruggge" Text="Club Brugge Zulte-Waregem" FontWeight="Bold" Margin="5"></TextBlock>
+                        <TextBlock x:Name="lblClubBruggge" Text="Club Brugge Zulte-Waregem" FontWeight="Bold" Margin="5"></TextBlock>-->
+                        <WrapPanel Margin="5,-2,0,0" Width="217" Height="65" VerticalAlignment="Top">
+                            <TextBox Style="{StaticResource EfesInputTextbox}" Text="Maç Ara.." Width="170" Height="26" />
+                            <Image Cursor="Hand" Source="Resource/searchTextbox.png" Width="30" Height="30" Margin="-2,0.2,0,0" />
+                            <TextBlock TextAlignment="Center" HorizontalAlignment="Center" Width="217" Text="Club Brugge &amp; Zulte-Waregem" Style="{StaticResource ClubTextstyle}" Foreground="#444" Margin="0,10,0,0" />
+                        </WrapPanel>
                     </StackPanel>
                 </Grid>
             </Grid>
         </Border>
-        <Border Grid.Row="2" Grid.Column="0" BorderBrush="LightGray" BorderThickness="2" CornerRadius="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2" >
+        <Border Grid.Row="2" Grid.Column="0" BorderBrush="White" BorderThickness="0" CornerRadius="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2" >
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" Background="White">
-                    <!--<Rectangle Width="100" Height="20" Fill="Blue" Stroke="Black" StrokeThickness="4" />-->
-                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
-                           x:Name="single1" Margin="5"  Width="80" Height="25"  >
-                        <Rectangle.BitmapEffect>
-                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
-                        </Rectangle.BitmapEffect>
-                        <Rectangle.Fill>
-                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
-                                <GradientStop Color="#E7E7E7" Offset="0"/>
-                                <GradientStop Color="#E7E7E7" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
-                           x:Name="single2" Margin="5"  Width="80" Height="25" >
-                        <Rectangle.BitmapEffect>
-                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
-                        </Rectangle.BitmapEffect>
-                        <Rectangle.Fill>
-                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
-                                <GradientStop Color="#E7E7E7" Offset="0"/>
-                                <GradientStop Color="#E7E7E7" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
-                           x:Name="single3" Margin="5"  Width="80" Height="25" >
-                        <Rectangle.BitmapEffect>
-                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
-                        </Rectangle.BitmapEffect>
-                        <Rectangle.Fill>
-                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
-                                <GradientStop Color="#E7E7E7" Offset="0"/>
-                                <GradientStop Color="#E7E7E7" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
-                           x:Name="single4" Margin="5"  Width="80" Height="25" >
-                        <Rectangle.BitmapEffect>
-                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
-                        </Rectangle.BitmapEffect>
-                        <Rectangle.Fill>
-                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
-                                <GradientStop Color="#E7E7E7" Offset="0"/>
-                                <GradientStop Color="#E7E7E7" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
+                    <Border Width="100" Height="25" Background="#E7E7E7" CornerRadius="1" Margin="1">
+                        <TextBlock Text="18.04 21:30" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                    <Border Width="100" Height="25" Background="#E7E7E7" CornerRadius="1" Margin="1">
+                        <TextBlock Text="892255" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                    </Border>
+                    <Border Width="75" Height="25" Background="#E7E7E7" CornerRadius="1" Margin="1">
+                        <TextBlock Text="Tekli" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                    </Border>
+                    <Border Width="75" Height="25" Background="#E7E7E7" CornerRadius="1" Margin="1">
+                        <TextBlock Text="Tekli" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                    </Border>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
-                           x:Name="single5" Margin="5"  Width="50" Height="25" >
-                        <Rectangle.BitmapEffect>
-                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
-                        </Rectangle.BitmapEffect>
-                        <Rectangle.Fill>
-                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
-                                <GradientStop Color="#E7E7E7" Offset="0"/>
-                                <GradientStop Color="#E7E7E7" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
-                           x:Name="single6" Margin="5"  Width="50" Height="25" >
-                        <Rectangle.BitmapEffect>
-                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
-                        </Rectangle.BitmapEffect>
-                        <Rectangle.Fill>
-                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
-                                <GradientStop Color="#E7E7E7" Offset="0"/>
-                                <GradientStop Color="#E7E7E7" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
-                           x:Name="single7" Margin="5"  Width="50" Height="25" >
-                        <Rectangle.BitmapEffect>
-                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
-                        </Rectangle.BitmapEffect>
-                        <Rectangle.Fill>
-                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
-                                <GradientStop Color="#E7E7E7" Offset="0"/>
-                                <GradientStop Color="#E7E7E7" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
-                           x:Name="single8" Margin="5"  Width="50" Height="25" >
-                        <Rectangle.BitmapEffect>
-                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
-                        </Rectangle.BitmapEffect>
-                        <Rectangle.Fill>
-                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
-                                <GradientStop Color="#0394E7" Offset="0"/>
-                                <GradientStop Color="#0394E7" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>                               
-                    </Rectangle>
-                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
-                           x:Name="single9" Margin="5"  Width="50" Height="25" >
-                        <Rectangle.BitmapEffect>
-                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
-                        </Rectangle.BitmapEffect>
-                        <Rectangle.Fill>
-                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
-                                <GradientStop Color="#0394E7" Offset="0"/>
-                                <GradientStop Color="#0394E7" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
-                           x:Name="single10" Margin="5"  Width="50" Height="25" >
-                        <Rectangle.BitmapEffect>
-                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
-                        </Rectangle.BitmapEffect>
-                        <Rectangle.Fill>
-                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
-                                <GradientStop Color="#0394E7" Offset="0"/>
-                                <GradientStop Color="#0394E7" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>                  
+                    <Border Width="57" Height="25" Background="#E7E7E7" CornerRadius="1" Margin="1">
+                        <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                    </Border>
+                    <Border Width="57" Height="25" Background="#E7E7E7" CornerRadius="1" Margin="1">
+                        <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                    </Border>
+                    <Border Width="57" Height="25" Background="#E7E7E7" CornerRadius="1" Margin="1">
+                        <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                    </Border>
+                    <Border Width="57" Height="25" Background="#0394E7" CornerRadius="1" Margin="1">
+                        <TextBlock Text="[1] 1.70" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" ></TextBlock>
+                    </Border>
+                    <Border Width="57" Height="25" Background="#0394E7" CornerRadius="1" Margin="1">
+                        <TextBlock Text="[0]3.35" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" ></TextBlock>
+                    </Border>
+                    <Border Width="57" Height="25" Background="#0394E7" CornerRadius="1" Margin="1">
+                        <TextBlock Text="[2]3.24" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" ></TextBlock>
+                    </Border>      
                     
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
-                           x:Name="single11" Margin="5"  Width="50" Height="25" >
-                        <Rectangle.BitmapEffect>
-                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
-                        </Rectangle.BitmapEffect>
-                        <Rectangle.Fill>
-                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
-                                <GradientStop Color="#E7E7E7" Offset="0"/>
-                                <GradientStop Color="#E7E7E7" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
-                           x:Name="single12" Margin="5"  Width="50" Height="25" >
-                        <Rectangle.BitmapEffect>
-                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
-                        </Rectangle.BitmapEffect>
-                        <Rectangle.Fill>
-                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
-                                <GradientStop Color="#E7E7E7" Offset="0"/>
-                                <GradientStop Color="#E7E7E7" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Rectangle Stroke="#87757575" StrokeDashCap="Square" StrokeEndLineCap="Flat" StrokeLineJoin="Miter" StrokeThickness="0.5" RadiusX="3" RadiusY="3"
-                           x:Name="single13" Margin="5"  Width="50" Height="25" >
-                        <Rectangle.BitmapEffect>
-                            <DropShadowBitmapEffect Opacity="0.835" ShadowDepth="1" Softness="0.305"/>
-                        </Rectangle.BitmapEffect>
-                        <Rectangle.Fill>
-                            <LinearGradientBrush StartPoint="0.538462,0.98077" EndPoint="0.538462,-0.576924">
-                                <GradientStop Color="#E7E7E7" Offset="0"/>
-                                <GradientStop Color="#E7E7E7" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-
+                    <Border Width="57" Height="25" Background="#E7E7E7" CornerRadius="1" Margin="1">
+                        <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                    </Border>
+                    <Border Width="57" Height="25" Background="#E7E7E7" CornerRadius="1" Margin="1">
+                        <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                    </Border>
+                    <Border Width="57" Height="25" Background="#E7E7E7" CornerRadius="1" Margin="1">
+                        <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                    </Border>
                 </StackPanel>
             </StackPanel>
             
@@ -242,322 +229,602 @@
             
         </Border>
         <Border Grid.Column="0" Grid.Row="3" BorderBrush="WhiteSmoke" BorderThickness="2" CornerRadius="5" Margin="2">
-            <ListView ItemsSource="{Binding vmSahibiKonuk, Path=SahibiKonukList}" Margin="2">
+            <DataGrid ItemsSource="{Binding vmSahibiKonuk, Path=SahibiKonukList}" Style="{StaticResource EfesDataGridStyle}"
+                      FrozenColumnCount="4">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Foreground" Value="White"></Setter>
+                        <Setter Property="Background" Value="Black"></Setter>
+                        <Setter Property="MinHeight" Value="28"></Setter>
+                        <Setter Property="Cursor" Value="Hand"></Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Border x:Name="BackgroundBorder" BorderThickness="0" 
+                              Background="{StaticResource Siyah}" 
+                              BorderBrush="{StaticResource Siyah}" 
+                              Grid.ColumnSpan="2" />
+                                        <ContentPresenter Margin="6,3,6,3" VerticalAlignment="Center" />
+                                        <Path x:Name="SortArrow" Visibility="Collapsed" Data="M0,0 L1,0 0.5,1 z" Stretch="Fill" 
+                            Grid.Column="3" Width="8" Height="6" Fill="White" Margin="0,0,8,0" 
+                            VerticalAlignment="Center" RenderTransformOrigin="0.5,0.4" />
+                                        <Rectangle Width="1" Fill="#AAC377" HorizontalAlignment="Right" Grid.ColumnSpan="2" />
 
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="{x:Type ListViewItem}"  >
-                        <Setter Property="Height" Value="24" />
-                        <Setter Property="Background" Value="WhiteSmoke" />
-                        <Setter Property="Foreground" Value="#000000" />
-                        <Setter Property="FontSize" Value="12" />
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                        <Setter Property="BorderThickness" Value="1" />
-                        <Setter Property="BorderBrush" Value="Gray" />
+                                        <Rectangle Width="1" Margin="0,0,1,0" Fill="#425B10" 
+                                 HorizontalAlignment="Right" Grid.ColumnSpan="2" />
+                                        <Thumb x:Name="PART_LeftHeaderGripper" Visibility="Hidden" HorizontalAlignment="Left" 
+                             />
+                                        <Thumb x:Name="PART_RightHeaderGripper" Visibility="Hidden" HorizontalAlignment="Right" 
+                             />
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="SortDirection" Value="{x:Null}">
+                                            <Setter TargetName="BackgroundBorder" Property="Background" 
+                                  Value="{DynamicResource Siyah}" />
+                                            <Setter TargetName="BackgroundBorder" Property="BorderBrush"  
+                                  Value="Transparent" />
+                                        </Trigger>
+                                        <MultiTrigger>
+                                            <MultiTrigger.Conditions>
+                                                <Condition Property="IsMouseOver" Value="True" />
+                                                <Condition Property="SortDirection" Value="{x:Null}" />
+                                            </MultiTrigger.Conditions>
+                                            <Setter Property="Background" TargetName="BackgroundBorder" 
+                                  Value="{StaticResource ASiyah}" />
+                                            <Setter Property="BorderBrush" TargetName="BackgroundBorder" 
+                                  Value="{StaticResource ASiyah}" />
+                                        </MultiTrigger>
+                                        <MultiTrigger>
+                                            <MultiTrigger.Conditions>
+                                                <Condition Property="IsMouseOver" Value="true" />
+                                                <Condition Property="SortDirection" Value="{x:Null}" />
+                                            </MultiTrigger.Conditions>
+                                            <Setter TargetName="BackgroundBorder" Property="Background" 
+                                  Value="{StaticResource ASiyah}" />
+                                            <Setter TargetName="BackgroundBorder" Property="BorderBrush" 
+                                  Value="{StaticResource ASiyah}" />
+                                        </MultiTrigger>
+
+                                        <Trigger Property="SortDirection" Value="Ascending">
+                                            <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="SortArrow" Property="RenderTransform">
+                                                <Setter.Value>
+                                                    <RotateTransform Angle="180" />
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                        <Trigger Property="SortDirection" Value="Descending">
+                                            <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                                        </Trigger>
+                                        <Trigger Property="DisplayIndex" Value="0">
+                                            <Setter Property="Visibility" Value="Collapsed" 
+                                  TargetName="PART_LeftHeaderGripper"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightGray"/>
+                            </Trigger>
+                        </Style.Triggers>
                     </Style>
-                </ListView.ItemContainerStyle>
-
-
-                <ListView.View>
-                    <GridView AllowsColumnReorder="false" 
-                              ColumnHeaderContainerStyle="{StaticResource EfesGrayGridViewHdr}"
-                              >
-
-                        <GridViewColumn Width="80" Header="Kod">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Path=Kod}" HorizontalAlignment="Center"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Width="80" Header="Ev Sahibi">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Sahibi}" HorizontalAlignment="Center"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Konuk}" Width="100" Header="Konuk">
-                        </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Altsecenekler}" Width="150" Header="Altsecenekler">
-                        </GridViewColumn>
-                        
-                    </GridView>
-
-                </ListView.View>
-
-            </ListView>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Kod" Binding="{Binding Kod}" Width="50" />
+                    <DataGridTextColumn Header="Ev Sahibi" Binding="{Binding Sahibi}" Width="85" />
+                    <DataGridTextColumn Header="Konuk" Binding="{Binding Konuk}" Width="110" />
+                    <DataGridTextColumn Header="Altsecenekler" Binding="{Binding Altsecenekler}" Width="120" />
+                </DataGrid.Columns>
+            </DataGrid>
         </Border>
         <Border Grid.Column="0" Grid.Row="4" BorderBrush="WhiteSmoke" BorderThickness="2" CornerRadius="5" Margin="2">
             <StackPanel Orientation="Vertical">
-                <ListView ItemsSource="{Binding vmSahibiKonuk, Path=MaxGooseList}" Margin="2">
+                <Grid Background="#E7E7E7" Width="352"  HorizontalAlignment="Left" Margin="0,1,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0*" />
+                        <RowDefinition Height="13*"/>
+                        <RowDefinition Height="12*"/>
+                        <RowDefinition Height="25" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="9" />
+                        <ColumnDefinition Width="9" />
+                        <ColumnDefinition Width="24.134"/>
+                        <ColumnDefinition Width="78" />
+                        <ColumnDefinition Width="45" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Style="{StaticResource Baslik2}" Text="KB" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="0,3" />
+                    <TextBlock Style="{StaticResource Baslik2}" Text="Max. Kaz" Grid.Column="3" Grid.RowSpan="3" />
+                    <TextBlock Style="{StaticResource Baslik2}" Text="Sistem" Grid.Column="4" Grid.RowSpan="3" />
+                    <TextBlock Grid.Column="5" Grid.RowSpan="3" />
+                    <TextBlock Style="{StaticResource Baslik2}" Text="Tutar" Grid.Column="6" Grid.RowSpan="3" />
+                    <TextBlock Style="{StaticResource Carpi}" Text="X" Grid.Column="7" Grid.RowSpan="3" />
+                    <TextBox Width="40" Text="112.00" Style="{StaticResource Input1}" HorizontalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="3" Margin="0" />
+                    <TextBox Width="65" Text="1000000" Style="{StaticResource Input1}" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Left" Margin="0,2,0,3" />
+                    <Image Source="Resource/tl.png" Width="6" Height="9" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Right" Margin="2" />
+                    <Border Grid.Column="5" Background="{StaticResource MaviBeyaz}" Grid.RowSpan="3" />
+                    <TextBox Style="{StaticResource Input1}" Text="15"  Width="40" Grid.Row="3" Grid.Column="4" Margin="2,2,3,2" />
+                    <TextBox Style="{StaticResource Input1}" Height="46" Grid.Column="5" Grid.RowSpan="4" Margin="0,6" />
+                    <TextBox  Style="{StaticResource Input1}" Grid.Row="3" Grid.Column="6" Width="60" Margin="3,1,2,6" ></TextBox>
+                    <Border Grid.Row="3" Grid.Column="7" Background="#59B223" Margin="1">
+                        <TextBlock Text="Oyna" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Border>
+                </Grid>
+                <DataGrid ItemsSource="{Binding vmSahibiKonuk, Path=RateEstimationGuestList}" Style="{StaticResource EfesDataGridStyle}"
+                        FrozenColumnCount="7" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" GridLinesVisibility="All">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Foreground" Value="White"></Setter>
+                            <Setter Property="Background" Value="Black"></Setter>
+                            <Setter Property="MinHeight" Value="28"></Setter>
+                            <Setter Property="Cursor" Value="Hand"></Setter>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Border x:Name="BackgroundBorder" BorderThickness="0" 
+                              Background="{StaticResource Siyah}" 
+                              BorderBrush="{StaticResource Siyah}" 
+                              Grid.ColumnSpan="2" />
+                                            <ContentPresenter Margin="6,3,6,3" VerticalAlignment="Center" />
+                                            <Path x:Name="SortArrow" Visibility="Collapsed" Data="M0,0 L1,0 0.5,1 z" Stretch="Fill" 
+                            Grid.Column="3" Width="8" Height="6" Fill="White" Margin="0,0,8,0" 
+                            VerticalAlignment="Center" RenderTransformOrigin="0.5,0.4" />
+                                            <Rectangle Width="1" Fill="#AAC377" HorizontalAlignment="Right" Grid.ColumnSpan="2" />
 
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="{x:Type ListViewItem}"  >
-                            <Setter Property="Height" Value="24" />
-                            <Setter Property="Background" Value="WhiteSmoke" />
-                            <Setter Property="Foreground" Value="#000000" />
-                            <Setter Property="FontSize" Value="12" />
-                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                            <Setter Property="BorderThickness" Value="1" />
-                            <Setter Property="BorderBrush" Value="Gray" />
+                                            <Rectangle Width="1" Margin="0,0,1,0" Fill="#425B10" 
+                                 HorizontalAlignment="Right" Grid.ColumnSpan="2" />
+                                            <Thumb x:Name="PART_LeftHeaderGripper" Visibility="Hidden" HorizontalAlignment="Left" 
+                             />
+                                            <Thumb x:Name="PART_RightHeaderGripper" Visibility="Hidden" HorizontalAlignment="Right" 
+                             />
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="SortDirection" Value="{x:Null}">
+                                                <Setter TargetName="BackgroundBorder" Property="Background" 
+                                  Value="{DynamicResource Siyah}" />
+                                                <Setter TargetName="BackgroundBorder" Property="BorderBrush"  
+                                  Value="Transparent" />
+                                            </Trigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="IsMouseOver" Value="True" />
+                                                    <Condition Property="SortDirection" Value="{x:Null}" />
+                                                </MultiTrigger.Conditions>
+                                                <Setter Property="Background" TargetName="BackgroundBorder" 
+                                  Value="{StaticResource ASiyah}" />
+                                                <Setter Property="BorderBrush" TargetName="BackgroundBorder" 
+                                  Value="{StaticResource ASiyah}" />
+                                            </MultiTrigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="IsMouseOver" Value="true" />
+                                                    <Condition Property="SortDirection" Value="{x:Null}" />
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="BackgroundBorder" Property="Background" 
+                                  Value="{StaticResource ASiyah}" />
+                                                <Setter TargetName="BackgroundBorder" Property="BorderBrush" 
+                                  Value="{StaticResource ASiyah}" />
+                                            </MultiTrigger>
+
+                                            <Trigger Property="SortDirection" Value="Ascending">
+                                                <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                                                <Setter TargetName="SortArrow" Property="RenderTransform">
+                                                    <Setter.Value>
+                                                        <RotateTransform Angle="180" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                            <Trigger Property="SortDirection" Value="Descending">
+                                                <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                                            </Trigger>
+                                            <Trigger Property="DisplayIndex" Value="0">
+                                                <Setter Property="Visibility" Value="Collapsed" 
+                                  TargetName="PART_LeftHeaderGripper"></Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="LightGray"/>
+                                </Trigger>
+                            </Style.Triggers>
                         </Style>
-                    </ListView.ItemContainerStyle>
-                    <ListView.View>
-                        <GridView AllowsColumnReorder="false" 
-                              ColumnHeaderContainerStyle="{StaticResource EfesBlueGridViewHeader}"
-                              >
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="No" Binding="{Binding No}" Width="20" />
+                        <DataGridTextColumn Header="Kod" Binding="{Binding Code}" Width="40" />
+                        <DataGridTextColumn Header="Ev Sahivi" Binding="{Binding Host}" Width="70" />
+                        <DataGridTextColumn Header="Konuk" Binding="{Binding Guest}" Width="70" />
+                        <DataGridTextColumn Header="Tip" Binding="{Binding Tip}" Width="40" />
+                        <DataGridTextColumn Header="Tahmin" Binding="{Binding Estimation}" Width="50" />
+                        <DataGridTemplateColumn Header="Oran" Width="50">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Path=Rate}" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>                                        
+                                        <Image Source="Resource/closeicon.gif" Width="10" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                                    </StackPanel>                            
+                                    
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <!--<DataGridTextColumn Header="Oran" Binding="{Binding Rate}" Width="50" />-->
+                    </DataGrid.Columns>
+                </DataGrid>
 
-                            <GridViewColumn Width="30" Header="KB">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Path=KB}" HorizontalAlignment="Center"></TextBlock>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn Width="100" Header="Max Kaz">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding MaxGoose}" HorizontalAlignment="Center"></TextBlock>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=System}" Width="50" Header="Sistem">
-                            </GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=One_guest}" Width="80" Header=" ">
-                            </GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=Total}" Width="50" Header="Tutar">
-                            </GridViewColumn>
-
-                        </GridView>
-
-                    </ListView.View>
-
-                </ListView>
-                <ListView ItemsSource="{Binding vmSahibiKonuk, Path=RateEstimationGuestList}" Margin="2">
-
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="{x:Type ListViewItem}"  >
-                            <Setter Property="Height" Value="24" />
-                            <Setter Property="Background" Value="WhiteSmoke" />
-                            <Setter Property="Foreground" Value="#000000" />
-                            <Setter Property="FontSize" Value="12" />
-                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                            <Setter Property="BorderThickness" Value="1" />
-                            <Setter Property="BorderBrush" Value="Gray" />
-                        </Style>
-                    </ListView.ItemContainerStyle>
-                    <ListView.View>
-                        <GridView AllowsColumnReorder="false" 
-                              ColumnHeaderContainerStyle="{StaticResource EfesGrayGridViewHdr}"
-                              >
-
-                            <GridViewColumn Width="30" Header="No">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Path=No}" HorizontalAlignment="Center"></TextBlock>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn Width="70" Header="Kod">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Code}" HorizontalAlignment="Center"></TextBlock>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=Host}" Width="70" Header="Ev Sahivi">
-                            </GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=Guest}" Width="70" Header="Konuk">
-                            </GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=Tip}" Width="40" Header="Tip">
-                            </GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=Estimation}" Width="50" Header="Tahmin">
-                            </GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=Rate}" Width="50" Header="Oran">
-                            </GridViewColumn>
-
-                        </GridView>
-
-                    </ListView.View>
-
-                </ListView>
             </StackPanel>
             
         </Border>
-        <Grid x:Name="grdRight" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" >
-            <Border x:Name="brdRight" BorderBrush="LightGray" BorderThickness="5" CornerRadius="5" Margin="2">
-                <ListBox ItemsSource="{Binding SahibiKonukList}" Margin="2">
-                    <ListBox.ItemTemplate>
-                        <HierarchicalDataTemplate>
-                            <CheckBox Content="{Binding Konuk}" IsChecked="{Binding IsChecked}"/>
-                        </HierarchicalDataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </Border>
-            
+        <Grid x:Name="grdRight" Grid.Column="5" Grid.Row="1" Grid.RowSpan="3" >
+            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Stretch">
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Tüm Ligler" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Almayna Bundesliga" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Arjantin Ligi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Çek Senet Ligi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Danimarka Super Ligi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Finlandiya Veikkausi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Fransa 2. Ligi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Hollanda 2. Ligi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Norveç Adeccoliegen" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Almayna Bundesliga" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Arjantin Ligi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Çek Senet Ligi" />
+                </Border>
+            </StackPanel>
         </Grid>
-        <Border x:Name="brdCenterGrid" BorderBrush="LightGray" BorderThickness="10" CornerRadius="5" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4">
-            <ListView ItemsSource="{Binding vmSahibiKonuk, Path=GuestHostTotalList}" Margin="2">
+        <Border x:Name="brdCenterGrid" BorderBrush="White" BorderThickness="0" CornerRadius="0" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" Margin="5">
+            <DataGrid ItemsSource="{Binding }" x:Name="dataGridParent" Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14"
+                      GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Foreground" Value="White"></Setter>
+                        <Setter Property="Background" Value="Black"></Setter>
+                        <Setter Property="MinHeight" Value="28"></Setter>
+                        <Setter Property="Cursor" Value="Hand"></Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Border x:Name="BackgroundBorder" BorderThickness="0" 
+                              Background="{StaticResource Siyah}" 
+                              BorderBrush="{StaticResource Siyah}" 
+                              Grid.ColumnSpan="2" />
+                                        <ContentPresenter Margin="6,3,6,3" VerticalAlignment="Center" />
+                                        <Path x:Name="SortArrow" Visibility="Collapsed" Data="M0,0 L1,0 0.5,1 z" Stretch="Fill" 
+                            Grid.Column="3" Width="8" Height="6" Fill="White" Margin="0,0,8,0" 
+                            VerticalAlignment="Center" RenderTransformOrigin="0.5,0.4" />
+                                        <Rectangle Width="1" Fill="#AAC377" HorizontalAlignment="Right" Grid.ColumnSpan="2" />
 
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="{x:Type ListViewItem}"  >
-                        <Setter Property="Height" Value="24" />
-                        <Setter Property="Background" Value="WhiteSmoke" />
-                        <Setter Property="Foreground" Value="#000000" />
-                        <Setter Property="FontSize" Value="12" />
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                        <Setter Property="BorderThickness" Value="1" />
-                        <Setter Property="BorderBrush" Value="Gray" />
+                                        <Rectangle Width="1" Margin="0,0,1,0" Fill="#425B10" 
+                                 HorizontalAlignment="Right" Grid.ColumnSpan="2" />
+                                        <Thumb x:Name="PART_LeftHeaderGripper" Visibility="Hidden" HorizontalAlignment="Left" 
+                             />
+                                        <Thumb x:Name="PART_RightHeaderGripper" Visibility="Hidden" HorizontalAlignment="Right" 
+                             />
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="SortDirection" Value="{x:Null}">
+                                            <Setter TargetName="BackgroundBorder" Property="Background" 
+                                  Value="{DynamicResource Siyah}" />
+                                            <Setter TargetName="BackgroundBorder" Property="BorderBrush"  
+                                  Value="Transparent" />
+                                        </Trigger>
+                                        <MultiTrigger>
+                                            <MultiTrigger.Conditions>
+                                                <Condition Property="IsMouseOver" Value="True" />
+                                                <Condition Property="SortDirection" Value="{x:Null}" />
+                                            </MultiTrigger.Conditions>
+                                            <Setter Property="Background" TargetName="BackgroundBorder" 
+                                  Value="{StaticResource ASiyah}" />
+                                            <Setter Property="BorderBrush" TargetName="BackgroundBorder" 
+                                  Value="{StaticResource ASiyah}" />
+                                        </MultiTrigger>
+                                        <MultiTrigger>
+                                            <MultiTrigger.Conditions>
+                                                <Condition Property="IsMouseOver" Value="true" />
+                                                <Condition Property="SortDirection" Value="{x:Null}" />
+                                            </MultiTrigger.Conditions>
+                                            <Setter TargetName="BackgroundBorder" Property="Background" 
+                                  Value="{StaticResource ASiyah}" />
+                                            <Setter TargetName="BackgroundBorder" Property="BorderBrush" 
+                                  Value="{StaticResource ASiyah}" />
+                                        </MultiTrigger>
+
+                                        <Trigger Property="SortDirection" Value="Ascending">
+                                            <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="SortArrow" Property="RenderTransform">
+                                                <Setter.Value>
+                                                    <RotateTransform Angle="180" />
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                        <Trigger Property="SortDirection" Value="Descending">
+                                            <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                                        </Trigger>
+                                        <Trigger Property="DisplayIndex" Value="0">
+                                            <Setter Property="Visibility" Value="Collapsed" 
+                                  TargetName="PART_LeftHeaderGripper"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightGray"/>
+                            </Trigger>
+                        </Style.Triggers>
                     </Style>
-                </ListView.ItemContainerStyle>
+                </DataGrid.ColumnHeaderStyle>
 
+                <DataGrid.Columns>                    
+                    <DataGridTextColumn Header="Kod" Binding="{Binding Code}" Width="50"   />
+                    <DataGridTextColumn Header="Tarih" Binding="{Binding History}" Width="75" />
+                    <DataGridTextColumn Header="Ev Sahibi" Binding="{Binding Own}" Width="115" />
+                    <DataGridTextColumn Header="Konuk" Binding="{Binding Guest}" Width="105" />
+                    <DataGridTextColumn Header="1" Binding="{Binding One_guest}" Width="35" />
+                    <DataGridTextColumn Header="X" Binding="{Binding X_game}" Width="35" />
+                    <DataGridTextColumn Header="2" Binding="{Binding Two_guest}" Width="35" />
+                    <DataGridTextColumn Header="T1" Binding="{Binding T1_host}" Width="30" />
+                    <DataGridTextColumn Header="TX" Binding="{Binding TX_host}" Width="30" />
+                    <DataGridTextColumn Header="T2" Binding="{Binding T2_host}" Width="30" />
+                    <DataGridTextColumn Header="+" Binding="{Binding TotalOptions}" Width="30" />
+                    <DataGridTextColumn Header="Min" Binding="{Binding MinOption}" Width="40" />
+                    <DataGridTextColumn Header="Lig" Binding="{Binding League}" Width="80" />                    
+                    <DataGridTemplateColumn Header="Durum" Width="90">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <ToggleButton  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Style="{StaticResource SlidingToggleButton}" BorderBrush="{x:Null}" Background="#FF2F63FF"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!--<DataGridTextColumn Header="Durum" Binding="{Binding Cases}" Width="80" />-->
 
-                <ListView.View>
-                    <GridView AllowsColumnReorder="false" 
-                              ColumnHeaderContainerStyle="{StaticResource EfesGrayGridViewHdr}"
-                              >
+                </DataGrid.Columns>
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <DataGrid Name="innerGrid" ItemsSource="{Binding}" Style="{StaticResource EfesDataGridStyle}" Margin="50,2,2,2" MinHeight="40"
+                                  GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA">
+                            <DataGrid.ColumnHeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Foreground" Value="White"></Setter>
+                                    <Setter Property="Background" Value="Black"></Setter>
+                                    <Setter Property="MinHeight" Value="28"></Setter>
+                                    <Setter Property="Cursor" Value="Hand"></Setter>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border x:Name="BackgroundBorder" BorderThickness="0" 
+                              Background="{StaticResource Siyah}" 
+                              BorderBrush="{StaticResource Siyah}" 
+                              Grid.ColumnSpan="2" />
+                                                    <ContentPresenter Margin="6,3,6,3" VerticalAlignment="Center" />
+                                                    <Path x:Name="SortArrow" Visibility="Collapsed" Data="M0,0 L1,0 0.5,1 z" Stretch="Fill" 
+                            Grid.Column="3" Width="8" Height="6" Fill="White" Margin="0,0,8,0" 
+                            VerticalAlignment="Center" RenderTransformOrigin="0.5,0.4" />
+                                                    <Rectangle Width="1" Fill="#AAC377" HorizontalAlignment="Right" Grid.ColumnSpan="2" />
 
-                        <GridViewColumn Width="100" Header="Kod">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Path=Code}" HorizontalAlignment="Center"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Width="100" Header="Tarih">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding History}" HorizontalAlignment="Center"></TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Own}" Width="100" Header="Ev Sahibi">
-                        </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=One_guest}" Width="40" Header="1">
-                        </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=X_game}" Width="40" Header="X">
-                        </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Two_guest}" Width="40" Header="2">
-                        </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=T1_host}" Width="40" Header="T1">
-                        </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=TX_host}" Width="40" Header="TX">
-                        </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=T2_host}" Width="40" Header="T2">
-                        </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=TotalOptions}" Width="40" Header="+">
-                        </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=MinOption}" Width="40" Header="Min">
-                        </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=League}" Width="100" >
-                            <GridViewColumn.Header>Lig                              
-                            </GridViewColumn.Header>
-                        </GridViewColumn>
-                    </GridView>
+                                                    <Rectangle Width="1" Margin="0,0,1,0" Fill="#425B10" 
+                                 HorizontalAlignment="Right" Grid.ColumnSpan="2" />
+                                                    <Thumb x:Name="PART_LeftHeaderGripper" Visibility="Hidden" HorizontalAlignment="Left" 
+                             />
+                                                    <Thumb x:Name="PART_RightHeaderGripper" Visibility="Hidden" HorizontalAlignment="Right" 
+                             />
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="SortDirection" Value="{x:Null}">
+                                                        <Setter TargetName="BackgroundBorder" Property="Background" 
+                                  Value="{DynamicResource Siyah}" />
+                                                        <Setter TargetName="BackgroundBorder" Property="BorderBrush"  
+                                  Value="Transparent" />
+                                                    </Trigger>
+                                                    <MultiTrigger>
+                                                        <MultiTrigger.Conditions>
+                                                            <Condition Property="IsMouseOver" Value="True" />
+                                                            <Condition Property="SortDirection" Value="{x:Null}" />
+                                                        </MultiTrigger.Conditions>
+                                                        <Setter Property="Background" TargetName="BackgroundBorder" 
+                                  Value="{StaticResource ASiyah}" />
+                                                        <Setter Property="BorderBrush" TargetName="BackgroundBorder" 
+                                  Value="{StaticResource ASiyah}" />
+                                                    </MultiTrigger>
+                                                    <MultiTrigger>
+                                                        <MultiTrigger.Conditions>
+                                                            <Condition Property="IsMouseOver" Value="true" />
+                                                            <Condition Property="SortDirection" Value="{x:Null}" />
+                                                        </MultiTrigger.Conditions>
+                                                        <Setter TargetName="BackgroundBorder" Property="Background" 
+                                  Value="{StaticResource ASiyah}" />
+                                                        <Setter TargetName="BackgroundBorder" Property="BorderBrush" 
+                                  Value="{StaticResource ASiyah}" />
+                                                    </MultiTrigger>
 
-                </ListView.View>
+                                                    <Trigger Property="SortDirection" Value="Ascending">
+                                                        <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                                                        <Setter TargetName="SortArrow" Property="RenderTransform">
+                                                            <Setter.Value>
+                                                                <RotateTransform Angle="180" />
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                    <Trigger Property="SortDirection" Value="Descending">
+                                                        <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                                                    </Trigger>
+                                                    <Trigger Property="DisplayIndex" Value="0">
+                                                        <Setter Property="Visibility" Value="Collapsed" 
+                                  TargetName="PART_LeftHeaderGripper"></Setter>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="LightGray"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.ColumnHeaderStyle>
+                        </DataGrid>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
+            </DataGrid>
 
-            </ListView>
         </Border>
-        <Border Grid.Column="2" Grid.Row="4" BorderBrush="White" BorderThickness="5" CornerRadius="5">
+        <Border Grid.Column="5" Grid.Row="4" BorderBrush="White" BorderThickness="0" CornerRadius="0" Margin="2,2,2,2">
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
-                    <Border Width="25" Height="25" Background="Black" CornerRadius="5" Margin="2">
+                    <Border Width="22" Height="22" Background="Black" CornerRadius="1" Margin="1">
                         <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
                     </Border>
-                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                    <Border Width="22" Height="22" Background="LightGray" CornerRadius="1" Margin="1">
                         <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     </Border>
-                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                    <Border Width="22" Height="22" Background="LightGray" CornerRadius="1" Margin="1">
                         <TextBlock Text="8" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     </Border>
-                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                    <Border Width="22" Height="22" Background="LightGray" CornerRadius="1" Margin="1">
                         <TextBlock Text="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     </Border>
-                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                    <Border Width="22" Height="22" Background="LightGray" CornerRadius="1" Margin="1">
                         <TextBlock Text="24" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     </Border>
-                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                    <Border Width="22" Height="22" Background="LightGray" CornerRadius="1" Margin="1">
                         <TextBlock Text="36" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     </Border>
-                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                    <Border Width="22" Height="22" Background="LightGray" CornerRadius="1" Margin="1">
                         <TextBlock Text="48" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     </Border>
-                    <Border Width="25" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                    <Border Width="22" Height="22" Background="LightGray" CornerRadius="1" Margin="1">
                         <TextBlock Text="72" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     </Border>
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal">
-                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="1" Margin="1">
                             <TextBlock Text="Oynanan" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
                         </Border>
-                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="5" Margin="2">
-                            <TextBlock Text="8236" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="1" Margin="1">
+                            <TextBlock Text="8236" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
                         </Border>
-                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
-                            <TextBlock Text="200,834,00" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="1" Margin="1">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="200,834,00" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"></TextBlock>
+                                <Image Source="Resource/tl.png" Width="6" Height="Auto"></Image>
+                            </StackPanel>
+                            
                         </Border>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="1" Margin="1">
                             <TextBlock Text="Kazanan" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
                         </Border>
-                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="5" Margin="2">
-                            <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="1" Margin="1">
+                            <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
                         </Border>
-                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="1" Margin="1">
                             <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                         </Border>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="1" Margin="1">
                             <TextBlock Text="Devam" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
                         </Border>
-                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="5" Margin="2">
-                            <TextBlock Text="8889" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="1" Margin="1">
+                            <TextBlock Text="8889" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
                         </Border>
-                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="1" Margin="1">
                             <TextBlock Text="80" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                         </Border>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="1" Margin="1">
                             <TextBlock Text="Kaybeden" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
                         </Border>
-                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="5" Margin="2">
-                            <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="1" Margin="1">
+                            <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
                         </Border>
-                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="1" Margin="1">
                             <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                         </Border>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="1" Margin="1">
                             <TextBlock Text="Silinen" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
                         </Border>
-                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="5" Margin="2">
-                            <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="1" Margin="1">
+                            <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
                         </Border>
-                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
-                            <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="5" Margin="1">
+                            <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
                         </Border>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <Border Width="50" Height="25" Background="LightGray" CornerRadius="1" Margin="1">
                             <TextBlock Text="Lade Olan" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
                         </Border>
-                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="5" Margin="2">
-                            <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <Border Width="50" Height="25" Background="#0394E7" CornerRadius="1" Margin="1">
+                            <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
                         </Border>
-                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="5" Margin="2">
+                        <Border Width="100" Height="25" Background="LightGray" CornerRadius="1" Margin="1">
                             <TextBlock Text="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                         </Border>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
         </Border>
-        <Grid x:Name="grdFooter" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" Background="Black">
+        <Grid x:Name="grdFooter" Grid.Row="5" Grid.ColumnSpan="6" Background="Black" Margin="0,0,-349,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width=".3*"></ColumnDefinition>
                 <ColumnDefinition Width=".7*"></ColumnDefinition>
@@ -568,7 +835,7 @@
                 <TextBlock x:Name="tbBayiAdi" Text="Bayi Adi :" Foreground="White" Margin="2"></TextBlock>
                 <TextBlock x:Name="tbBayiAdiName" Text="BayiAdi" Foreground="White" Margin="5,2,2,2"></TextBlock>
             </StackPanel>
-            <StackPanel x:Name="spTotal" Grid.Column="1" Orientation="Horizontal">
+            <StackPanel x:Name="spTotal" Grid.Column="3" Orientation="Horizontal">
                 <TextBlock x:Name="tbTotalMac" Text="Toplam Mac :" Foreground="White" Margin="2"></TextBlock>
                 <TextBlock x:Name="tbTotalBet" Text="Total Bet" Foreground="White" Margin="5,2,50,2"></TextBlock>
                 <TextBlock x:Name="tbTotalLig" Text="Total League :" Foreground="White" Margin="2"></TextBlock>
@@ -578,6 +845,8 @@
                         
             
         </Grid>
+        <Image Grid.Column="1" Grid.Row="3" Height="28" HorizontalAlignment="Left" Margin="2,20,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="8" Source="/EfesBetGUI;component/Resource/expandericon.gif" MouseLeftButtonDown="image1_MouseLeftButtonDown" />
+        <Image Height="28" HorizontalAlignment="Left" Margin="2,22,0,0" Name="image2" Source="/EfesBetGUI;component/Resource/expandericon.gif" Stretch="Fill" VerticalAlignment="Top" Width="8" Grid.Column="3" Grid.Row="3" MouseLeftButtonDown="image2_MouseLeftButtonDown" />
     </Grid>
 </Window>
     

@@ -18,7 +18,7 @@ namespace EfesBetGUI.Model
                 {
                     KB=112.00,
                     MaxGoose=1000000,
-                    System=15
+                    System=15 
                     
                 }
             };

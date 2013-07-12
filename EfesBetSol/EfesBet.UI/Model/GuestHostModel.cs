@@ -27,7 +27,7 @@ namespace EfesBetGUI.Model
                     T1_host=1.17,
                     TX_host=1.17,
                     T2_host=1.17,
-                    TotalOptions=11,
+                    TotalOptions="11+",
                     MinOption="Min3",
                     League="Rusya Kupa",
                     Cases="Pasif"
@@ -46,7 +46,7 @@ namespace EfesBetGUI.Model
                     T1_host=1.17,
                     TX_host=1.17,
                     T2_host=1.17,
-                    TotalOptions=11,
+                   TotalOptions="11+",
                     MinOption="Min3",
                     League="Rusya Kupa",
                     Cases="Pasif"
@@ -63,7 +63,7 @@ namespace EfesBetGUI.Model
                     T1_host=1.17,
                     TX_host=1.17,
                     T2_host=1.17,
-                    TotalOptions=11,
+                    TotalOptions="11+",
                     MinOption="Min3",
                     League="Rusya Kupa",
                     Cases="Pasif"
@@ -80,7 +80,7 @@ namespace EfesBetGUI.Model
                     T1_host=1.17,
                     TX_host=1.17,
                     T2_host=1.17,
-                    TotalOptions=11,
+                    TotalOptions="11+",
                     MinOption="Min3",
                     League="Rusya Kupa",
                     Cases="Pasif"
@@ -97,7 +97,7 @@ namespace EfesBetGUI.Model
                     T1_host=1.17,
                     TX_host=1.17,
                     T2_host=1.17,
-                    TotalOptions=11,
+                    TotalOptions="11+",
                     MinOption="Min3",
                     League="Rusya Kupa",
                     Cases="Pasif"
@@ -114,7 +114,7 @@ namespace EfesBetGUI.Model
                     T1_host=1.17,
                     TX_host=1.17,
                     T2_host=1.17,
-                    TotalOptions=11,
+                    TotalOptions="11+",
                     MinOption="Min3",
                     League="Rusya Kupa",
                     Cases="Pasif"
@@ -131,7 +131,7 @@ namespace EfesBetGUI.Model
                     T1_host=1.17,
                     TX_host=1.17,
                     T2_host=1.17,
-                    TotalOptions=11,
+                    TotalOptions="11+",
                     MinOption="Min3",
                     League="Rusya Kupa",
                     Cases="Pasif"

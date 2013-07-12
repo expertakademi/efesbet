@@ -14,6 +14,7 @@ namespace EfesBetGUI.ViewModel
         OwnGuestModel ownGuestModel = new OwnGuestModel();
         GuestHostModel guestHostModel = new GuestHostModel();
         MaxGooseModel maxGooseModel = new MaxGooseModel();
+        SubGridModel subGridModel = new SubGridModel();
         RateEstimationGuestModel rateEstimationGuestModel = new RateEstimationGuestModel();
         /// <summary>
         /// this is the constructor pupulating the Guest and host in the datagrid
@@ -21,6 +22,18 @@ namespace EfesBetGUI.ViewModel
         public OwnGuestViewModel()
         {
             PopulateSahibiKonuk();
+        }
+        private ObservableCollection<SubGridItem> _subGridItemList;
+        public ObservableCollection<SubGridItem> SubGridItemList
+        {
+            get
+            {
+                return _subGridItemList;
+            }
+            set
+            {
+                _subGridItemList = value;
+            }
         }
         private ObservableCollection<RateEstimationGuest> _rateEstimationGuestList;
         public ObservableCollection<RateEstimationGuest> RateEstimationGuestList
@@ -101,6 +114,7 @@ namespace EfesBetGUI.ViewModel
             _guestHostList = guestHostModel.guestHostList;
             _maxGooseList = maxGooseModel.GooseList;
             _rateEstimationGuestList = rateEstimationGuestModel.RateEstimationList;
+            _subGridItemList = subGridModel.SubGridItemList;
 
         }
         #region INotifyPropertyChanged Members

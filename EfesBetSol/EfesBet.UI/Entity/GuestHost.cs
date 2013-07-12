@@ -17,7 +17,7 @@ namespace EfesBetGUI.Entity
         public double T1_host { get; set; }
         public double TX_host { get; set; }
         public double T2_host { get; set; }
-        public int TotalOptions { get; set; }
+        public string TotalOptions { get; set; }
         public string MinOption { get; set; }        
         public string League { get; set; }
         public string Cases { get; set; }

@@ -36,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -60,12 +61,23 @@
     <Compile Include="Entity\OddsResult.cs" />
     <Compile Include="Entity\RateEstimationGuest.cs" />
     <Compile Include="Entity\RateEstimationHostGuest.cs" />
+    <Compile Include="Entity\SubGridItem.cs" />
     <Compile Include="Model\GuestHostModel.cs" />
     <Compile Include="Model\MaxGooseModel.cs" />
     <Compile Include="Model\OwnGuestModel.cs" />
     <Compile Include="Model\RateEstimationGuestModel.cs" />
+    <Compile Include="Model\SubGridModel.cs" />
     <Compile Include="ViewModel\DateTimeMonthUCViewModel.cs" />
     <Compile Include="ViewModel\OwnGuestViewModel.cs" />
+    <Compile Include="View\MenuPopup.xaml.cs">
+      <DependentUpon>MenuPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\popup.xaml.cs">
+      <DependentUpon>popup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\test.xaml.cs">
+      <DependentUpon>test.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\DateTimeMonth.xaml.cs">
       <DependentUpon>DateTimeMonth.xaml</DependentUpon>
     </Compile>
@@ -82,6 +94,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Theme\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MenuPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\popup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -117,7 +141,73 @@
   <ItemGroup>
     <Resource Include="Resource\search.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resource\Football.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\searchTextbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\CrossiconRed.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\closebutton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\closeicon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\tl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\expandericon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\dialogclose.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Announcement.png" />
+    <Resource Include="Resource\Clock.gif" />
+    <Resource Include="Resource\Clock1.gif" />
+    <Resource Include="Resource\clock1.png" />
+    <Resource Include="Resource\Edit.png" />
+    <Resource Include="Resource\football.jpg" />
+    <Resource Include="Resource\MenuHepsi.jpg" />
+    <Resource Include="Resource\Notepad.png" />
+    <Resource Include="Resource\Print.png" />
+    <Resource Include="Resource\Settings.png" />
+    <Resource Include="Resource\SubMenu1.jpg" />
+    <Resource Include="Resource\SubMenu2.jpg" />
+    <Resource Include="Resource\SubMenu3.jpg" />
+    <Resource Include="Resource\Tools.png" />
+    <Resource Include="Resource\TV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\battery.jpg" />
+    <Resource Include="Resource\coupon.jpg" />
+    <Resource Include="Resource\Printer.jpg" />
+    <Resource Include="Resource\settings.jpg" />
+    <Resource Include="Resource\speaker.jpg" />
+    <Resource Include="Resource\tools.jpg" />
+    <Resource Include="Resource\tv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\Currency.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\BasketBall.png" />
+    <Resource Include="Resource\Images\Beki.png" />
+    <Resource Include="Resource\Images\Clock.png" />
+    <Resource Include="Resource\Images\Duello.png" />
+    <Resource Include="Resource\Images\Edit.png" />
+    <Resource Include="Resource\Images\Footbal.png" />
+    <Resource Include="Resource\Images\NotePad.png" />
+    <Resource Include="Resource\Images\Print.png" />
+    <Resource Include="Resource\Images\Settings.png" />
+    <Resource Include="Resource\Images\Speaker.png" />
+    <Resource Include="Resource\Images\Tools.png" />
+    <Resource Include="Resource\Images\TV.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

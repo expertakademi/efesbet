@@ -361,7 +361,7 @@
                     </Border>
                 </Grid>
                 <DataGrid ItemsSource="{Binding vmSahibiKonuk, Path=RateEstimationGuestList}" Style="{StaticResource EfesDataGridStyle}"
-                        FrozenColumnCount="7" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" GridLinesVisibility="All">
+                        FrozenColumnCount="7" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" GridLinesVisibility="All" ToolTip="19.3 19:30-Denimarka 1.Leg">
                     <DataGrid.ColumnHeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="Foreground" Value="White"></Setter>
@@ -514,7 +514,7 @@
         </Grid>
         <Border x:Name="brdCenterGrid" BorderBrush="White" BorderThickness="0" CornerRadius="0" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" Margin="5">
             <DataGrid ItemsSource="{Binding }" x:Name="dataGridParent" Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14"
-                      GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA">
+                      GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" >
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="Foreground" Value="White"></Setter>

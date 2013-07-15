@@ -16,6 +16,7 @@ using EfesBetGUI.View;
 using System.Data;
 using System.ComponentModel;
 using EfesBetGUI.ViewModel;
+using System.Windows.Controls.Primitives;
 
 namespace EfesBetGUI
 {
@@ -48,8 +49,64 @@ namespace EfesBetGUI
             spLeft.IsEnabled = false;
             spRight.IsEnabled = false;
             this.dataGridParent.DataContext = ownguest.GuestHostTotalList;
-            this.dataGridParent.RowDetailsVisibilityChanged += new EventHandler<DataGridRowDetailsEventArgs>(dataGridParent_RowDetailsVisibilityChanged);            
-        }        
+            this.dataGridParent.RowDetailsVisibilityChanged += new EventHandler<DataGridRowDetailsEventArgs>(dataGridParent_RowDetailsVisibilityChanged);
+            this.dataGridParent.MouseRightButtonUp += new MouseButtonEventHandler(dataGridParent_MouseRightButtonUp);
+           
+        }
+
+        void dataGridParent_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            //detecting the column, cell and row that has been clicked 
+            DependencyObject dep = (DependencyObject)e.OriginalSource;
+
+            // iteratively traverse the visual tree
+            while ((dep != null) && !(dep is DataGridCell) &&  !(dep is DataGridColumnHeader))
+            {
+                dep = VisualTreeHelper.GetParent(dep);
+            }
+
+            if (dep == null)
+                return;
+
+            if (dep is DataGridColumnHeader)
+            {
+                DataGridColumnHeader columnHeader = dep as DataGridColumnHeader;
+                // do something
+            }
+
+            if (dep is DataGridCell)
+            {
+                DataGridCell cell = dep as DataGridCell;
+                
+                // do something
+                // navigate further up the tree
+                while ((dep != null) && !(dep is DataGridRow))
+                {
+                    dep = VisualTreeHelper.GetParent(dep);
+                }
+
+                //while ((dep != null) && !(dep is DataGridColumn))
+                //{
+                //    dep = VisualTreeHelper.GetParent(dep);
+                //}
+
+                //DataGridColumn col = dep as DataGridColumn;
+                //int rowIndex = FindRowIndex(col);
+            }
+        }
+
+        private int FindRowIndex(DataGridColumn col)
+        {
+            DataGrid dataGrid =
+                ItemsControl.ItemsControlFromItemContainer(col)
+                as DataGrid;
+
+            int index = dataGrid.ItemContainerGenerator.
+                IndexFromContainer(col);
+
+            return index;
+        }
+
         test t = new test();       
 
         void miAxleTools_Click(object sender, RoutedEventArgs e)
@@ -61,8 +118,7 @@ namespace EfesBetGUI
         void dataGridParent_RowDetailsVisibilityChanged(object sender, DataGridRowDetailsEventArgs e)
         {
             DataGrid innerDataGrid = e.DetailsElement as DataGrid;
-            innerDataGrid.DataContext = ownguest.SubGridItemList;       
-
+            innerDataGrid.DataContext = ownguest.SubGridItemList;
         }        
         private void image1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -78,5 +134,18 @@ namespace EfesBetGUI
             else
                 grdLastCol.Width = new GridLength(0.00);
         }
+
+       
+
+        //private void dataGridParent_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    if (((System.Windows.Controls.DataGrid)(sender)).CurrentColumn.Header.ToString() == "+")
+        //    {
+
+                
+        //    }
+        //}
+
+       
     }
 }

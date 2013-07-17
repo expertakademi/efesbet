@@ -629,7 +629,7 @@
                 </DataGrid.Columns>
                 <DataGrid.RowDetailsTemplate>
                     <DataTemplate>
-                        <DataGrid Name="innerGrid" ItemsSource="{Binding}" Style="{StaticResource EfesDataGridStyle}" Margin="50,2,2,2" MinHeight="40"
+                        <DataGrid x:Name="innerGrid" ItemsSource="{Binding}" Style="{StaticResource EfesDataGridStyle}" Margin="50,2,2,2" MinHeight="40"
                                   GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA">
                             <DataGrid.ColumnHeaderStyle>
                                 <Style TargetType="DataGridColumnHeader">
@@ -720,7 +720,6 @@
                     </DataTemplate>
                 </DataGrid.RowDetailsTemplate>
             </DataGrid>
-
         </Border>
         <Border Grid.Column="5" Grid.Row="4" BorderBrush="White" BorderThickness="0" CornerRadius="0" Margin="2,2,2,2">
             <StackPanel Orientation="Vertical">

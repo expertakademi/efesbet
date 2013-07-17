@@ -48,10 +48,78 @@ namespace EfesBetGUI
             colLastOrgPos = grdLastCol.Width;
             spLeft.IsEnabled = false;
             spRight.IsEnabled = false;
-            this.dataGridParent.DataContext = ownguest.GuestHostTotalList;
+            this.dataGridParent.DataContext = ownguest.GuestHostTotalList;            
             this.dataGridParent.RowDetailsVisibilityChanged += new EventHandler<DataGridRowDetailsEventArgs>(dataGridParent_RowDetailsVisibilityChanged);
             this.dataGridParent.MouseRightButtonUp += new MouseButtonEventHandler(dataGridParent_MouseRightButtonUp);
-           
+            this.dataGridParent.MouseLeftButtonUp += new MouseButtonEventHandler(dataGridParent_MouseLeftButtonUp);           
+        }
+
+        void dataGridParent_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            //detecting the column, cell and row that has been clicked 
+            DependencyObject dep = (DependencyObject)e.OriginalSource;
+
+            // iteratively traverse the visual tree
+            while ((dep != null) && !(dep is DataGridCell) && !(dep is DataGridColumnHeader))
+            {
+                dep = VisualTreeHelper.GetParent(dep);
+            }
+
+            if (dep == null)
+                return;
+
+            if (dep is DataGridColumnHeader)
+            {
+                DataGridColumnHeader columnHeader = dep as DataGridColumnHeader;
+                // do something
+            }
+
+            if (dep is DataGridCell)
+            {
+                DataGridCell cell = dep as DataGridCell;
+
+                // do something
+                // navigate further up the tree
+                while ((dep != null) && !(dep is DataGridRow))
+                {
+                    dep = VisualTreeHelper.GetParent(dep);
+                }
+                DataGridRow row = dep as DataGridRow;
+                DataGridColumn col=dep as DataGridColumn;
+                int colIndexValue = cell.Column.DisplayIndex;
+                if (colIndexValue == 10)
+                {
+                    //DataGrid innerDataGrid = new DataGrid();
+                    //innerDataGrid.DataContext = ownguest.SubGridItemList;
+                    
+                }
+                int rowIndex = FindRowIndex(row);         
+
+                //extract the value of the cell 
+                object value=ExtractBoundValue(row, cell);
+            }
+        }
+
+        private object ExtractBoundValue(DataGridRow row,  DataGridCell cell)
+        {
+            // find the column that this cell belongs to
+            DataGridBoundColumn col = cell.Column as DataGridBoundColumn;
+            
+            // find the property that this column is bound to
+            Binding binding = col.Binding as Binding;
+            string boundPropertyName = binding.Path.Path;
+
+            // find the object that is related to this row
+            object data = row.Item;
+
+            // extract the property value
+            PropertyDescriptorCollection properties =
+                TypeDescriptor.GetProperties(data);
+
+            PropertyDescriptor property = properties[boundPropertyName];
+            object value = property.GetValue(data);
+
+            return value;
         }
 
         void dataGridParent_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
@@ -84,28 +152,33 @@ namespace EfesBetGUI
                 {
                     dep = VisualTreeHelper.GetParent(dep);
                 }
+                
 
+                DataGridRow row = dep as DataGridRow;
                 //while ((dep != null) && !(dep is DataGridColumn))
                 //{
                 //    dep = VisualTreeHelper.GetParent(dep);
                 //}
 
                 //DataGridColumn col = dep as DataGridColumn;
-                //int rowIndex = FindRowIndex(col);
+                int rowIndex = FindRowIndex(row);
+
             }
         }
-
-        private int FindRowIndex(DataGridColumn col)
+        private int FindColumnIndex(DataGridColumn col)
         {
-            DataGrid dataGrid =
-                ItemsControl.ItemsControlFromItemContainer(col)
-                as DataGrid;
-
-            int index = dataGrid.ItemContainerGenerator.
-                IndexFromContainer(col);
+            DataGrid dataGrid = ItemsControl.ItemsControlFromItemContainer(col) as DataGrid;
+            int index = dataGrid.ItemContainerGenerator.IndexFromContainer(col);
+            return index;
+        }
+        private int FindRowIndex(DataGridRow row)
+        {
+            DataGrid dataGrid = ItemsControl.ItemsControlFromItemContainer(row) as DataGrid;
+            int index = dataGrid.ItemContainerGenerator.IndexFromContainer(row);
 
             return index;
         }
+
 
         test t = new test();       
 

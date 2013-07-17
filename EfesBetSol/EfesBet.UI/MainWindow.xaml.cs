@@ -34,6 +34,10 @@ namespace EfesBetGUI
         public MainWindow()
         {
             InitializeComponent();//
+            var rowDetailsTemplate = (DataTemplate)this.Resources["rowDT"];
+            dataGridParent.RowDetailsTemplate = rowDetailsTemplate;
+            
+
             this.Height = SystemParameters.MaximizedPrimaryScreenHeight;
             this.Width = SystemParameters.MaximizedPrimaryScreenWidth;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;            
@@ -49,9 +53,9 @@ namespace EfesBetGUI
             spLeft.IsEnabled = false;
             spRight.IsEnabled = false;
             this.dataGridParent.DataContext = ownguest.GuestHostTotalList;            
-            this.dataGridParent.RowDetailsVisibilityChanged += new EventHandler<DataGridRowDetailsEventArgs>(dataGridParent_RowDetailsVisibilityChanged);
-            this.dataGridParent.MouseRightButtonUp += new MouseButtonEventHandler(dataGridParent_MouseRightButtonUp);
-            this.dataGridParent.MouseLeftButtonUp += new MouseButtonEventHandler(dataGridParent_MouseLeftButtonUp);           
+            //this.dataGridParent.RowDetailsVisibilityChanged += new EventHandler<DataGridRowDetailsEventArgs>(dataGridParent_RowDetailsVisibilityChanged);
+            //this.dataGridParent.MouseRightButtonUp += new MouseButtonEventHandler(dataGridParent_MouseRightButtonUp);
+            //this.dataGridParent.MouseLeftButtonUp += new MouseButtonEventHandler(dataGridParent_MouseLeftButtonUp);           
         }
 
         void dataGridParent_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -77,7 +81,6 @@ namespace EfesBetGUI
             if (dep is DataGridCell)
             {
                 DataGridCell cell = dep as DataGridCell;
-
                 // do something
                 // navigate further up the tree
                 while ((dep != null) && !(dep is DataGridRow))
@@ -87,11 +90,12 @@ namespace EfesBetGUI
                 DataGridRow row = dep as DataGridRow;
                 DataGridColumn col=dep as DataGridColumn;
                 int colIndexValue = cell.Column.DisplayIndex;
+                MessageBox.Show(colIndexValue.ToString());
                 if (colIndexValue == 10)
                 {
-                    //DataGrid innerDataGrid = new DataGrid();
+                    //DataGrid innerDataGrid = new DataGrid(); 
                     //innerDataGrid.DataContext = ownguest.SubGridItemList;
-                    
+                    /*  */
                 }
                 int rowIndex = FindRowIndex(row);         
 
@@ -144,8 +148,7 @@ namespace EfesBetGUI
 
             if (dep is DataGridCell)
             {
-                DataGridCell cell = dep as DataGridCell;
-                
+                DataGridCell cell = dep as DataGridCell;                
                 // do something
                 // navigate further up the tree
                 while ((dep != null) && !(dep is DataGridRow))
@@ -189,9 +192,11 @@ namespace EfesBetGUI
         }
 
         void dataGridParent_RowDetailsVisibilityChanged(object sender, DataGridRowDetailsEventArgs e)
-        {
-            DataGrid innerDataGrid = e.DetailsElement as DataGrid;
-            innerDataGrid.DataContext = ownguest.SubGridItemList;
+        {           
+
+            //MessageBox.Show("Row Visibility");
+            //DataGrid innerDataGrid = e.DetailsElement as DataGrid;
+            //innerDataGrid.DataContext = ownguest.SubGridItemList;
         }        
         private void image1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -206,6 +211,24 @@ namespace EfesBetGUI
                 grdLastCol.Width = colLastOrgPos;
             else
                 grdLastCol.Width = new GridLength(0.00);
+        }
+
+        private void StackPanel_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            var templateChildPanel = sender as StackPanel;
+            var detailTextBlock = new TextBlock
+            {
+                Width = 350,
+                TextWrapping = TextWrapping.Wrap,
+                Text = "I am Amyo Kabir"
+            };
+
+            //If you need binding
+            //var dataBinding = new Binding("DetailsText");
+            //dataBinding.Mode = BindingMode.TwoWay;
+            //detailTextBlock.SetBinding(TextBlock.TextProperty, dataBinding);
+            templateChildPanel.Children.Add(detailTextBlock);
         }
 
        

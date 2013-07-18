@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="test" Height="300" Width="300">
     <Window.Resources>
-        <ResourceDictionary Source="D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\Theme\Generic.xaml">
+        <ResourceDictionary Source="/Theme/Generic.xaml">
         </ResourceDictionary>
     </Window.Resources>
     <Grid>

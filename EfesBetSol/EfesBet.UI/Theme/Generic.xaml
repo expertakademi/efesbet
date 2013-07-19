@@ -572,7 +572,7 @@
         <Setter Property="Foreground" Value="#606973" />
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="Height" Value="25" />
-        <Setter Property="Padding" Value="50,8,0,0" />
+        <Setter Property="Padding" Value="40,8,0,0" />
         <Setter Property="Cursor" Value="Hand" />
     </Style>
     <Style x:Key="Input1" TargetType="{x:Type TextBox}">

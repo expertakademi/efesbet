@@ -3,61 +3,44 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="test" Height="300" Width="300">
     <Window.Resources>
-        <ResourceDictionary Source="/Theme/Generic.xaml">
+        <ResourceDictionary Source="/Theme/Test1.xaml">
+
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
 
         <Grid x:Name="LayoutRoot">
-            <Menu Width="100" Margin="10,10,5,5" HorizontalAlignment="Left"
+            <!--<ToggleButton Content="ToggleButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="65.743,80,0,0" Style="{StaticResource SlidingToggleButton}" BorderBrush="{x:Null}" Background="#FF2F63FF"/>
+            <ToggleButton Content="ToggleButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="65.743,128,0,0" Style="{StaticResource SlidingToggleButton}" BorderBrush="{x:Null}" Background="#FF35862C"/>
+            <ToggleButton Content="ToggleButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="65.743,180,0,0" Style="{StaticResource SlidingToggleButton}" BorderBrush="{x:Null}" Background="#FFAB7938"/>
+            <ToggleButton Content="ToggleButton" VerticalAlignment="Top" Margin="271.743,80,192,0" Style="{StaticResource SlidingToggleButton}" BorderBrush="{x:Null}" Background="#FF2F63FF"  IsEnabled="False"/>
+            <ToggleButton Content="ToggleButton" VerticalAlignment="Top" Margin="271.743,128,192,0" Style="{StaticResource SlidingToggleButton}" BorderBrush="{x:Null}" Background="#FF35862C"  IsEnabled="False"/>
+            <ToggleButton Content="ToggleButton" VerticalAlignment="Top" Margin="271.743,180,192,0" Style="{StaticResource SlidingToggleButton}" BorderBrush="{x:Null}" Background="#FFAB7938"  IsEnabled="False"/>-->
+            <Menu Height="33" HorizontalAlignment="Left" Margin="6,23,0,0" Background="Black" Name="menu1" VerticalAlignment="Top" Width="272" >
 
-      Background="Red" BorderBrush="Blue" BorderThickness="1">
 
-                <MenuItem Header="_File" Background="Red">
+                <MenuItem Width="80" Height="35" HorizontalAlignment="Center" Style="{StaticResource MyMenuStyle}"  >
+                    <MenuItem.Icon >
+                        <Image Source="/Resource/MenuHepsi.jpg" Height="20" Width="80" VerticalAlignment="Center"/>
+                    </MenuItem.Icon>
 
-                    <MenuItem.ItemsPanel>
-
-                        <ItemsPanelTemplate>
-
-                            <VirtualizingStackPanel Orientation="Horizontal"/>
-
-                        </ItemsPanelTemplate>
-
-                    </MenuItem.ItemsPanel>
-
-                    <MenuItem Header="_New" IsCheckable="true" Background="Red"/>
-
-                    <MenuItem Header="_Open" IsCheckable="true" Background="Red"/>
-
-                    <MenuItem Header="_Close" IsCheckable="true" Background="Red"/>
-
-                    <Separator/>
-
-                    <MenuItem Header="Menu with Submenu">
-
-                        <MenuItem Header="_submenuitem1" IsCheckable="true" Background="Red"/>
-
-                        <MenuItem Header="_submenuitem2" IsCheckable="true" Background="Red">
-
-                            <MenuItem Header="_submenuitem2.1" IsCheckable="true" Background="Red"/>
-
-                        </MenuItem>
-
+                    <MenuItem  Style="{StaticResource MyMenuStyle}" Cursor="Hand" Width="120" Height="25"  BorderThickness="0" >
+                        <MenuItem.Icon>
+                            <Image Source="/EfesBetGUI;component/Resource/Images/Currency.PNG" Height="21" Width="18"  HorizontalAlignment="Left" />
+                        </MenuItem.Icon>
+                        <MenuItem.Header>
+                            <TextBlock Text="Futbol" Padding="5,0,0,0" Foreground="White" FontSize="12" HorizontalAlignment="Right" >
+                            </TextBlock>
+                        </MenuItem.Header>
                     </MenuItem>
+
+                   
 
                 </MenuItem>
 
-                
 
-                <Menu.ItemsPanel>
 
-                    <ItemsPanelTemplate>
 
-                        <VirtualizingStackPanel Orientation="Vertical"/>
-
-                    </ItemsPanelTemplate>
-
-                </Menu.ItemsPanel>
 
             </Menu>
         </Grid>

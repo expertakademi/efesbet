@@ -15,7 +15,6 @@ using EfesBetGUI.ViewModel;
 using EfesBetGUI.View;
 using System.Data;
 using System.ComponentModel;
-using EfesBetGUI.ViewModel;
 using System.Windows.Controls.Primitives;
 
 namespace EfesBetGUI
@@ -26,10 +25,12 @@ namespace EfesBetGUI
     public partial class MainWindow : Window
     {
         OwnGuestViewModel vmSK = new OwnGuestViewModel();
-        //MenuPopup pop = new MenuPopup();
-        popup pop = new popup();
+        MenuPopup pop = new MenuPopup();
+        //popup pop = new popup();
         GridLength colfirstOrgPos, colLastOrgPos;
         DataTable dt = new DataTable();
+        FrameworkElement tb = new FrameworkElement();
+
         OwnGuestViewModel ownguest = new ViewModel.OwnGuestViewModel();
         public MainWindow()
         {
@@ -50,29 +51,69 @@ namespace EfesBetGUI
             spLeft.IsEnabled = false;
             spRight.IsEnabled = false;
             this.dataGridParent.DataContext = ownguest.GuestHostTotalList;
-            this.dataGridParent.RowDetailsVisibilityChanged += new EventHandler<DataGridRowDetailsEventArgs>(dataGridParent_RowDetailsVisibilityChanged);            
-            this.grdSettings.MouseLeftButtonDown += new MouseButtonEventHandler(grdSettings_MouseLeftButtonDown);              
-            this.spBottomLeftGrid.MouseEnter += new MouseEventHandler(spBottomLeftGrid_MouseEnter);
-            this.grdBakiyem.MouseLeftButtonUp += new MouseButtonEventHandler(grdBakiyem_MouseLeftButtonUp);
+            //this.dataGridParent.RowDetailsVisibilityChanged += new EventHandler<DataGridRowDetailsEventArgs>(dataGridParent_RowDetailsVisibilityChanged);
+            // this.dataGridParent.MouseRightButtonUp += new MouseButtonEventHandler(dataGridParent_MouseRightButtonUp);
+            this.dataGridParent.MouseLeftButtonUp += new MouseButtonEventHandler(dataGridParent_MouseLeftButtonUp);
+            //this.dataGridParent.SelectionChanged += new SelectionChangedEventHandler(dataGridParent_SelectionChanged);
         }
 
-        void grdBakiyem_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        void dataGridParent_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            grdBakiyem.Background = new SolidColorBrush(Colors.Gray);
-            Menu1.Visibility = Visibility.Visible;
+
         }
 
-        void grdSettings_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            grdSettings.Background = new SolidColorBrush(Colors.Gray);
-            grdSettingsSubMenu.Visibility = Visibility.Visible;
-        }
-        void spBottomLeftGrid_MouseEnter(object sender, MouseEventArgs e)
-        {
-            //Menu2.Visibility = Visibility.Visible;
-        }
+
+
+
+
+
+
+
+
+
         void dataGridParent_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
+
+            string value = dataGridParent.CurrentColumn.Header.ToString();
+
+            if (value == "+")
+            {
+                //dataGridParent. row = DataGridRow;
+
+                DependencyObject dep = (DependencyObject)e.OriginalSource;
+                DataGridRow row = dep as DataGridRow;
+                FrameworkElement tb = GetTemplateChildByName(dataGridParent, "innerGrid");
+                //DataGrid innerDataGrid = new DataGrid();
+                // DataGridRow row = new DataGridRow();
+                //DataGridRow row = e.Source as DataGridRow;
+                if (tb != null && value == "+")
+                {
+                    // tb.DataContext = null;
+
+                    if (tb.Visibility == Visibility.Visible && value == "+")
+                    {
+                        tb.Visibility = Visibility.Collapsed;
+                        tb.DataContext = null;
+
+                    }
+                    else
+                    {
+                        tb.Visibility = Visibility.Collapsed;
+                        tb.DataContext = ownguest.SubGridItemList;
+                        tb.Visibility = Visibility.Visible;
+
+                    }
+                }
+            }
+
+            else
+            {
+                dataGridParent.SelectedIndex = -1;
+            }
+
+
+
+
             //    //detecting the column, cell and row that has been clicked 
             //    DependencyObject dep = (DependencyObject)e.OriginalSource;
 
@@ -151,6 +192,7 @@ namespace EfesBetGUI
             //    return value;
         }
 
+
         void dataGridParent_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
             //detecting the column, cell and row that has been clicked 
@@ -181,6 +223,8 @@ namespace EfesBetGUI
                 {
                     dep = VisualTreeHelper.GetParent(dep);
                 }
+
+
                 DataGridRow row = dep as DataGridRow;
                 //while ((dep != null) && !(dep is DataGridColumn))
                 //{
@@ -211,11 +255,13 @@ namespace EfesBetGUI
 
         void miAxleTools_Click(object sender, RoutedEventArgs e)
         {
-            //t.ShowDialog();
-            pop.Visibility = Visibility.Visible;
+            t.ShowDialog();
+           // pop.Visibility = Visibility.Visible;
         }
         void dataGridParent_RowDetailsVisibilityChanged(object sender, DataGridRowDetailsEventArgs e)
         {
+
+
             DataGrid innerDataGrid = new DataGrid();
             DataGridRow row = e.Row as DataGridRow;
             FrameworkElement tb = GetTemplateChildByName(row, "innerGrid");
@@ -227,6 +273,8 @@ namespace EfesBetGUI
                 tb.DataContext = ownguest.SubGridItemList;
                 // innerDataGrid = e.DetailsElement as DataGrid;
                 //innerDataGrid.DataContext = ownguest.SubGridItemList;
+
+
             }
 
             else
@@ -234,7 +282,11 @@ namespace EfesBetGUI
                 dataGridParent.SelectedIndex = -1;
                 //tb.Visibility = Visibility.Collapsed;
             }
+
         }
+
+
+
         public FrameworkElement GetTemplateChildByName(DependencyObject parent, string name)
         {
             int childnum = VisualTreeHelper.GetChildrenCount(parent);
@@ -254,6 +306,11 @@ namespace EfesBetGUI
             }
             return null;
         }
+
+
+
+
+
         private void image1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (grdFirstCol.Width == new GridLength(0.00))
@@ -268,26 +325,38 @@ namespace EfesBetGUI
             else
                 grdLastCol.Width = new GridLength(0.00);
         }
-        
-        private void grdBakiyem_MouseEnter(object sender, MouseEventArgs e)
-        {
-            //grdBakiyem.Background = new SolidColorBrush(Colors.Gray);
-            //Menu1.Visibility = Visibility.Visible;
-        }
-        private void grdBakiyem_MouseLeave(object sender, MouseEventArgs e)
-        {
-            grdBakiyem.Background = new SolidColorBrush(Colors.Transparent);
-            Menu1.Visibility = Visibility.Collapsed;
-        }
-        private void grdSettings_MouseEnter(object sender, MouseEventArgs e)
-        {
-            //grdSettings.Background = new SolidColorBrush(Colors.Gray);
-            //grdSettingsSubMenu.Visibility = Visibility.Visible;
-        }
-        private void grdSettings_MouseLeave(object sender, MouseEventArgs e)
-        {
-            //grdSettings.Background = new SolidColorBrush(Colors.Transparent);
-            //grdSettingsSubMenu.Visibility = Visibility.Collapsed;
-        }
+
+
+
+
+
+        //private void dataGridParent_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    if (((System.Windows.Controls.DataGrid)(sender)).CurrentColumn.Header.ToString() == "+")
+        //    {
+
+
+        //    }
+        //}
+
+
+
+
+        //private void grdBakiyem_MouseEnter(object sender, MouseEventArgs e)
+        //{
+        //    grdBakiyem.Background = new SolidColorBrush(Colors.Gray);
+        //    Menu1.Visibility = Visibility.Visible;
+        //}
+
+        //private void grdBakiyem_MouseLeave(object sender, MouseEventArgs e)
+        //{
+        //    grdBakiyem.Background = new SolidColorBrush(Colors.Transparent);
+        //    Menu1.Visibility = Visibility.Collapsed;
+        //}
+
+
+
+       
+
     }
 }

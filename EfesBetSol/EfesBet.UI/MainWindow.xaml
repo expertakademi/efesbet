@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vmSahibiKonuk="clr-namespace:EfesBetGUI.ViewModel"
         xmlns:DateTimeUC="clr-namespace:EfesBetGUI.View.UserControls"        
-        Title="MainWindow" >    
+        Title="MainWindow" >
     <Window.Resources>
-        <ResourceDictionary Source="Theme/Generic.xaml">       
+        <ResourceDictionary Source="Theme/Generic.xaml">
         </ResourceDictionary>
     </Window.Resources>
     <Grid >
@@ -24,6 +24,46 @@
             <ColumnDefinition Width="10"></ColumnDefinition>
             <ColumnDefinition Width="14*" x:Name="grdLastCol"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Grid x:Name="grdRight" Grid.Column="5" Grid.Row="1" Grid.RowSpan="3">
+            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Stretch">
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Tüm Ligler" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Almayna Bundesliga" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Arjantin Ligi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Çek Senet Ligi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Danimarka Super Ligi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Finlandiya Veikkausi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Fransa 2. Ligi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Hollanda 2. Ligi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Norveç Adeccoliegen" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Almayna Bundesliga" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Arjantin Ligi" />
+                </Border>
+                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
+                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Çek Senet Ligi" />
+                </Border>
+            </StackPanel>
+        </Grid>
         <GridSplitter HorizontalAlignment="Left" Grid.Row="1" Grid.RowSpan="4" VerticalAlignment="Stretch" Grid.Column="1" ResizeBehavior="PreviousAndNext" Width="10" Background="#E7E7E7" x:Name="spLeft" />
         <GridSplitter HorizontalAlignment="Right" x:Name="spRight" Grid.Row="1" Grid.RowSpan="4"
                   VerticalAlignment="Stretch" 
@@ -253,7 +293,7 @@
             </DataGrid>
         </Border>
         <Border Grid.Column="0" Grid.Row="4" BorderBrush="WhiteSmoke" BorderThickness="2" CornerRadius="5" Margin="2">
-            <StackPanel x:Name="spleftCorner" Orientation="Vertical">
+            <StackPanel Orientation="Vertical">
                 <Grid Background="#E7E7E7" Width="352"  HorizontalAlignment="Left" Margin="0,1,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="0*" />
@@ -288,147 +328,114 @@
                         <TextBlock Text="Oyna" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     </Border>
                 </Grid>
-                <StackPanel x:Name="spBottomLeftGrid">
-                    <DataGrid x:Name="dataGrdRateEstimation" ItemsSource="{Binding vmSahibiKonuk, Path=RateEstimationGuestList}" Style="{StaticResource EfesDataGridStyle}"
+                <DataGrid ItemsSource="{Binding vmSahibiKonuk, Path=RateEstimationGuestList}" Style="{StaticResource EfesDataGridStyle}"
                         FrozenColumnCount="7" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" GridLinesVisibility="All">
-                        <DataGrid.ColumnHeaderStyle>
-                            <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="Foreground" Value="White"></Setter>
-                                <Setter Property="Background" Value="Black"></Setter>
-                                <Setter Property="MinHeight" Value="28"></Setter>
-                                <Setter Property="Cursor" Value="Hand"></Setter>
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="*" />
-                                                    <ColumnDefinition Width="Auto" />
-                                                </Grid.ColumnDefinitions>
-                                                <Border x:Name="BackgroundBorder" BorderThickness="0" Background="{StaticResource Siyah}" BorderBrush="{StaticResource Siyah}" Grid.ColumnSpan="2" />
-                                                <ContentPresenter Margin="6,3,6,3" VerticalAlignment="Center" />
-                                                <Path x:Name="SortArrow" Visibility="Collapsed" Data="M0,0 L1,0 0.5,1 z" Stretch="Fill" 
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Foreground" Value="White"></Setter>
+                            <Setter Property="Background" Value="Black"></Setter>
+                            <Setter Property="MinHeight" Value="28"></Setter>
+                            <Setter Property="Cursor" Value="Hand"></Setter>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Border x:Name="BackgroundBorder" BorderThickness="0" 
+                              Background="{StaticResource Siyah}" 
+                              BorderBrush="{StaticResource Siyah}" 
+                              Grid.ColumnSpan="2" />
+                                            <ContentPresenter Margin="6,3,6,3" VerticalAlignment="Center" />
+                                            <Path x:Name="SortArrow" Visibility="Collapsed" Data="M0,0 L1,0 0.5,1 z" Stretch="Fill" 
                             Grid.Column="3" Width="8" Height="6" Fill="White" Margin="0,0,8,0" 
                             VerticalAlignment="Center" RenderTransformOrigin="0.5,0.4" />
-                                                <Rectangle Width="1" Fill="#AAC377" HorizontalAlignment="Right" Grid.ColumnSpan="2" />
+                                            <Rectangle Width="1" Fill="#AAC377" HorizontalAlignment="Right" Grid.ColumnSpan="2" />
 
-                                                <Rectangle Width="1" Margin="0,0,1,0" Fill="#425B10" 
+                                            <Rectangle Width="1" Margin="0,0,1,0" Fill="#425B10" 
                                  HorizontalAlignment="Right" Grid.ColumnSpan="2" />
-                                                <Thumb x:Name="PART_LeftHeaderGripper" Visibility="Hidden" HorizontalAlignment="Left" 
+                                            <Thumb x:Name="PART_LeftHeaderGripper" Visibility="Hidden" HorizontalAlignment="Left" 
                              />
-                                                <Thumb x:Name="PART_RightHeaderGripper" Visibility="Hidden" HorizontalAlignment="Right" 
+                                            <Thumb x:Name="PART_RightHeaderGripper" Visibility="Hidden" HorizontalAlignment="Right" 
                              />
-                                            </Grid>
-                                            <ControlTemplate.Triggers>
-                                                <Trigger Property="SortDirection" Value="{x:Null}">
-                                                    <Setter TargetName="BackgroundBorder" Property="Background" 
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="SortDirection" Value="{x:Null}">
+                                                <Setter TargetName="BackgroundBorder" Property="Background" 
                                   Value="{DynamicResource Siyah}" />
-                                                    <Setter TargetName="BackgroundBorder" Property="BorderBrush"  
+                                                <Setter TargetName="BackgroundBorder" Property="BorderBrush"  
                                   Value="Transparent" />
-                                                </Trigger>
-                                                <MultiTrigger>
-                                                    <MultiTrigger.Conditions>
-                                                        <Condition Property="IsMouseOver" Value="True" />
-                                                        <Condition Property="SortDirection" Value="{x:Null}" />
-                                                    </MultiTrigger.Conditions>
-                                                    <Setter Property="Background" TargetName="BackgroundBorder" 
+                                            </Trigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="IsMouseOver" Value="True" />
+                                                    <Condition Property="SortDirection" Value="{x:Null}" />
+                                                </MultiTrigger.Conditions>
+                                                <Setter Property="Background" TargetName="BackgroundBorder" 
                                   Value="{StaticResource ASiyah}" />
-                                                    <Setter Property="BorderBrush" TargetName="BackgroundBorder" 
+                                                <Setter Property="BorderBrush" TargetName="BackgroundBorder" 
                                   Value="{StaticResource ASiyah}" />
-                                                </MultiTrigger>
-                                                <MultiTrigger>
-                                                    <MultiTrigger.Conditions>
-                                                        <Condition Property="IsMouseOver" Value="true" />
-                                                        <Condition Property="SortDirection" Value="{x:Null}" />
-                                                    </MultiTrigger.Conditions>
-                                                    <Setter TargetName="BackgroundBorder" Property="Background" 
+                                            </MultiTrigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="IsMouseOver" Value="true" />
+                                                    <Condition Property="SortDirection" Value="{x:Null}" />
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="BackgroundBorder" Property="Background" 
                                   Value="{StaticResource ASiyah}" />
-                                                    <Setter TargetName="BackgroundBorder" Property="BorderBrush" 
+                                                <Setter TargetName="BackgroundBorder" Property="BorderBrush" 
                                   Value="{StaticResource ASiyah}" />
-                                                </MultiTrigger>
+                                            </MultiTrigger>
 
-                                                <Trigger Property="SortDirection" Value="Ascending">
-                                                    <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
-                                                    <Setter TargetName="SortArrow" Property="RenderTransform">
-                                                        <Setter.Value>
-                                                            <RotateTransform Angle="180" />
-                                                        </Setter.Value>
-                                                    </Setter>
-                                                </Trigger>
-                                                <Trigger Property="SortDirection" Value="Descending">
-                                                    <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
-                                                </Trigger>
-                                                <Trigger Property="DisplayIndex" Value="0">
-                                                    <Setter Property="Visibility" Value="Collapsed" 
+                                            <Trigger Property="SortDirection" Value="Ascending">
+                                                <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                                                <Setter TargetName="SortArrow" Property="RenderTransform">
+                                                    <Setter.Value>
+                                                        <RotateTransform Angle="180" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                            <Trigger Property="SortDirection" Value="Descending">
+                                                <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                                            </Trigger>
+                                            <Trigger Property="DisplayIndex" Value="0">
+                                                <Setter Property="Visibility" Value="Collapsed" 
                                   TargetName="PART_LeftHeaderGripper"></Setter>
-                                                </Trigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="LightGray"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </DataGrid.ColumnHeaderStyle>
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="No" Binding="{Binding No}" Width="20" />
-                            <DataGridTextColumn Header="Kod" Binding="{Binding Code}" Width="40" />
-                            <DataGridTextColumn Header="Ev Sahivi" Binding="{Binding Host}" Width="70" />
-                            <DataGridTextColumn Header="Konuk" Binding="{Binding Guest}" Width="70" />
-                            <DataGridTextColumn Header="Tip" Binding="{Binding Tip}" Width="40" />
-                            <DataGridTextColumn Header="Tahmin" Binding="{Binding Estimation}" Width="50" />
-                            <DataGridTemplateColumn Header="Oran" Width="50">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="{Binding Path=Rate}" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-                                            <Image Source="Resource/closeicon.gif" Width="10" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <!--<DataGridTextColumn Header="Oran" Binding="{Binding Rate}" Width="50" />-->
-                        </DataGrid.Columns>
-                        <DataGrid.RowStyle>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="LightGray"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="No" Binding="{Binding No}" Width="20" />
+                        <DataGridTextColumn Header="Kod" Binding="{Binding Code}" Width="40" />
+                        <DataGridTextColumn Header="Ev Sahivi" Binding="{Binding Host}" Width="70" />
+                        <DataGridTextColumn Header="Konuk" Binding="{Binding Guest}" Width="70" />
+                        <DataGridTextColumn Header="Tip" Binding="{Binding Tip}" Width="40" />
+                        <DataGridTextColumn Header="Tahmin" Binding="{Binding Estimation}" Width="50" />
+                        <DataGridTemplateColumn Header="Oran" Width="50">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Path=Rate}" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        <Image Source="Resource/closeicon.gif" Width="10" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                                    </StackPanel>
 
-                            <Style TargetType="DataGridRow">
-                                <Setter Property="ToolTip">
-                                    <Setter.Value>
-                                        <TextBlock Text="19.3.20  19:30 Denimarka 1.Lig" />
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </DataGrid.RowStyle>
-                    </DataGrid>
-                    <Grid Name="Menu2"  Height="35" Width="100" Visibility="Hidden">
-                        <Grid Background="#00000000" Margin="0,-10,0,10">
-                            <Rectangle Fill="Black" StrokeThickness="0" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Width="10" Height="10" Margin="10,0,0,0">
-                                <Rectangle.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform />
-                                        <SkewTransform />
-                                        <RotateTransform Angle="45" />
-                                        <TranslateTransform />
-                                    </TransformGroup>
-                                </Rectangle.RenderTransform>
-                            </Rectangle>
-                            <Border BorderBrush="Black" Margin="0,15,0,0" Background="Black">
-                                <StackPanel IsEnabled="False" Orientation="Horizontal">
-                                    <TextBlock TextWrapping="Wrap" Text="5.296.256.36" Padding="5,0,5,0" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,0,0,0"><Run /><InlineUIContainer>
-								<ContentPresenter Content=" " />
-							</InlineUIContainer></TextBlock>
-                                    <Image HorizontalAlignment="Right" VerticalAlignment="Center"  Source="Resource/Images/Currency.PNG"/>
-
-                                </StackPanel>
-                            </Border>
-                        </Grid>
-                    </Grid>
-
-                </StackPanel>
-                
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <!--<DataGridTextColumn Header="Oran" Binding="{Binding Rate}" Width="50" />-->
+                    </DataGrid.Columns>
+                </DataGrid>
 
             </StackPanel>
 
@@ -564,114 +571,186 @@
                 <ColumnDefinition Width=".3*"></ColumnDefinition>
                 <ColumnDefinition Width=".4*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Height="35" Grid.ColumnSpan="5" Margin="0" Background="Black" VerticalAlignment="Top"></Grid>
-            <Grid Margin="0" Grid.ColumnSpan="5"  Height="200">
+            <Grid Height="35" Grid.ColumnSpan="5" Margin="0" Background="Black" VerticalAlignment="Top">
+                
+            <!--</Grid>-->
+            <!--<Grid Margin="0" Grid.ColumnSpan="5"  Height="200">-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width=".25*"></ColumnDefinition>
                     <ColumnDefinition Width=".3*"></ColumnDefinition>
                     <ColumnDefinition Width=".4*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Grid Width="100" Height="100"   Margin="0" VerticalAlignment="Top" HorizontalAlignment="Left" >
+             
 
-                    <Grid Height="100"  Width="100" Margin="5,0,0,0">
-                        <StackPanel>
-                            <Grid  Name="grdBakiyem"  Height="35"  Margin="0"  Cursor="Hand"  MouseEnter="grdBakiyem_MouseEnter" MouseLeave="grdBakiyem_MouseLeave">
-                                <StackPanel Name="stpnlBakiyem" Orientation="Horizontal" VerticalAlignment="Top" Height="35" HorizontalAlignment="Left">
-                                    <Image Margin="5,0,0,0" Source="Resource/Images/Beki.png" Width="20" Height="20" VerticalAlignment="Center"   HorizontalAlignment="Left" />
-                                    <TextBlock Text="Bakiyem" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="14" Padding="10,0,0,0" />
-                                </StackPanel >
-
+                <Menu Height="35" Grid.ColumnSpan="5" VerticalAlignment="Top" HorizontalAlignment="Stretch" Background="Black" VerticalContentAlignment="Bottom">
+                    <Menu.ItemsPanel >
+                        <ItemsPanelTemplate  >
+                            <Grid HorizontalAlignment="Stretch" Background="Black" Height="35" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".21*"></ColumnDefinition>
+                                    <ColumnDefinition Width=".32*"></ColumnDefinition>
+                                    <ColumnDefinition Width=".2*"></ColumnDefinition>
+                                    <ColumnDefinition Width=".1*"></ColumnDefinition>
+                                 
+                                </Grid.ColumnDefinitions>
                             </Grid>
-                            <Grid Name="Menu1"  Height="35" Width="100" Visibility="Hidden">
-                                <Grid Background="#00000000" Margin="0,-10,0,10">
-                                    <Rectangle Fill="Black" StrokeThickness="0" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Width="10" Height="10" Margin="10,0,0,0">
-                                        <Rectangle.RenderTransform>
-                                            <TransformGroup>
-                                                <ScaleTransform />
-                                                <SkewTransform />
-                                                <RotateTransform Angle="45" />
-                                                <TranslateTransform />
-                                            </TransformGroup>
-                                        </Rectangle.RenderTransform>
-                                    </Rectangle>
-                                    <Border BorderBrush="Black" Margin="0,15,0,0" Background="Black">
-                                        <StackPanel IsEnabled="False" Orientation="Horizontal">
-                                            <TextBlock TextWrapping="Wrap" Text="5.296.256.36" Padding="5,0,5,0" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,0,0,0"><Run /><InlineUIContainer>
-								<ContentPresenter Content=" " />
-							</InlineUIContainer></TextBlock>
-                                            <Image HorizontalAlignment="Right" VerticalAlignment="Center"  Source="Resource/Images/Currency.PNG"/>
+                        </ItemsPanelTemplate>
+                    </Menu.ItemsPanel>
 
-                                        </StackPanel>
-                                    </Border>
-                                </Grid>
-                            </Grid>
+                    <MenuItem Grid.Column="0" Width="90" Height="35" Cursor="Hand" Style="{StaticResource BakiyemSubMenuStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,0,0,0">
+                        <MenuItem.Icon>
+                            <Image Source="/EfesBetGUI;component/Resource/Images/Beki.png" Height="21" Width="18" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,0,0,0" />
+                        </MenuItem.Icon>
+                        <MenuItem.Header>
+                            <TextBlock Text="Bakiyem" Foreground="White" FontFamily="Arial" FontSize="14"  Padding="0,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        </MenuItem.Header>
 
-                        </StackPanel>
-                    </Grid>
-                </Grid>
+                        <MenuItem Style="{StaticResource BakiyemSubMenuStyle}" Height="20" Width="110" Cursor="Hand">
 
-                <Grid Width="120" Height="100"   Grid.Column="5" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,15,0" >
+                            <MenuItem.Icon>
+                                <Image Source="/EfesBetGUI;component/Resource/Images/Currency.PNG" Height="21" Width="18" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                            </MenuItem.Icon>
+                            <MenuItem.Header>
+                                <TextBlock Text=" 5.296.256.36" Foreground="White" FontFamily="Arial" FontSize="14"  Padding="3,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        
+                    </MenuItem>
 
-                    <Grid  Width="120" Margin="0,0,0,0">
-                        <StackPanel>
-                            <Grid  Name="grdSettings"  Height="35" Width="35" HorizontalAlignment="Right" Margin="0"  Cursor="Hand" MouseEnter="grdSettings_MouseEnter" MouseLeave="grdSettings_MouseLeave">
-                                <StackPanel Name="stpnSettings"  Orientation="Horizontal" VerticalAlignment="Top" Height="35" HorizontalAlignment="Right">
-                                    <Image Margin="5,0,10,0"  Source="Resource/Images/Settings.png" Width="20" Height="20" VerticalAlignment="Center"   HorizontalAlignment="Left" />
-                                </StackPanel >
+                    <MenuItem Style="{StaticResource HepsiSubMenuStyle}" HorizontalAlignment="Left" Width="80" Height="20" Background="Red"  BorderThickness="0" Cursor="Hand" Grid.Column="1" Margin="20,0,0,0" >
 
-                            </Grid>
-                            <Grid Height="50" Width="120" Background="#00000000" Name="grdSettingsSubMenu" Visibility="Collapsed" >
-                                <Grid Margin="0" Background="#00000000" >
-                                    <Rectangle Fill="Black" StrokeThickness="0" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" Width="10" Height="10" Margin="0,2,10,0" VerticalAlignment="Top">
-                                        <Rectangle.RenderTransform>
-                                            <TransformGroup>
-                                                <ScaleTransform/>
-                                                <SkewTransform/>
-                                                <RotateTransform Angle="45"/>
-                                                <TranslateTransform/>
-                                            </TransformGroup>
-                                        </Rectangle.RenderTransform>
-                                    </Rectangle>
-                                    <Border BorderBrush="Black" Margin="0" BorderThickness="0" Height="44" VerticalAlignment="Bottom" Background="Black">
-                                        <StackPanel IsEnabled="False" VerticalAlignment="Bottom" Margin="0,2">
-                                            <Border BorderBrush="Black" Background="Black" Padding="1">
-                                                <TextBlock TextWrapping="Wrap" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0,0,0" Text="Admin Paneli" FontSize="14"/>
-                                            </Border>
-                                            <Border BorderBrush="Black" Background="#FF060404" Padding="1">
-                                                <TextBlock TextWrapping="Wrap" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0,0,0" Text="Cikis" FontSize="14"/>
-                                            </Border>
-                                        </StackPanel>
-                                    </Border>
-                                </Grid>
-                            </Grid>
-                        </StackPanel>
-                    </Grid>
-                </Grid>
-
-                <Menu Grid.Column="1" Height="35" Grid.ColumnSpan="5" VerticalAlignment="Top" HorizontalAlignment="Left" Background="Black" VerticalContentAlignment="Bottom">
-                    <MenuItem  Width="80" Background="Red" Grid.Column="1" BorderThickness="0" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Left" Padding="0" Margin="0,6,0,0">
                         <MenuItem.Icon>
                             <Image Source="Resource/MenuHepsi.jpg" Height="20" Width="80" VerticalAlignment="Center"/>
                         </MenuItem.Icon>
+
                         <MenuItem.ItemsPanel >
                             <ItemsPanelTemplate>
+
                                 <VirtualizingStackPanel Orientation="Horizontal" Background="Red"  />
+
+
                             </ItemsPanelTemplate>
                         </MenuItem.ItemsPanel>
-                        <MenuItem  Style="{StaticResource Submenu1}" Cursor="Hand" Width="80" Height="90" Padding="0" BorderThickness="0" />
-                        <MenuItem  Style="{StaticResource Submenu2}" Cursor="Hand"  Width="80" Height="90" Padding="0" BorderThickness="0" />
-                        <MenuItem  Style="{StaticResource Submenu3}" Cursor="Hand" Width="80" Height="90" Padding="0" BorderThickness="0" />
+
+                        <MenuItem  Style="{StaticResource HepsiSubMenuStyle}" Cursor="Hand" Width="80" Height="90" Padding="0" BorderThickness="0" >
+                            <MenuItem.Icon>
+                                <Image Source="/EfesBetGUI;component/Resource/Images/Footbal.png" Height="26" Width="26" HorizontalAlignment="Center" Margin="0,20,0,0" />
+                            </MenuItem.Icon>
+                            <MenuItem.Header>
+                                <TextBlock Text="Futbol" Foreground="White" FontSize="14" Padding="0,0,0,15">
+                                </TextBlock>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem  Style="{StaticResource HepsiSubMenuStyle}" Cursor="Hand" Width="80" Height="90" Padding="0" BorderThickness="0" >
+                            <MenuItem.Icon>
+                                <Image Source="/EfesBetGUI;component/Resource/Images/BasketBall.png" Height="26" Width="26" HorizontalAlignment="Center" Margin="0,20,0,0" />
+                            </MenuItem.Icon>
+                            <MenuItem.Header>
+                                <TextBlock Text="Basketbol" Foreground="White" FontSize="14" Padding="0,0,0,15">
+                                </TextBlock>
+                            </MenuItem.Header>
+
+                        </MenuItem
+>
+                        <MenuItem  Style="{StaticResource HepsiSubMenuStyle}" Cursor="Hand" Width="80" Height="90" Padding="0" BorderThickness="0" >
+                            <MenuItem.Icon>
+                                <Image Source="/EfesBetGUI;component/Resource/Images/Duello.png" Height="26" Width="49" HorizontalAlignment="Center" Margin="0,20,0,0" />
+                            </MenuItem.Icon>
+                            <MenuItem.Header>
+                                <TextBlock Text="Duello" Foreground="White" FontSize="14" Padding="0,0,0,15">
+                                </TextBlock>
+                            </MenuItem.Header>
+
+                        </MenuItem>
+                    </MenuItem>
+
+
+
+
+                    <MenuItem  Style="{StaticResource CommonMenuStyle}" Cursor="Hand" Height="35" Width="83" HorizontalAlignment="Left" Grid.Column="2"  >
+                        <MenuItem.Icon>
+                            <Image Source="/EfesBetGUI;component/Resource/Images/Clock.png" Height="24" Width="21" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,0,0,0" />
+                        </MenuItem.Icon>
+                        <MenuItem.Header>
+                            <TextBlock Text="Normal" Foreground="White" FontFamily="Arial" FontSize="14"  Padding="0,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        </MenuItem.Header>
 
                     </MenuItem>
-                    <MenuItem  Style="{StaticResource MenuStyleNormal}" Cursor="Hand" Foreground="White" FontSize="14"   Margin="430,0,0,0" Height="30" />
-                    <MenuItem  Style="{StaticResource MenuStyleCanli}" Cursor="Hand" Foreground="White" FontSize="14"    Height="30" />
-                    <MenuItem  Style="{StaticResource MenuStyleKupon}" Cursor="Hand" Foreground="White" FontSize="14"    Height="30" />
-                    <MenuItem  Style="{StaticResource MenuStyleRapor}" Cursor="Hand" Foreground="White" FontSize="14"    Height="30" />
-                    <MenuItem  Style="{StaticResource MenuStyleTools}" Cursor="Hand" Foreground="White" FontSize="14"  Height="30" x:Name="miAxleTools" />
-                    <MenuItem  Style="{StaticResource MenuStyleAnnouce}" Cursor="Hand" Foreground="White" FontSize="14"   Height="30" />
-                    <MenuItem  Style="{StaticResource MenuStylePrint}" Cursor="Hand" Foreground="White" FontSize="14"    Height="30" />
+                    <MenuItem  Style="{StaticResource CommonMenuStyle}" Cursor="Hand" Height="35" Width="77" HorizontalAlignment="Left" Grid.Column="2"  Margin="90,0,0,0" >
+                        <MenuItem.Icon>
+                            <Image Source="/EfesBetGUI;component/Resource/Images/TV.png" Height="24" Width="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,0,0,0" />
+                        </MenuItem.Icon>
+                        <MenuItem.Header>
+                            <TextBlock Text="Canli" Foreground="White" FontFamily="Arial" FontSize="14"  Padding="0,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        </MenuItem.Header>
 
+                    </MenuItem>
+                    
+                        <MenuItem  Style="{StaticResource CommonMenuStyle}" Cursor="Hand" Height="35" Width="77" HorizontalAlignment="Left" Grid.Column="2"  Margin="175,0,0,0" >
+                        <MenuItem.Icon>
+                            <Image Source="/EfesBetGUI;component/Resource/Images/Edit.png" Height="24" Width="19" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,0,0,0" />
+                        </MenuItem.Icon>
+                        <MenuItem.Header>
+                            <TextBlock Text="Kupon" Foreground="White" FontFamily="Arial" FontSize="14"  Padding="0,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        </MenuItem.Header>
+
+                    </MenuItem>
+
+                    <MenuItem  Style="{StaticResource CommonMenuStyle}" Cursor="Hand" Height="35" Width="72" HorizontalAlignment="Left" Grid.Column="2"  Margin="260,0,0,0" >
+                        <MenuItem.Icon>
+                            <Image Source="/EfesBetGUI;component/Resource/Images/NotePad.png" Height="24" Width="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,0,0,0" />
+                        </MenuItem.Icon>
+                        <MenuItem.Header>
+                            <TextBlock Text="Rapor" Foreground="White" FontFamily="Arial" FontSize="14"  Padding="0,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        </MenuItem.Header>
+
+                    </MenuItem>
+
+                    <MenuItem  Style="{StaticResource CommonMenuStyle}" x:Name="miAxleTools" Cursor="Hand" Height="35" Width="35" HorizontalAlignment="Right" Grid.Column="3"  Margin="0,0,125,0" >
+                        <MenuItem.Icon>
+                            <Image Source="/EfesBetGUI;component/Resource/Images/Tools.png" Height="15" Width="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </MenuItem.Icon>
+                       
+                    </MenuItem>
+
+                    <MenuItem  Style="{StaticResource CommonMenuStyle}" Cursor="Hand" Height="35" Width="35" HorizontalAlignment="Right" Grid.Column="3"  Margin="0,0,85,0" >
+                        <MenuItem.Icon>
+                            <Image Source="/EfesBetGUI;component/Resource/Images/Speaker.png" Height="16" Width="14" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </MenuItem.Icon>
+
+                    </MenuItem>
+
+
+                    <MenuItem  Style="{StaticResource CommonMenuStyle}" Cursor="Hand" Height="35" Width="35" HorizontalAlignment="Right" Grid.Column="3"  Margin="0,0,45,0" >
+                        <MenuItem.Icon>
+                            <Image Source="/EfesBetGUI;component/Resource/Images/Print.png" Height="16" Width="17" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </MenuItem.Icon>
+
+                    </MenuItem>
+
+
+                    <MenuItem  Style="{StaticResource SettingsSubMenuStyle}" Cursor="Hand" Foreground="White" FontSize="14"  Height="35" Width="35" Grid.Column="9" Padding="5,0,5,0" HorizontalAlignment="Right" Margin="0,0,10,0" >
+                        <MenuItem.Icon>
+                            <Image Source="/EfesBetGUI;component/Resource/Images/Settings.png" Height="20" Width="20" VerticalAlignment="Center"/>
+                        </MenuItem.Icon>
+
+                        <MenuItem  Style="{StaticResource SettingsSubMenuStyle}" Cursor="Hand"  Height="25"  BorderThickness="0" HorizontalAlignment="Left" >
+                            <MenuItem.Header>
+                                <TextBlock Text="Admin Paneli" Padding="5,0,0,0" Foreground="White" FontSize="12" >
+                                </TextBlock>
+                            </MenuItem.Header>
+                        </MenuItem>
+
+                        <MenuItem  Style="{StaticResource SettingsSubMenuStyle}" Cursor="Hand"  Height="25" BorderThickness="0" HorizontalAlignment="Left">
+                            <MenuItem.Header>
+                                <TextBlock Text="Cikis" Foreground="White" FontSize="12" Padding="5,0,0,0" >
+                                </TextBlock>
+                            </MenuItem.Header>
+                        </MenuItem>
+
+
+                    </MenuItem>
 
                 </Menu>
             </Grid>
@@ -784,7 +863,7 @@
 
             </Menu>-->
         </Grid>
-        <Border x:Name="brdCenterGrid" BorderBrush="White" BorderThickness="0" CornerRadius="0" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" Margin="5">
+        <Border x:Name="brdCenterGrid" BorderBrush="White" BorderThickness="0" CornerRadius="0" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" Margin="5,30,5,5">
             <DataGrid ItemsSource="{Binding }" x:Name="dataGridParent" Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14" GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA">
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="DataGridColumnHeader">
@@ -863,7 +942,6 @@
                     <DataGridTextColumn Header="X" Binding="{Binding X_game}" Width="35" />
                     <DataGridTextColumn Header="2" Binding="{Binding Two_guest}" Width="35" />
                     <DataGridTextColumn Header="T1" Binding="{Binding T1_host}" Width="30" />
-                    <!--<DataGridTemplateColumn Header="++" x:Name="Test"  />-->
                     <DataGridTextColumn Header="TX" Binding="{Binding TX_host}" Width="30" />
                     <DataGridTextColumn Header="T2" Binding="{Binding T2_host}" Width="30" />
                     <DataGridTextColumn Header="+" Binding="{Binding TotalOptions}" Width="30" />
@@ -871,16 +949,17 @@
                     <DataGridTextColumn Header="Lig" Binding="{Binding League}" Width="80" />
                     <DataGridTemplateColumn Header="Durum" Width="90">
                         <DataGridTemplateColumn.CellTemplate>
+
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <ToggleButton HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Style="{StaticResource SlidingToggleButton}" BorderBrush="{x:Null}" Background="#FF2F63FF" />
+                                    <ToggleButton HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Style="{StaticResource SlidingToggleButton}" BorderBrush="{x:Null}" IsChecked="True" Background="#FF2F63FF" />
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     <!--<DataGridTextColumn Header="Durum" Binding="{Binding Cases}" Width="80" />-->
                 </DataGrid.Columns>
-                <DataGrid.RowDetailsTemplate>
+                <DataGrid.RowDetailsTemplate x:Uid="test123">
                     <DataTemplate x:Name="testTemplete">
                         <DataGrid x:Name="innerGrid" ItemsSource="{Binding}" Style="{StaticResource EfesDataGridStyle}" Margin="50,2,2,2" MinHeight="40" GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA">
                             <DataGrid.ColumnHeaderStyle>
@@ -956,46 +1035,6 @@
                 </DataGrid.RowDetailsTemplate>
             </DataGrid>
         </Border>
-        <Grid x:Name="grdRight" Grid.Column="5" Grid.Row="1" Grid.RowSpan="3">
-            <StackPanel Orientation="Vertical" Margin="2" HorizontalAlignment="Stretch">
-                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
-                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Tüm Ligler" />
-                </Border>
-                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
-                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Almayna Bundesliga" />
-                </Border>
-                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
-                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Arjantin Ligi" />
-                </Border>
-                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
-                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Çek Senet Ligi" />
-                </Border>
-                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
-                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Danimarka Super Ligi" />
-                </Border>
-                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
-                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Finlandiya Veikkausi" />
-                </Border>
-                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
-                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Fransa 2. Ligi" />
-                </Border>
-                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
-                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Hollanda 2. Ligi" />
-                </Border>
-                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
-                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Norveç Adeccoliegen" />
-                </Border>
-                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
-                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Almayna Bundesliga" />
-                </Border>
-                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
-                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Arjantin Ligi" />
-                </Border>
-                <Border Style="{StaticResource EfesRightTopCornerStackPanelStyle}">
-                    <CheckBox Style="{StaticResource EfesRightTopCornerCheckBoxStyle}" Content="Çek Senet Ligi" />
-                </Border>
-            </StackPanel>
-        </Grid>
     </Grid>
 </Window>
     

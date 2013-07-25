@@ -16,6 +16,7 @@ namespace EfesBetGUI.ViewModel
         MaxGooseModel maxGooseModel = new MaxGooseModel();
         SubGridModel subGridModel = new SubGridModel();
         RateEstimationGuestModel rateEstimationGuestModel = new RateEstimationGuestModel();
+        UserModel objUserModel = new UserModel();
         /// <summary>
         /// this is the constructor pupulating the Guest and host in the datagrid
         /// </summary>
@@ -115,8 +116,25 @@ namespace EfesBetGUI.ViewModel
             _maxGooseList = maxGooseModel.GooseList;
             _rateEstimationGuestList = rateEstimationGuestModel.RateEstimationList;
             _subGridItemList = subGridModel.SubGridItemList;
-
+            _userList = objUserModel.UserList;
         }
+
+
+        private ObservableCollection<User> _userList;
+        public ObservableCollection<User> UserList
+        {
+            get
+            {
+                return _userList;
+            }
+            set
+            {
+                _userList = value;
+            }
+        }
+
+
+
         #region INotifyPropertyChanged Members
 
         public event PropertyChangedEventHandler PropertyChanged;

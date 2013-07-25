@@ -62,11 +62,13 @@
     <Compile Include="Entity\RateEstimationGuest.cs" />
     <Compile Include="Entity\RateEstimationHostGuest.cs" />
     <Compile Include="Entity\SubGridItem.cs" />
+    <Compile Include="Entity\User.cs" />
     <Compile Include="Model\GuestHostModel.cs" />
     <Compile Include="Model\MaxGooseModel.cs" />
     <Compile Include="Model\OwnGuestModel.cs" />
     <Compile Include="Model\RateEstimationGuestModel.cs" />
     <Compile Include="Model\SubGridModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
     <Compile Include="ViewModel\DateTimeMonthUCViewModel.cs" />
     <Compile Include="ViewModel\OwnGuestViewModel.cs" />
     <Compile Include="View\MenuPopup.xaml.cs">

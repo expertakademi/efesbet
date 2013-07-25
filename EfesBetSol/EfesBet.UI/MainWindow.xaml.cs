@@ -38,6 +38,7 @@ namespace EfesBetGUI
 
 
         OwnGuestViewModel ownguest = new ViewModel.OwnGuestViewModel();
+        
         public MainWindow()
         {
             InitializeComponent();//
@@ -57,12 +58,42 @@ namespace EfesBetGUI
             spLeft.IsEnabled = false;
             spRight.IsEnabled = false;
             this.dataGridParent.DataContext = ownguest.GuestHostTotalList;
+            this.dataGridUserDetails.DataContext = ownguest.UserList;
             this.dataGridParent.RowDetailsVisibilityChanged += new EventHandler<DataGridRowDetailsEventArgs>(dataGridParent_RowDetailsVisibilityChanged);
             // this.dataGridParent.MouseRightButtonUp += new MouseButtonEventHandler(dataGridParent_MouseRightButtonUp);
             // this.dataGridParent.MouseLeftButtonUp += new MouseButtonEventHandler(dataGridParent_MouseLeftButtonUp);
             this.dataGridParent.SelectionChanged += new SelectionChangedEventHandler(dataGridParent_SelectionChanged);
             this.dgrdLeftBottom.MouseLeftButtonUp += new MouseButtonEventHandler(dgrdLeftBottom_MouseLeftButtonUp);
+            this.dgrdLeftBottom.SizeChanged += new SizeChangedEventHandler(dgrdLeftBottom_SizeChanged);
+            this.brdOyna.MouseLeftButtonUp += new MouseButtonEventHandler(brdOyna_MouseLeftButtonUp);
+
         }
+
+        void brdOyna_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+
+        }
+
+        void dgrdLeftBottom_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+
+            TxtInput1.Text = dgrdLeftBottom.Items.Count.ToString();
+          
+
+            if (dgrdLeftBottom.Items.Count >= 3)
+            {
+                brdOyna.IsEnabled = true;
+                
+            }
+            else
+            {
+                brdOyna.IsEnabled = false;
+            }
+
+        }
+
+      
 
         void dgrdLeftBottom_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -110,8 +141,8 @@ namespace EfesBetGUI
                         {
                             foreach (GuestHost item in dataGridParent.SelectedItems)
                             {
-
-                                objRateEst.No = 3;
+                                objRateEst.No = dgrdLeftBottom.Items.Count+1;
+                                //objRateEst.No = 3;
                                 objRateEst.Code = Convert.ToInt32(item.Code.ToString().Substring(1));
                                 objRateEst.MyProperty = 4542;
                                 objRateEst.Host = item.Own;
@@ -142,6 +173,7 @@ namespace EfesBetGUI
                 string value = dataGridParent.CurrentColumn.Header.ToString();
                 if (value == "+")
                 {
+                    
                     checkGridState = 1;
                     getSelectedIndex = dataGridParent.SelectedIndex;
 

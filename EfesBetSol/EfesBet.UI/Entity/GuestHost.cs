@@ -21,5 +21,6 @@ namespace EfesBetGUI.Entity
         public string MinOption { get; set; }        
         public string League { get; set; }
         public string Cases { get; set; }
+        public bool ToggleBtn { get; set; }
     }
 }

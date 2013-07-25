@@ -321,11 +321,11 @@
                     <TextBox Width="40" Text="112.00" Style="{StaticResource Input1}" HorizontalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="3" Margin="0" />
                     <TextBox Width="65" Text="1000000" Style="{StaticResource Input1}" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Left" Margin="0,2,0,3" />
                     <Image Source="Resource/tl.png" Width="6" Height="9" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Right" Margin="2" />
-                    <Border Grid.Column="5" Background="{StaticResource MaviBeyaz}" Grid.RowSpan="3" />
-                    <TextBox Style="{StaticResource Input1}" Text="15"  Width="40" Grid.Row="3" Grid.Column="4" Margin="2,2,3,2" />
-                    <TextBox Style="{StaticResource Input1}" Height="46" Grid.Column="5" Grid.RowSpan="4" Margin="0,6" />
-                    <TextBox  Style="{StaticResource Input1}" Grid.Row="3" Grid.Column="6" Width="60" Margin="3,1,2,6" ></TextBox>
-                    <Border Grid.Row="3" Grid.Column="7" Background="#59B223" Margin="1">
+                    <Border Grid.Column="5" Background="{StaticResource MaviBeyaz}" Grid.RowSpan="2" BorderThickness="0" Margin="0,3,0,1" />
+                    <TextBox Style="{StaticResource Input1}" x:Name="TxtInput1" Width="40" Grid.Row="3" Grid.Column="4" Margin="2,2,3,2" />
+                    <TextBox Style="{StaticResource Input1}" Height="46" Grid.Column="5" Grid.RowSpan="4" Margin="0,10,0,2" />
+                    <TextBox  Style="{StaticResource Input1}" Grid.Row="3" Grid.Column="6" Width="60" Margin="3,3,2,2" ></TextBox>
+                    <Border Grid.Row="3" x:Name="brdOyna" Grid.Column="7" Style="{StaticResource BoarderStyle}" Margin="1" IsEnabled="False" >
                         <TextBlock Text="Oyna" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     </Border>
                 </Grid>
@@ -437,7 +437,17 @@
                         </DataGridTemplateColumn>
                         <!--<DataGridTextColumn Header="Oran" Binding="{Binding Rate}" Width="50" />-->
                     </DataGrid.Columns>
+                    <DataGrid.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#F7D6C8"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
+                    </DataGrid.Resources>
+
                     <DataGrid.RowStyle >
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="ToolTip" Value="19.3.20  19:30 Denimarka 1.Lig"/>
+                        </Style>
+                    </DataGrid.RowStyle>
+                    <!--<DataGrid.RowStyle >
                         <Style TargetType="DataGridRow">
                             <Setter Property="ToolTip">
                                 <Setter.Value>
@@ -445,7 +455,7 @@
                                 </Setter.Value>
                             </Setter>
                         </Style>
-                    </DataGrid.RowStyle>
+                    </DataGrid.RowStyle>-->
                 </DataGrid>
 
             </StackPanel>
@@ -569,7 +579,6 @@
                 <TextBlock x:Name="tbTotalBet" Text="Total Bet" Foreground="White" Margin="5,2,50,2"></TextBlock>
                 <TextBlock x:Name="tbTotalLig" Text="Total League :" Foreground="White" Margin="2"></TextBlock>
                 <TextBlock x:Name="tbTotaloption" Text="toplam secenek total option is enabled" Foreground="White" Margin="5,2,2,2"></TextBlock>
-
             </StackPanel>
 
 
@@ -583,9 +592,6 @@
                 <ColumnDefinition Width=".4*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Height="35" Grid.ColumnSpan="5" Margin="0" Background="Black" VerticalAlignment="Top">
-
-                <!--</Grid>-->
-                <!--<Grid Margin="0" Grid.ColumnSpan="5"  Height="200">-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width=".25*"></ColumnDefinition>
                     <ColumnDefinition Width=".3*"></ColumnDefinition>
@@ -765,116 +771,10 @@
 
                 </Menu>
             </Grid>
-            <!--<Menu  Grid.ColumnSpan="10"  Height="35" x:Name="HeaderMenu1" Margin="2" VerticalAlignment="Center" HorizontalAlignment="Left" BorderThickness="2" BorderBrush="Black" Foreground="White"  FontSize="12" >
-                <Menu.Background>
-                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                        <GradientStop Color="Black" Offset="0.528"/>
-                        <GradientStop Color="Black" Offset="0.01"/>
-                        <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="Black" Offset="1"/>
-                    </LinearGradientBrush>
-                </Menu.Background>
-                <Menu.BitmapEffect>
-                    <DropShadowBitmapEffect />
-                </Menu.BitmapEffect>
-
-
-                <MenuItem  Header="Bakiyem" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" Foreground="White" FontSize="14">
-                    <MenuItem.Icon>
-                        <Image Source="Resource/Images/Beki.png" Width="20" Height="20" />
-                    </MenuItem.Icon>
-                    <MenuItem.ItemsPanel>
-                        <ItemsPanelTemplate >
-                            <Grid Background="Black">
-                            </Grid>
-                        </ItemsPanelTemplate>
-                    </MenuItem.ItemsPanel>
-                    <MenuItem  Style="{StaticResource MenuStyleBakiyem}" Cursor="Hand" Foreground="White" FontSize="14"   Padding="0,0,10,0"  Height="30" >
-                    </MenuItem>
-                </MenuItem>
-                <Grid Width="100" Height="60" Background="Blue">
-                    <Grid Width="100" Height="30" Background="AliceBlue" Margin="0"></Grid>
-                    <Grid Height="30" Width="100">
-                        <Grid Margin="0" Background="#00000000" >
-                            <Rectangle Fill="Black" StrokeThickness="0" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Width="10" Height="10" Margin="10,0,0,0">
-                                <Rectangle.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform/>
-                                        <SkewTransform/>
-                                        <RotateTransform Angle="45"/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </Rectangle.RenderTransform>
-                            </Rectangle>
-                            <Border BorderBrush="Black" Margin="0,15,0,0" Background="Black">
-                                <StackPanel IsEnabled="False" Orientation="Horizontal">
-                                    <TextBlock TextWrapping="Wrap" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,0,0,0"><Run /><InlineUIContainer>
-								<ContentPresenter Content=""/>
-							</InlineUIContainer></TextBlock>
-                                    <Image HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,2,0"/>
-                                </StackPanel>
-                            </Border>
-                        </Grid>
-                    </Grid>
-                </Grid>
-                <MenuItem Width="100" Height="30" Background="Azure">
-                    <Grid Height="30" Width="100" Background="#00000000">
-                        <Grid Margin="0" Background="#00000000" >
-                            <Rectangle Fill="Black" StrokeThickness="0" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Width="10" Height="10" Margin="10,0,0,0">
-                                <Rectangle.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform/>
-                                        <SkewTransform/>
-                                        <RotateTransform Angle="45"/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </Rectangle.RenderTransform>
-                            </Rectangle>
-                            <Border BorderBrush="Black" Margin="0,15,0,0" Background="Black">
-                                <StackPanel IsEnabled="False" Orientation="Horizontal">
-                                    <TextBlock TextWrapping="Wrap" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,0,0,0"><Run /><InlineUIContainer>
-								<ContentPresenter Content=""/>
-							</InlineUIContainer></TextBlock>
-                                    <Image HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,2,0"/>
-                                </StackPanel>
-                            </Border>
-                        </Grid>
-                    </Grid>
-
-                </MenuItem>
-
-                    <MenuItem  Width="80" Background="Red"  BorderThickness="0" Cursor="Hand" VerticalAlignment="Center" Margin="280,0,0,0" Padding="0">
-
-                    <MenuItem.Icon>
-                        <Image Source="Resource/MenuHepsi.jpg" Height="20"    VerticalAlignment="Center"/>
-                    </MenuItem.Icon>
-
-                    <MenuItem.ItemsPanel >
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel Orientation="Horizontal" Background="Red"  />
-                        </ItemsPanelTemplate>
-                    </MenuItem.ItemsPanel>
-
-                    <MenuItem  Style="{StaticResource Submenu1}" Cursor="Hand" Width="80" Height="90" Padding="0" BorderThickness="0" />
-                    <MenuItem  Style="{StaticResource Submenu2}" Cursor="Hand"  Width="80" Height="90" Padding="0" BorderThickness="0" />
-                    <MenuItem  Style="{StaticResource Submenu3}" Cursor="Hand" Width="80" Height="90" Padding="0" BorderThickness="0" />
-
-
-
-                </MenuItem>
-
-                <MenuItem  Style="{StaticResource MenuStyleNormal}" Cursor="Hand" Foreground="White" FontSize="14"   Margin="350,0,0,0" Height="30" />
-                <MenuItem  Style="{StaticResource MenuStyleCanli}" Cursor="Hand" Foreground="White" FontSize="14"    Height="30" />
-                <MenuItem  Style="{StaticResource MenuStyleKupon}" Cursor="Hand" Foreground="White" FontSize="14"    Height="30" />
-                <MenuItem  Style="{StaticResource MenuStyleRapor}" Cursor="Hand" Foreground="White" FontSize="14"    Height="30" />
-                <MenuItem  Style="{StaticResource MenuStyleTools}" Cursor="Hand" Foreground="White" FontSize="14"  Height="30" x:Name="miAxleTools" />
-                <MenuItem  Style="{StaticResource MenuStyleAnnouce}" Cursor="Hand" Foreground="White" FontSize="14"   Height="30" />
-                <MenuItem  Style="{StaticResource MenuStylePrint}" Cursor="Hand" Foreground="White" FontSize="14"    Height="30" />
-                <MenuItem  Style="{StaticResource MenuStyleSetting}" Cursor="Hand" Foreground="White" FontSize="14"   Height="30" />
-
-            </Menu>-->
+         
         </Grid>
-        <Border x:Name="brdCenterGrid" BorderBrush="White" BorderThickness="0" CornerRadius="0" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" Margin="5,0,5,1">
+        
+            <Border x:Name="brdCenterGrid" BorderBrush="White" BorderThickness="0" CornerRadius="0" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Margin="5,0,5,1">
             <DataGrid ItemsSource="{Binding }" x:Name="dataGridParent" Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14" GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" Cursor="Hand" >
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="DataGridColumnHeader">
@@ -955,21 +855,24 @@
                     <DataGridTextColumn Header="T1" Binding="{Binding T1_host}" Width="30" />
                     <DataGridTextColumn Header="TX" Binding="{Binding TX_host}" Width="30" />
                     <DataGridTextColumn Header="T2" Binding="{Binding T2_host}" Width="30" />
-                    <DataGridTextColumn Header="+" Foreground="Red"  Binding="{Binding TotalOptions}" Width="30" />
+                    <DataGridTextColumn Header="+"  CellStyle ="{StaticResource DataGridCellStyle}"  Binding="{Binding TotalOptions}" Width="30" />
                     <DataGridTextColumn Header="Min" Binding="{Binding MinOption}" Width="40" />
                     <DataGridTextColumn Header="Lig" Binding="{Binding League}" Width="80" />
-                    <DataGridTemplateColumn Header="Durum" Width="90">
+                    <DataGridTemplateColumn Header="Durum" Width="90" >
                         <DataGridTemplateColumn.CellTemplate>
-
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <ToggleButton HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Style="{StaticResource SlidingToggleButton}" BorderBrush="{x:Null}" IsChecked="True" Background="#FF2F63FF" />
+                                    <ToggleButton HorizontalAlignment="Center" x:Name="toggleBtn" VerticalAlignment="Center" Margin="0" Style="{StaticResource SlidingToggleButton}" BorderBrush="{x:Null}" IsChecked="{Binding ToggleBtn}" Background="#FF2F63FF" />
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     <!--<DataGridTextColumn Header="Durum" Binding="{Binding Cases}" Width="80" />-->
                 </DataGrid.Columns>
+                <DataGrid.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
+                </DataGrid.Resources>
                 <DataGrid.RowDetailsTemplate x:Uid="test123">
                     <DataTemplate x:Name="testTemplete">
                         <DataGrid x:Name="innerGrid" ItemsSource="{Binding}" Style="{StaticResource EfesDataGridStyle}" Margin="50,2,2,2" MinHeight="40" GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA">
@@ -1046,6 +949,97 @@
                 </DataGrid.RowDetailsTemplate>
             </DataGrid>
         </Border>
+     
+            
+            <Border x:Name="brdBottomGrid" BorderBrush="White"  BorderThickness="0" CornerRadius="0" Grid.Row="4" Grid.Column="2" Grid.RowSpan="1" Margin="5,0,5,1">
+            <DataGrid ItemsSource="{Binding }" x:Name="dataGridUserDetails" Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14" GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" Cursor="Hand" >
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Foreground" Value="White"></Setter>
+                        <Setter Property="Background" Value="Black"></Setter>
+                        <Setter Property="MinHeight" Value="28"></Setter>
+                        <Setter Property="Cursor" Value="Hand"></Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Border x:Name="BackgroundBorder" BorderThickness="0" Background="{StaticResource Siyah}" BorderBrush="{StaticResource Siyah}" Grid.ColumnSpan="2" />
+                                        <ContentPresenter Margin="6,3,6,3" VerticalAlignment="Center" />
+                                        <Path x:Name="SortArrow" Visibility="Collapsed" Data="M0,0 L1,0 0.5,1 z" Stretch="Fill" Grid.Column="3" Width="8" Height="6" Fill="White" Margin="0,0,8,0" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.4" />
+                                        <Rectangle Width="1" Fill="#AAC377" HorizontalAlignment="Right" Grid.ColumnSpan="2" />
+                                        <Rectangle Width="1" Margin="0,0,1,0" Fill="#425B10" HorizontalAlignment="Right" Grid.ColumnSpan="2" />
+                                        <Thumb x:Name="PART_LeftHeaderGripper" Visibility="Hidden" HorizontalAlignment="Left" />
+                                        <Thumb x:Name="PART_RightHeaderGripper" Visibility="Hidden" HorizontalAlignment="Right" />
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="SortDirection" Value="{x:Null}">
+                                            <Setter TargetName="BackgroundBorder" Property="Background" Value="{DynamicResource Siyah}" />
+                                            <Setter TargetName="BackgroundBorder" Property="BorderBrush" Value="Transparent" />
+                                        </Trigger>
+                                        <MultiTrigger>
+                                            <MultiTrigger.Conditions>
+                                                <Condition Property="IsMouseOver" Value="True" />
+                                                <Condition Property="SortDirection" Value="{x:Null}" />
+                                            </MultiTrigger.Conditions>
+                                            <Setter Property="Background" TargetName="BackgroundBorder" Value="{StaticResource ASiyah}" />
+                                            <Setter Property="BorderBrush" TargetName="BackgroundBorder" Value="{StaticResource ASiyah}" />
+                                        </MultiTrigger>
+                                        <MultiTrigger>
+                                            <MultiTrigger.Conditions>
+                                                <Condition Property="IsMouseOver" Value="true" />
+                                                <Condition Property="SortDirection" Value="{x:Null}" />
+                                            </MultiTrigger.Conditions>
+                                            <Setter TargetName="BackgroundBorder" Property="Background" Value="{StaticResource ASiyah}" />
+                                            <Setter TargetName="BackgroundBorder" Property="BorderBrush" Value="{StaticResource ASiyah}" />
+                                        </MultiTrigger>
+                                        <Trigger Property="SortDirection" Value="Ascending">
+                                            <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="SortArrow" Property="RenderTransform">
+                                                <Setter.Value>
+                                                    <RotateTransform Angle="180" />
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                        <Trigger Property="SortDirection" Value="Descending">
+                                            <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                                        </Trigger>
+                                        <Trigger Property="DisplayIndex" Value="0">
+                                            <Setter Property="Visibility" Value="Collapsed" TargetName="PART_LeftHeaderGripper"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightGray" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tarih" Binding="{Binding History}" Width="100" />
+                    <DataGridTextColumn Header="Kupon No" Binding="{Binding CuponNo}" Width="180" />
+                    <DataGridTextColumn Header="Tutar" Binding="{Binding Amount}" Width="100" />
+                    <DataGridTextColumn Header="Kullanici" Binding="{Binding UserName}" Width="105" />
+                    <DataGridTextColumn Header="Kazanc" Binding="{Binding Earnings}" Width="100" />
+                    <DataGridTextColumn Header="Kolon Sayisi" Binding="{Binding NoOfCupons}" Width="100" />
+                    <DataGridTextColumn Header="Max. Kazanc" Binding="{Binding MaxEarning}" Width="100" />
+                   
+                    <!--<DataGridTextColumn Header="Durum" Binding="{Binding Cases}" Width="80" />-->
+                </DataGrid.Columns>
+                <DataGrid.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
+                </DataGrid.Resources>
+                
+            </DataGrid>
+        </Border>
+
     </Grid>
 </Window>
     

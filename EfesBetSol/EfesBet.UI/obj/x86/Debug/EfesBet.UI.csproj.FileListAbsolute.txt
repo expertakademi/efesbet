@@ -70,4 +70,3 @@ C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86
 C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\Theme\Test1.baml
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\Theme\Dictionary1.baml

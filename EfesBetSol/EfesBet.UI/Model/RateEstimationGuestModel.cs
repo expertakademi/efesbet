@@ -22,7 +22,7 @@ namespace EfesBetGUI.Model
                     Host="Piast Gwillice",
                     Guest="Piast Gwillice",
                     Tip="Min3",
-                    Estimate=0,
+                    Estimate=0.0,
                     Rate=3.15
                 },
                 new RateEstimationGuest()
@@ -32,7 +32,7 @@ namespace EfesBetGUI.Model
                     Host="Bochum",
                     Guest="St. Pauli",
                     Tip="Min3",
-                    Estimate=0,
+                    Estimate=0.0,
                     Rate=3.2
                 },
                 new RateEstimationGuest()
@@ -42,7 +42,7 @@ namespace EfesBetGUI.Model
                     Host="Piast Gwillice",
                     Guest="Piast Gwillice",
                     Tip="Min3",
-                    Estimate=0,
+                    Estimate=0.0,
                     Rate=3.15
                 }
                 

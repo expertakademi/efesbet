@@ -16,6 +16,7 @@ using EfesBetGUI.View;
 using System.Data;
 using System.ComponentModel;
 using System.Windows.Controls.Primitives;
+using EfesBetGUI.Entity;
 
 namespace EfesBetGUI
 {
@@ -30,6 +31,11 @@ namespace EfesBetGUI
         GridLength colfirstOrgPos, colLastOrgPos;
         DataTable dt = new DataTable();
         FrameworkElement tb = new FrameworkElement();
+        int getSelectedIndex = -1;
+        int checkGridState = 0;
+
+        DataGrid innerDataGrid = new DataGrid();
+
 
         OwnGuestViewModel ownguest = new ViewModel.OwnGuestViewModel();
         public MainWindow()
@@ -51,20 +57,132 @@ namespace EfesBetGUI
             spLeft.IsEnabled = false;
             spRight.IsEnabled = false;
             this.dataGridParent.DataContext = ownguest.GuestHostTotalList;
-            //this.dataGridParent.RowDetailsVisibilityChanged += new EventHandler<DataGridRowDetailsEventArgs>(dataGridParent_RowDetailsVisibilityChanged);
+            this.dataGridParent.RowDetailsVisibilityChanged += new EventHandler<DataGridRowDetailsEventArgs>(dataGridParent_RowDetailsVisibilityChanged);
             // this.dataGridParent.MouseRightButtonUp += new MouseButtonEventHandler(dataGridParent_MouseRightButtonUp);
-            this.dataGridParent.MouseLeftButtonUp += new MouseButtonEventHandler(dataGridParent_MouseLeftButtonUp);
-            //this.dataGridParent.SelectionChanged += new SelectionChangedEventHandler(dataGridParent_SelectionChanged);
+            // this.dataGridParent.MouseLeftButtonUp += new MouseButtonEventHandler(dataGridParent_MouseLeftButtonUp);
+            this.dataGridParent.SelectionChanged += new SelectionChangedEventHandler(dataGridParent_SelectionChanged);
+            this.dgrdLeftBottom.MouseLeftButtonUp += new MouseButtonEventHandler(dgrdLeftBottom_MouseLeftButtonUp);
         }
+
+        void dgrdLeftBottom_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                if (dgrdLeftBottom.SelectedIndex >= 0)
+                {
+                    string value = dgrdLeftBottom.CurrentColumn.Header.ToString();
+                    if (value == "Oran")
+                    {
+                        var grid = dgrdLeftBottom;
+                        var mygrid = dgrdLeftBottom;
+                        if (grid.SelectedIndex >= 0)
+                        {
+                            for (int i = 0; i <= grid.SelectedItems.Count; i++)
+                            {
+                                mygrid.Items.Remove(grid.SelectedItems[i]);
+                            }
+                        }
+                        grid = mygrid;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
 
         void dataGridParent_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            try
+            {
+                if (dataGridParent.SelectedIndex >= 0 && dataGridParent.SelectedIndex==getSelectedIndex)
+                {
 
+                    string value = dataGridParent.CurrentColumn.Header == null ? "" : dataGridParent.CurrentColumn.Header.ToString();
+                    if (checkGridState == 1 && value == "+")
+                    {
+
+                        RateEstimationGuest objRateEst = new RateEstimationGuest();
+
+                        if (dataGridParent.SelectedItems.Count > 0)
+                        {
+                            foreach (GuestHost item in dataGridParent.SelectedItems)
+                            {
+
+                                objRateEst.No = 3;
+                                objRateEst.Code = Convert.ToInt32(item.Code.ToString().Substring(1));
+                                objRateEst.MyProperty = 4542;
+                                objRateEst.Host = item.Own;
+                                objRateEst.Guest = item.Guest;
+                                objRateEst.Tip = item.MinOption;
+                                objRateEst.Estimate = item.T1_host;
+                                objRateEst.Rate = item.T2_host;
+                            }
+                        }
+                        dgrdLeftBottom.Items.Add(objRateEst);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
+        void dataGridParent_RowDetailsVisibilityChanged(object sender, DataGridRowDetailsEventArgs e)
+        {
+            try
+            {
+                checkGridState = 0;
+                DataGridRow row = e.Row as DataGridRow;
+                row.Background = new SolidColorBrush(Colors.White);
+                FrameworkElement tb = GetTemplateChildByName(row, "innerGrid");
+                tb.Visibility = Visibility.Collapsed;
+                string value = dataGridParent.CurrentColumn.Header.ToString();
+                if (value == "+")
+                {
+                    checkGridState = 1;
+                    getSelectedIndex = dataGridParent.SelectedIndex;
 
+                    tb.Visibility = Visibility.Visible;
+                    tb.DataContext = ownguest.SubGridItemList;
 
+                    // innerDataGrid = e.DetailsElement as DataGrid;
+                    //innerDataGrid.DataContext = ownguest.SubGridItemList;
+                }
 
+                else
+                {
+                    dataGridParent.SelectedIndex = -1;
+                    // tb.Visibility = Visibility.Collapsed;
+                }
+            }
+            catch (Exception ex) 
+            {
+ 
+            }
+        }
+
+        public FrameworkElement GetTemplateChildByName(DependencyObject parent, string name)
+        {
+            int childnum = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < childnum; i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+                if (child is FrameworkElement && ((FrameworkElement)child).Name == name)
+                {
+                    return child as FrameworkElement;
+                }
+                else
+                {
+                    var s = GetTemplateChildByName(child, name);
+                    if (s != null)
+                        return s;
+                }
+            }
+            return null;
+        }
 
 
 
@@ -74,122 +192,43 @@ namespace EfesBetGUI
         void dataGridParent_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
 
-            string value = dataGridParent.CurrentColumn.Header.ToString();
-
-            if (value == "+")
+            if (dataGridParent.SelectedIndex >= 0)
             {
-                //dataGridParent. row = DataGridRow;
-
-                DependencyObject dep = (DependencyObject)e.OriginalSource;
-                DataGridRow row = dep as DataGridRow;
-                FrameworkElement tb = GetTemplateChildByName(dataGridParent, "innerGrid");
-                //DataGrid innerDataGrid = new DataGrid();
-                // DataGridRow row = new DataGridRow();
-                //DataGridRow row = e.Source as DataGridRow;
-                if (tb != null && value == "+")
+                string value = dataGridParent.CurrentColumn.Header.ToString();
+                if (value == "+")
                 {
-                    // tb.DataContext = null;
+                    //dataGridParent. row = DataGridRow;
 
-                    if (tb.Visibility == Visibility.Visible && value == "+")
+                    DependencyObject dep = (DependencyObject)e.OriginalSource;
+                    DataGridRow row = dep as DataGridRow;
+                    FrameworkElement tb = GetTemplateChildByName(dataGridParent, "innerGrid");
+                    //DataGrid innerDataGrid = new DataGrid();
+                    // DataGridRow row = new DataGridRow();
+                    //DataGridRow row = e.Source as DataGridRow;
+                    if (tb != null && value == "+")
                     {
-                        tb.Visibility = Visibility.Collapsed;
-                        tb.DataContext = null;
+                        // tb.DataContext = null;
 
-                    }
-                    else
-                    {
-                        tb.Visibility = Visibility.Collapsed;
-                        tb.DataContext = ownguest.SubGridItemList;
-                        tb.Visibility = Visibility.Visible;
+                        if (tb.Visibility == Visibility.Visible && value == "+")
+                        {
+                            tb.Visibility = Visibility.Collapsed;
+                            tb.DataContext = null;
 
+                        }
+                        else
+                        {
+                            tb.Visibility = Visibility.Collapsed;
+                            tb.DataContext = ownguest.SubGridItemList;
+                            tb.Visibility = Visibility.Visible;
+                        }
                     }
                 }
+
+                else
+                {
+                    dataGridParent.SelectedIndex = -1;
+                }
             }
-
-            else
-            {
-                dataGridParent.SelectedIndex = -1;
-            }
-
-
-
-
-            //    //detecting the column, cell and row that has been clicked 
-            //    DependencyObject dep = (DependencyObject)e.OriginalSource;
-
-            //    // iteratively traverse the visual tree
-            //    while ((dep != null) && !(dep is DataGridCell) && !(dep is DataGridColumnHeader))
-            //    {
-            //        dep = VisualTreeHelper.GetParent(dep);
-            //    }
-
-            //    if (dep == null)
-            //        return;
-
-            //    if (dep is DataGridColumnHeader)
-            //    {
-            //        DataGridColumnHeader columnHeader = dep as DataGridColumnHeader;
-            //        // do something
-            //    }
-
-            //    if (dep is DataGridCell)
-            //    {
-            //        DataGridCell cell = dep as DataGridCell;
-
-            //        // do something
-            //        // navigate further up the tree
-            //        while ((dep != null) && !(dep is DataGridRow))
-            //        {
-            //            dep = VisualTreeHelper.GetParent(dep);
-            //        }
-            //        DataGridRow row = dep as DataGridRow;
-            //        DataGridColumn col=dep as DataGridColumn;
-            //        int colIndexValue = cell.Column.DisplayIndex;
-            //        MessageBox.Show(colIndexValue.ToString());
-            //        if (colIndexValue == 10)
-            //        {
-            //            //DataGrid innerDataGrid = new DataGrid();
-            //            //innerDataGrid.Height = 10;
-            //            //innerDataGrid.Width = 200;
-            //            //innerDataGrid.AutoGenerateColumns = false;
-
-            //            //innerDataGrid.DataContext = ownguest.SubGridItemList;
-            //            //DataGrid innerDataGrid = new DataGrid();
-            //           // innerDataGrid.DataContext = ownguest.SubGridItemList;
-
-
-            //        }
-            //        else
-            //        {
-
-            //        }
-            //        int rowIndex = FindRowIndex(row);         
-
-            //        //extract the value of the cell 
-            //        object value=ExtractBoundValue(row, cell);
-            //    }
-            //}
-
-            //private object ExtractBoundValue(DataGridRow row,  DataGridCell cell)
-            //{
-            //    // find the column that this cell belongs to
-            //    DataGridBoundColumn col = cell.Column as DataGridBoundColumn;
-
-            //    // find the property that this column is bound to
-            //    Binding binding = col.Binding as Binding;
-            //    string boundPropertyName = binding.Path.Path;
-
-            //    // find the object that is related to this row
-            //    object data = row.Item;
-
-            //    // extract the property value
-            //    PropertyDescriptorCollection properties =
-            //        TypeDescriptor.GetProperties(data);
-
-            //    PropertyDescriptor property = properties[boundPropertyName];
-            //    object value = property.GetValue(data);
-
-            //    return value;
         }
 
 
@@ -256,56 +295,10 @@ namespace EfesBetGUI
         void miAxleTools_Click(object sender, RoutedEventArgs e)
         {
             t.ShowDialog();
-           // pop.Visibility = Visibility.Visible;
-        }
-        void dataGridParent_RowDetailsVisibilityChanged(object sender, DataGridRowDetailsEventArgs e)
-        {
-
-
-            DataGrid innerDataGrid = new DataGrid();
-            DataGridRow row = e.Row as DataGridRow;
-            FrameworkElement tb = GetTemplateChildByName(row, "innerGrid");
-            tb.Visibility = Visibility.Collapsed;
-            string value = dataGridParent.CurrentColumn.Header.ToString();
-            if (value == "+")
-            {
-                tb.Visibility = Visibility.Visible;
-                tb.DataContext = ownguest.SubGridItemList;
-                // innerDataGrid = e.DetailsElement as DataGrid;
-                //innerDataGrid.DataContext = ownguest.SubGridItemList;
-
-
-            }
-
-            else
-            {
-                dataGridParent.SelectedIndex = -1;
-                //tb.Visibility = Visibility.Collapsed;
-            }
-
+            // pop.Visibility = Visibility.Visible;
         }
 
 
-
-        public FrameworkElement GetTemplateChildByName(DependencyObject parent, string name)
-        {
-            int childnum = VisualTreeHelper.GetChildrenCount(parent);
-            for (int i = 0; i < childnum; i++)
-            {
-                var child = VisualTreeHelper.GetChild(parent, i);
-                if (child is FrameworkElement && ((FrameworkElement)child).Name == name)
-                {
-                    return child as FrameworkElement;
-                }
-                else
-                {
-                    var s = GetTemplateChildByName(child, name);
-                    if (s != null)
-                        return s;
-                }
-            }
-            return null;
-        }
 
 
 
@@ -356,7 +349,7 @@ namespace EfesBetGUI
 
 
 
-       
+
 
     }
 }

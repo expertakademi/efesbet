@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vmSahibiKonuk="clr-namespace:EfesBetGUI.ViewModel"
         xmlns:DateTimeUC="clr-namespace:EfesBetGUI.View.UserControls"        
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
         Title="MainWindow" >
     <Window.Resources>
         <ResourceDictionary Source="Theme/Generic.xaml">
@@ -328,8 +329,9 @@
                         <TextBlock Text="Oyna" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                     </Border>
                 </Grid>
-                <DataGrid ItemsSource="{Binding vmSahibiKonuk, Path=RateEstimationGuestList}" Style="{StaticResource EfesDataGridStyle}"
-                        FrozenColumnCount="7" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" GridLinesVisibility="All">
+                <!-- ItemsSource="{Binding vmSahibiKonuk, Path=RateEstimationGuestList}"-->
+                <DataGrid Style="{StaticResource EfesDataGridStyle}"
+                        FrozenColumnCount="7" HorizontalGridLinesBrush="#DADADA" x:Name ="dgrdLeftBottom" VerticalGridLinesBrush="#DADADA" GridLinesVisibility="All" Cursor="Hand" >
                     <DataGrid.ColumnHeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="Foreground" Value="White"></Setter>
@@ -421,7 +423,7 @@
                         <DataGridTextColumn Header="Ev Sahivi" Binding="{Binding Host}" Width="70" />
                         <DataGridTextColumn Header="Konuk" Binding="{Binding Guest}" Width="70" />
                         <DataGridTextColumn Header="Tip" Binding="{Binding Tip}" Width="40" />
-                        <DataGridTextColumn Header="Tahmin" Binding="{Binding Estimation}" Width="50" />
+                        <DataGridTextColumn Header="Tahmin" Binding="{Binding Estimate}" Width="50" />
                         <DataGridTemplateColumn Header="Oran" Width="50">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -435,6 +437,15 @@
                         </DataGridTemplateColumn>
                         <!--<DataGridTextColumn Header="Oran" Binding="{Binding Rate}" Width="50" />-->
                     </DataGrid.Columns>
+                    <DataGrid.RowStyle >
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="ToolTip">
+                                <Setter.Value>
+                                    <TextBlock Text="19.3.20  19:30 Denimarka 1.Lig" />
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DataGrid.RowStyle>
                 </DataGrid>
 
             </StackPanel>
@@ -572,16 +583,16 @@
                 <ColumnDefinition Width=".4*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid Height="35" Grid.ColumnSpan="5" Margin="0" Background="Black" VerticalAlignment="Top">
-                
-            <!--</Grid>-->
-            <!--<Grid Margin="0" Grid.ColumnSpan="5"  Height="200">-->
+
+                <!--</Grid>-->
+                <!--<Grid Margin="0" Grid.ColumnSpan="5"  Height="200">-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width=".25*"></ColumnDefinition>
                     <ColumnDefinition Width=".3*"></ColumnDefinition>
                     <ColumnDefinition Width=".4*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-             
+
 
                 <Menu Height="35" Grid.ColumnSpan="5" VerticalAlignment="Top" HorizontalAlignment="Stretch" Background="Black" VerticalContentAlignment="Bottom">
                     <Menu.ItemsPanel >
@@ -592,7 +603,7 @@
                                     <ColumnDefinition Width=".32*"></ColumnDefinition>
                                     <ColumnDefinition Width=".2*"></ColumnDefinition>
                                     <ColumnDefinition Width=".1*"></ColumnDefinition>
-                                 
+
                                 </Grid.ColumnDefinitions>
                             </Grid>
                         </ItemsPanelTemplate>
@@ -615,7 +626,7 @@
                                 <TextBlock Text=" 5.296.256.36" Foreground="White" FontFamily="Arial" FontSize="14"  Padding="3,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                             </MenuItem.Header>
                         </MenuItem>
-                        
+
                     </MenuItem>
 
                     <MenuItem Style="{StaticResource HepsiSubMenuStyle}" HorizontalAlignment="Left" Width="80" Height="20" Background="Red"  BorderThickness="0" Cursor="Hand" Grid.Column="1" Margin="20,0,0,0" >
@@ -686,8 +697,8 @@
                         </MenuItem.Header>
 
                     </MenuItem>
-                    
-                        <MenuItem  Style="{StaticResource CommonMenuStyle}" Cursor="Hand" Height="35" Width="77" HorizontalAlignment="Left" Grid.Column="2"  Margin="175,0,0,0" >
+
+                    <MenuItem  Style="{StaticResource CommonMenuStyle}" Cursor="Hand" Height="35" Width="77" HorizontalAlignment="Left" Grid.Column="2"  Margin="175,0,0,0" >
                         <MenuItem.Icon>
                             <Image Source="/EfesBetGUI;component/Resource/Images/Edit.png" Height="24" Width="19" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="6,0,0,0" />
                         </MenuItem.Icon>
@@ -711,7 +722,7 @@
                         <MenuItem.Icon>
                             <Image Source="/EfesBetGUI;component/Resource/Images/Tools.png" Height="15" Width="15" VerticalAlignment="Center" HorizontalAlignment="Center" />
                         </MenuItem.Icon>
-                       
+
                     </MenuItem>
 
                     <MenuItem  Style="{StaticResource CommonMenuStyle}" Cursor="Hand" Height="35" Width="35" HorizontalAlignment="Right" Grid.Column="3"  Margin="0,0,85,0" >
@@ -863,8 +874,8 @@
 
             </Menu>-->
         </Grid>
-        <Border x:Name="brdCenterGrid" BorderBrush="White" BorderThickness="0" CornerRadius="0" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" Margin="5,30,5,5">
-            <DataGrid ItemsSource="{Binding }" x:Name="dataGridParent" Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14" GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA">
+        <Border x:Name="brdCenterGrid" BorderBrush="White" BorderThickness="0" CornerRadius="0" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" Margin="5,0,5,1">
+            <DataGrid ItemsSource="{Binding }" x:Name="dataGridParent" Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14" GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" Cursor="Hand" >
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="Foreground" Value="White"></Setter>
@@ -944,7 +955,7 @@
                     <DataGridTextColumn Header="T1" Binding="{Binding T1_host}" Width="30" />
                     <DataGridTextColumn Header="TX" Binding="{Binding TX_host}" Width="30" />
                     <DataGridTextColumn Header="T2" Binding="{Binding T2_host}" Width="30" />
-                    <DataGridTextColumn Header="+" Binding="{Binding TotalOptions}" Width="30" />
+                    <DataGridTextColumn Header="+" Foreground="Red"  Binding="{Binding TotalOptions}" Width="30" />
                     <DataGridTextColumn Header="Min" Binding="{Binding MinOption}" Width="40" />
                     <DataGridTextColumn Header="Lig" Binding="{Binding League}" Width="80" />
                     <DataGridTemplateColumn Header="Durum" Width="90">

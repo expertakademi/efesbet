@@ -582,238 +582,6 @@
     </Style>
 
 
-    <Style x:Key="Submenu1" TargetType="MenuItem">
-
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#C91C1F" />
-            </Trigger>
-        </Style.Triggers>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <StackPanel>
-                            <Image Source="/EfesBetGUI;component/Resource/Images/Footbal.png" Height="26" Width="26" HorizontalAlignment="Center" Margin="0,20,0,0" />
-                            <TextBlock Text="Futbol" Foreground="White"  FontFamily="Arial" FontSize="14"  Padding="0,10,0,0" HorizontalAlignment="Center"/>
-                        </StackPanel>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="Submenu2" TargetType="MenuItem">
-
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#C91C1F" />
-            </Trigger>
-        </Style.Triggers>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <StackPanel>
-                            <Image Source="/EfesBetGUI;component/Resource/Images/BasketBall.png" Height="26" Width="26" HorizontalAlignment="Center" Margin="0,20,0,0" />
-                            <TextBlock Text="Basketbol" Foreground="White"  FontFamily="Arial" FontSize="14"  Padding="0,10,0,0" HorizontalAlignment="Center"/>
-                        </StackPanel>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="Submenu3" TargetType="MenuItem">
-
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#C91C1F" />
-            </Trigger>
-        </Style.Triggers>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <StackPanel>
-                            <Image Source="/EfesBetGUI;component/Resource/Images/Duello.png" Height="26" Width="49" HorizontalAlignment="Center" Margin="0,20,0,0" />
-                            <TextBlock Text="Duello" Foreground="White"  FontFamily="Arial" FontSize="14"  Padding="0,10,0,0" HorizontalAlignment="Center"/>
-                        </StackPanel>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-
-    <Style x:Key="MenuStyleNormal" TargetType="MenuItem">
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#595050" />
-            </Trigger>
-        </Style.Triggers>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <StackPanel Orientation="Horizontal" Height="30">
-                            <Image Source="/EfesBetGUI;component/Resource/Images/Clock.png" Height="20" Width="20" VerticalAlignment="Center" Margin="10,0,3,0"/>
-                            <TextBlock Text="Normal"  FontFamily="Arial" FontSize="14"  Padding="3,0,5,0" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="MenuStyleCanli" TargetType="MenuItem">
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#595050" />
-            </Trigger>
-        </Style.Triggers>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <StackPanel Orientation="Horizontal" Height="30">
-                            <Image Source="/EfesBetGUI;component/Resource/tv.jpg" Height="20" Width="20" VerticalAlignment="Center" Margin="10,0,3,0"/>
-                            <TextBlock Text="Canli"  FontFamily="Arial" FontSize="14"  Padding="3,0,5,0" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="MenuStyleKupon" TargetType="MenuItem">
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#595050" />
-            </Trigger>
-        </Style.Triggers>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <StackPanel Orientation="Horizontal" Height="30">
-                            <Image Source="/EfesBetGUI;component/Resource/coupon.jpg" Height="20" Width="20" VerticalAlignment="Center" Margin="10,0,3,0"/>
-                            <TextBlock Text="Kupon"  FontFamily="Arial" FontSize="14"  Padding="3,0,5,0" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="MenuStyleRapor" TargetType="MenuItem">
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#595050" />
-            </Trigger>
-        </Style.Triggers>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <StackPanel Orientation="Horizontal" Height="30">
-                            <Image Source="/EfesBetGUI;component/Resource/battery.jpg" Height="20" Width="20" VerticalAlignment="Center" Margin="10,0,3,0"/>
-                            <TextBlock Text="Rapor"  FontFamily="Arial" FontSize="14"  Padding="3,0,5,0" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="MenuStyleTools" TargetType="MenuItem">
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#595050" />
-            </Trigger>
-        </Style.Triggers>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <StackPanel Orientation="Horizontal" Height="30">
-                            <Image Source="/EfesBetGUI;component/Resource/tools.jpg" Height="20" Width="20" VerticalAlignment="Center" Margin="10,0,10,0"/>
-                        </StackPanel>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="MenuStyleAnnouce" TargetType="MenuItem">
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#595050" />
-            </Trigger>
-        </Style.Triggers>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <StackPanel Orientation="Horizontal" Height="30">
-                            <Image Source="/EfesBetGUI;component/Resource/speaker.jpg" Height="20" Width="20" VerticalAlignment="Center" Margin="10,0,10,0"/>
-                        </StackPanel>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="MenuStylePrint" TargetType="MenuItem">
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#595050" />
-            </Trigger>
-        </Style.Triggers>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <StackPanel Orientation="Horizontal" Height="30">
-                            <Image Source="/EfesBetGUI;component/Resource/Printer.jpg" Height="20" Width="20" VerticalAlignment="Center" Margin="10,0,10,0"/>
-                        </StackPanel>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="MenuStyleSetting" TargetType="MenuItem">
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#595050" />
-            </Trigger>
-        </Style.Triggers>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <StackPanel Orientation="Horizontal" Height="30">
-                            <Image Source="/EfesBetGUI;component/Resource/settings.jpg" Height="20" Width="20" VerticalAlignment="Center" Margin="10,0,10,0"/>
-                        </StackPanel>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style x:Key="MenuStyleBakiyem" TargetType="MenuItem">
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#595050" />
-                <Setter Property="BorderBrush" Value="#595050"/>
-                <Setter Property="Padding" Value="0"/>
-            </Trigger>
-        </Style.Triggers>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type MenuItem}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <StackPanel Orientation="Horizontal" Height="20">
-                            <TextBlock Text="5.296.256.36"  FontFamily="Arial" FontSize="14" Padding="3,0,5,0" VerticalAlignment="Center"/>
-                            <Image Source="/EfesBetGUI;component/Resource/Images/Currency.PNG" Height="21" Width="18" VerticalAlignment="Center" Margin="10,0,3,0"/>
-                        </StackPanel>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
     <Style x:Key="Flat">
         <Setter Property="Control.Background" Value="{x:Null}" />
         <Setter Property="Control.BorderBrush" Value="{x:Null}" />
@@ -927,7 +695,7 @@
 
 
 
-    <!-- ******************************************************** -->
+    <!-- ************************* Menu  Styles Start ******************************* -->
 
     <!--  Hepsi Sub Menu Style    -->
 
@@ -1123,8 +891,7 @@
         </Setter>
     </Style>
 
-
-    <!--  Bakiyem Sub Menu Style    -->
+    <!--  Common Menu Style    -->
 
     <Style x:Key="CommonMenuStyle" TargetType="{x:Type MenuItem}">
         <Setter Property="Template">
@@ -1195,5 +962,8 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <!-- ************************* Menu  Styles End ******************************* -->
+
 
 </ResourceDictionary>

@@ -13,7 +13,7 @@ namespace EfesBetGUI.Entity
         public string Host { get; set; }
         public string Guest { get; set; }
         public string Tip { get; set; }
-        public int Estimate { get; set; }
+        public double Estimate { get; set; }
         public double Rate { get; set; }
     }
 }

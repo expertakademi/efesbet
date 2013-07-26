@@ -26,7 +26,6 @@ C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI
 C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csproj.GenerateResource.Cache
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.exe
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.pdb
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csprojResolveAssemblyReference.cache
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\Theme\Generic.baml
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\UserControls\DateTimeMonth.baml
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\MainWindow.g.cs

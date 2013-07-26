@@ -26,7 +26,7 @@ namespace EfesBetGUI
     public partial class MainWindow : Window
     {
         OwnGuestViewModel vmSK = new OwnGuestViewModel();
-        MenuPopup pop = new MenuPopup();
+        popup pop = new popup();
         //popup pop = new popup();
         GridLength colfirstOrgPos, colLastOrgPos;
         DataTable dt = new DataTable();
@@ -326,8 +326,8 @@ namespace EfesBetGUI
 
         void miAxleTools_Click(object sender, RoutedEventArgs e)
         {
-            t.ShowDialog();
-            // pop.Visibility = Visibility.Visible;
+            //t.ShowDialog();
+             pop.Visibility = Visibility.Visible;
         }
 
 

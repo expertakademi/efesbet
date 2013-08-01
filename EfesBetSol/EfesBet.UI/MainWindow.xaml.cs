@@ -17,6 +17,7 @@ using System.Data;
 using System.ComponentModel;
 using System.Windows.Controls.Primitives;
 using EfesBetGUI.Entity;
+using System.Windows.Threading;
 
 namespace EfesBetGUI
 {
@@ -27,25 +28,34 @@ namespace EfesBetGUI
     {
         OwnGuestViewModel vmSK = new OwnGuestViewModel();
         popup pop = new popup();
-        //popup pop = new popup();
         GridLength colfirstOrgPos, colLastOrgPos;
         DataTable dt = new DataTable();
         FrameworkElement tb = new FrameworkElement();
         int getSelectedIndex = -1;
         int checkGridState = 0;
+        int isOpen = 0;
 
         DataGrid innerDataGrid = new DataGrid();
 
 
         OwnGuestViewModel ownguest = new ViewModel.OwnGuestViewModel();
-        
+
         public MainWindow()
         {
             InitializeComponent();//
+
+         DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0,0,1), DispatcherPriority.Normal, delegate
+         {
+             this.txtTime.Text = DateTime.Now.ToString("HH:mm");
+             this.txtDate.Text = DateTime.Now.Day.ToString();
+         }, this.Dispatcher);
+
             this.Height = SystemParameters.MaximizedPrimaryScreenHeight;
             this.Width = SystemParameters.MaximizedPrimaryScreenWidth;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.miAxleTools.Click += new RoutedEventHandler(miAxleTools_Click);
+
+          
 
             #region -- ViewModel --
             vmSK = new OwnGuestViewModel();
@@ -59,19 +69,130 @@ namespace EfesBetGUI
             spRight.IsEnabled = false;
             this.dataGridParent.DataContext = ownguest.GuestHostTotalList;
             this.dataGridUserDetails.DataContext = ownguest.UserList;
-            this.dataGridParent.RowDetailsVisibilityChanged += new EventHandler<DataGridRowDetailsEventArgs>(dataGridParent_RowDetailsVisibilityChanged);
-            // this.dataGridParent.MouseRightButtonUp += new MouseButtonEventHandler(dataGridParent_MouseRightButtonUp);
-            // this.dataGridParent.MouseLeftButtonUp += new MouseButtonEventHandler(dataGridParent_MouseLeftButtonUp);
-            this.dataGridParent.SelectionChanged += new SelectionChangedEventHandler(dataGridParent_SelectionChanged);
+            //this.dataGridParent.RowDetailsVisibilityChanged += new EventHandler<DataGridRowDetailsEventArgs>(dataGridParent_RowDetailsVisibilityChanged);
+            //this.dataGridParent.MouseRightButtonUp += new MouseButtonEventHandler(dataGridParent_MouseRightButtonUp);
+            //this.dataGridParent.MouseLeftButtonUp += new MouseButtonEventHandler(dataGridParent_MouseLeftButtonUp);
+           // this.dataGridParent.SelectionChanged += new SelectionChangedEventHandler(dataGridParent_SelectionChanged);
             this.dgrdLeftBottom.MouseLeftButtonUp += new MouseButtonEventHandler(dgrdLeftBottom_MouseLeftButtonUp);
             this.dgrdLeftBottom.SizeChanged += new SizeChangedEventHandler(dgrdLeftBottom_SizeChanged);
             this.brdOyna.MouseLeftButtonUp += new MouseButtonEventHandler(brdOyna_MouseLeftButtonUp);
+        }
+
+
+        private void RowClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var row = (DataGridRow)sender;
+                row.DataContext = ownguest.SubGridItemList;
+
+                string value = dataGridParent.CurrentColumn.Header.ToString();
+                if (value == "+")
+                {
+
+                    if (isOpen == 0)
+                    {
+                        // row.DetailsVisibility = row.DetailsVisibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
+                        FrameworkElement tb = GetTemplateChildByName(row, "innerGrid");
+                        if (tb.Visibility == Visibility.Collapsed)
+                        {
+                            tb.Visibility = Visibility.Visible;
+                            tb.DataContext = ownguest.SubGridItemList;
+                            row.DetailsVisibility = Visibility.Visible;
+
+                            DispatcherTimer dispTimer = new DispatcherTimer(new TimeSpan(0, 0, 30), DispatcherPriority.Normal, delegate
+                            {
+                                tb.Visibility = Visibility.Collapsed;
+
+                            }, this.Dispatcher);
+                        }
+                        else
+                        {
+                            tb.Visibility = Visibility.Collapsed;
+                            row.DetailsVisibility = Visibility.Collapsed;
+                        }
+                    }
+                    else
+                    {
+                        isOpen = 0;
+                    }
+                }
+                else
+                {
+                    dataGridParent.SelectedIndex = -1;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
 
         }
+
+
+
+        private void InnerGridRowClick(object sender, RoutedEventArgs e)
+        {
+            RateEstimationGuest objRateEst = new RateEstimationGuest();
+
+            if (dataGridParent.SelectedItems.Count > 0)
+            {
+                isOpen = 1;
+
+                foreach (GuestHost item in dataGridParent.SelectedItems)
+                {
+                    objRateEst.No = dgrdLeftBottom.Items.Count + 1;
+                    //objRateEst.No = 3;
+                    objRateEst.Code = Convert.ToInt32(item.Code.ToString().Substring(1));
+                    objRateEst.MyProperty = 4542;
+                    objRateEst.Host = item.Own;
+                    objRateEst.Guest = item.Guest;
+                    objRateEst.Tip = item.MinOption;
+                    objRateEst.Estimate = item.T1_host;
+                    objRateEst.Rate = item.T2_host;
+                }
+            }
+            dgrdLeftBottom.Items.Add(objRateEst);
+
+        }
+
+
+
+
 
         void brdOyna_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
 
+            NewUserPopup newUserPopup = new NewUserPopup();
+            newUserPopup.ShowDialog();
+
+            User objUser = new User();
+
+            if (dataGridUserDetails.Items.Count>0)
+            {
+                int num = ownguest.UserList.Count-1;
+
+
+                string str = ownguest.UserList[num].CuponNo.Substring(0, 14);
+                int numcheck = Convert.ToInt32(ownguest.UserList[num].CuponNo.Substring(14,4));
+
+                //foreach (User item in ownguest.UserList[0])
+               // {
+                objUser.History = ownguest.UserList[num].History;
+                objUser.CuponNo = ownguest.UserList[num].CuponNo.Substring(0,14) + (Convert.ToInt32( ownguest.UserList[num].CuponNo.Substring(14,4))+1213 );
+                objUser.Amount = ownguest.UserList[num].Amount;
+                objUser.UserName = ownguest.UserList[num].UserName;
+                objUser.Earnings = ownguest.UserList[num].Earnings;
+                objUser.NoOfCupons = ownguest.UserList[num].NoOfCupons+1;
+                objUser.MaxEarning = ownguest.UserList[num].MaxEarning;
+             // }
+
+            }
+            ownguest.UserList.Add(objUser);
+            this.dataGridUserDetails.DataContext = ownguest.UserList;
+
+           // dataGridUserDetails.Items.Add(objUser);
+            /*  */
 
         }
 
@@ -79,12 +200,12 @@ namespace EfesBetGUI
         {
 
             TxtInput1.Text = dgrdLeftBottom.Items.Count.ToString();
-          
+
 
             if (dgrdLeftBottom.Items.Count >= 3)
             {
                 brdOyna.IsEnabled = true;
-                
+
             }
             else
             {
@@ -93,7 +214,7 @@ namespace EfesBetGUI
 
         }
 
-      
+
 
         void dgrdLeftBottom_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -128,7 +249,7 @@ namespace EfesBetGUI
         {
             try
             {
-                if (dataGridParent.SelectedIndex >= 0 && dataGridParent.SelectedIndex==getSelectedIndex)
+                if (dataGridParent.SelectedIndex >= 0 && dataGridParent.SelectedIndex == getSelectedIndex)
                 {
 
                     string value = dataGridParent.CurrentColumn.Header == null ? "" : dataGridParent.CurrentColumn.Header.ToString();
@@ -141,7 +262,7 @@ namespace EfesBetGUI
                         {
                             foreach (GuestHost item in dataGridParent.SelectedItems)
                             {
-                                objRateEst.No = dgrdLeftBottom.Items.Count+1;
+                                objRateEst.No = dgrdLeftBottom.Items.Count + 1;
                                 //objRateEst.No = 3;
                                 objRateEst.Code = Convert.ToInt32(item.Code.ToString().Substring(1));
                                 objRateEst.MyProperty = 4542;
@@ -151,6 +272,9 @@ namespace EfesBetGUI
                                 objRateEst.Estimate = item.T1_host;
                                 objRateEst.Rate = item.T2_host;
                             }
+
+
+
                         }
                         dgrdLeftBottom.Items.Add(objRateEst);
                     }
@@ -165,34 +289,40 @@ namespace EfesBetGUI
         {
             try
             {
+                //innerDataGrid.Visibility = Visibility.Visible;
                 checkGridState = 0;
                 DataGridRow row = e.Row as DataGridRow;
-                row.Background = new SolidColorBrush(Colors.White);
+                innerDataGrid.Visibility = Visibility.Collapsed;
                 FrameworkElement tb = GetTemplateChildByName(row, "innerGrid");
                 tb.Visibility = Visibility.Collapsed;
                 string value = dataGridParent.CurrentColumn.Header.ToString();
                 if (value == "+")
                 {
-                    
+                    innerDataGrid.Visibility = Visibility.Visible;
+
+                    isOpen = isOpen + 2;
                     checkGridState = 1;
                     getSelectedIndex = dataGridParent.SelectedIndex;
 
                     tb.Visibility = Visibility.Visible;
+
                     tb.DataContext = ownguest.SubGridItemList;
 
-                    // innerDataGrid = e.DetailsElement as DataGrid;
+                    innerDataGrid = e.DetailsElement as DataGrid;
                     //innerDataGrid.DataContext = ownguest.SubGridItemList;
                 }
 
                 else
                 {
                     dataGridParent.SelectedIndex = -1;
-                    // tb.Visibility = Visibility.Collapsed;
+                    tb.Visibility = Visibility.Collapsed;
+                    innerDataGrid.Visibility = Visibility.Collapsed;
+
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
- 
+
             }
         }
 
@@ -218,48 +348,11 @@ namespace EfesBetGUI
 
 
 
-
-
-
         void dataGridParent_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
             if (dataGridParent.SelectedIndex >= 0)
             {
-                string value = dataGridParent.CurrentColumn.Header.ToString();
-                if (value == "+")
-                {
-                    //dataGridParent. row = DataGridRow;
 
-                    DependencyObject dep = (DependencyObject)e.OriginalSource;
-                    DataGridRow row = dep as DataGridRow;
-                    FrameworkElement tb = GetTemplateChildByName(dataGridParent, "innerGrid");
-                    //DataGrid innerDataGrid = new DataGrid();
-                    // DataGridRow row = new DataGridRow();
-                    //DataGridRow row = e.Source as DataGridRow;
-                    if (tb != null && value == "+")
-                    {
-                        // tb.DataContext = null;
-
-                        if (tb.Visibility == Visibility.Visible && value == "+")
-                        {
-                            tb.Visibility = Visibility.Collapsed;
-                            tb.DataContext = null;
-
-                        }
-                        else
-                        {
-                            tb.Visibility = Visibility.Collapsed;
-                            tb.DataContext = ownguest.SubGridItemList;
-                            tb.Visibility = Visibility.Visible;
-                        }
-                    }
-                }
-
-                else
-                {
-                    dataGridParent.SelectedIndex = -1;
-                }
             }
         }
 
@@ -327,7 +420,7 @@ namespace EfesBetGUI
         void miAxleTools_Click(object sender, RoutedEventArgs e)
         {
             //t.ShowDialog();
-             pop.Visibility = Visibility.Visible;
+            pop.Visibility = Visibility.Visible;
         }
 
 
@@ -349,6 +442,18 @@ namespace EfesBetGUI
                 grdLastCol.Width = colLastOrgPos;
             else
                 grdLastCol.Width = new GridLength(0.00);
+        }
+
+        private void textBlockOyna_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            //NewUserPopup newUserPopup = new NewUserPopup();
+            //newUserPopup.ShowDialog();
+        }
+
+        private void brdOyna_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //NewUserPopup newUserPopup = new NewUserPopup();
+            //newUserPopup.ShowDialog();
         }
 
 

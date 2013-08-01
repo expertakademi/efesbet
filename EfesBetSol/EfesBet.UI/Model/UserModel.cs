@@ -20,7 +20,7 @@ namespace EfesBetGUI.Model
                     new User()
                 {
                     History="27.07 10.55",
-                    CuponNo="765494-52412sdr4241",
+                    CuponNo="765494-522sdr-4241",
                     Amount="56,00 TL",
                     UserName="User1",
                     Earnings="5,00 TL",

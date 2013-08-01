@@ -77,8 +77,6 @@
                 <ColumnDefinition Width=".5*"></ColumnDefinition>
                 <ColumnDefinition Width=".5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-
-
             <!--<ComboBox>
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -101,11 +99,11 @@
                     <Border Grid.Column="0" BorderBrush="LightGray" BorderThickness="1" CornerRadius="10"  >
                         <WrapPanel Background="{StaticResource Siyah}">
                             <Border Margin="5,6,5,5" Background="White" BorderBrush="#EDEDED" CornerRadius="2" BorderThickness="1" Width="78" Height="41" HorizontalAlignment="Left">
-                                <TextBlock Text="11:34" FontFamily="Arial" FontSize="28" Margin="2,4" Foreground="#444" />
+                                <TextBlock Text="11:34" x:Name="txtTime" FontFamily="Arial" FontSize="28" Margin="2,4" Foreground="#444" />
                             </Border>
                             <StackPanel Width="40">
                                 <TextBlock Style="{StaticResource EfesClockDateTime}" Text="Salı" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Top" />
-                                <TextBlock Style="{StaticResource EfesClockDateTime}" Text="30" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"  />
+                                <TextBlock Style="{StaticResource EfesClockDateTime}" Text=" " x:Name="txtDate" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"  />
                                 <TextBlock Style="{StaticResource EfesClockDateTime}" Text="Mayıs" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Top"  />
                             </StackPanel>
                         </WrapPanel>
@@ -199,7 +197,7 @@
         </Border>
         <Border Grid.Column="0" Grid.Row="3" BorderBrush="WhiteSmoke" BorderThickness="2" CornerRadius="5" Margin="2">
             <DataGrid ItemsSource="{Binding vmSahibiKonuk, Path=SahibiKonukList}" Style="{StaticResource EfesDataGridStyle}"
-                      FrozenColumnCount="4">
+                      FrozenColumnCount="4" AutoGenerateColumns="False">
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="Foreground" Value="White"></Setter>
@@ -323,15 +321,15 @@
                     <Image Source="Resource/tl.png" Width="6" Height="9" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Right" Margin="2" />
                     <Border Grid.Column="5" Background="{StaticResource MaviBeyaz}" Grid.RowSpan="2" BorderThickness="0" Margin="0,3,0,1" />
                     <TextBox Style="{StaticResource Input1}" x:Name="TxtInput1" Width="40" Grid.Row="3" Grid.Column="4" Margin="2,2,3,2" />
-                    <TextBox Style="{StaticResource Input1}" Height="46" Width="60" Grid.Column="5" Grid.RowSpan="4" Margin="0,10,0,2" />
+                    <TextBox Style="{StaticResource Input1}" Width="60" Height="46" Grid.Column="5" Grid.RowSpan="4" Margin="0,10,0,2" />
                     <TextBox  Style="{StaticResource Input1}" Grid.Row="3" Grid.Column="6" Width="60" Margin="3,3,2,2" ></TextBox>
                     <Border Grid.Row="3" x:Name="brdOyna" Grid.Column="7" Style="{StaticResource BoarderStyle}" Margin="1" IsEnabled="False" >
-                        <TextBlock Text="Oyna" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock x:Name="textBlockOyna" Text="Oyna" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonUp="textBlockOyna_MouseLeftButtonUp"></TextBlock>
                     </Border>
                 </Grid>
                 <!-- ItemsSource="{Binding vmSahibiKonuk, Path=RateEstimationGuestList}"-->
                 <DataGrid Style="{StaticResource EfesDataGridStyle}"
-                        FrozenColumnCount="7" HorizontalGridLinesBrush="#DADADA" x:Name ="dgrdLeftBottom" VerticalGridLinesBrush="#DADADA" GridLinesVisibility="All" Cursor="Hand" >
+                        FrozenColumnCount="7" HorizontalGridLinesBrush="#DADADA" x:Name ="dgrdLeftBottom" VerticalGridLinesBrush="#DADADA" GridLinesVisibility="All" Cursor="Hand" AutoGenerateColumns="False">
                     <DataGrid.ColumnHeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
                             <Setter Property="Foreground" Value="White"></Setter>
@@ -431,14 +429,14 @@
                                         <TextBlock Text="{Binding Path=Rate}" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
                                         <Image Source="Resource/closeicon.gif" Width="10" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                                     </StackPanel>
-
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <!--<DataGridTextColumn Header="Oran" Binding="{Binding Rate}" Width="50" />-->
                     </DataGrid.Columns>
+                    
                     <DataGrid.Resources>
-                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                       <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
                         <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
                     </DataGrid.Resources>
 
@@ -447,14 +445,12 @@
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Background"   Value="#F7D6C8" />
-
                                 </Trigger>
                             </Style.Triggers>
-
+                            
                             <Setter Property="ToolTip" Value="19.3.20  19:30 Denimarka 1.Lig"/>
                         </Style>
                     </DataGrid.RowStyle>
-                   
                     <!--<DataGrid.RowStyle >
                         <Style TargetType="DataGridRow">
                             <Setter Property="ToolTip">
@@ -782,10 +778,11 @@
          
         </Grid>
         
-            <Border x:Name="brdCenterGrid" BorderBrush="White" BorderThickness="0" CornerRadius="0" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Margin="5,0,5,1">
-            <DataGrid ItemsSource="{Binding }" x:Name="dataGridParent" Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14" GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" Cursor="Hand" AutoGenerateColumns="False" >
+            <Border x:Name="brdCenterGrid" BorderBrush="White" BorderThickness="0" CornerRadius="0" Grid.Row="1" Grid.Column="2"  Grid.RowSpan="3" Margin="5,0,5,1">
+            <DataGrid ItemsSource="{Binding }" HorizontalAlignment="Stretch" Margin="1,0,1,0" x:Name="dataGridParent" Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14" GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" Cursor="Hand" AutoGenerateColumns="False" RowDetailsVisibilityMode="Visible"  >
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
                         <Setter Property="Foreground" Value="White"></Setter>
                         <Setter Property="Background" Value="Black"></Setter>
                         <Setter Property="MinHeight" Value="28"></Setter>
@@ -853,20 +850,22 @@
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Kod" Binding="{Binding Code}" Width="50" />
-                    <DataGridTextColumn Header="Tarih" Binding="{Binding History}" Width="75" />
-                    <DataGridTextColumn Header="Ev Sahibi" Binding="{Binding Own}" Width="115" />
-                    <DataGridTextColumn Header="Konuk" Binding="{Binding Guest}" Width="105" />
-                    <DataGridTextColumn Header="1" Binding="{Binding One_guest}" Width="35" />
-                    <DataGridTextColumn Header="X" Binding="{Binding X_game}" Width="35" />
-                    <DataGridTextColumn Header="2" Binding="{Binding Two_guest}" Width="35" />
-                    <DataGridTextColumn Header="T1" Binding="{Binding T1_host}" Width="30" />
-                    <DataGridTextColumn Header="TX" Binding="{Binding TX_host}" Width="30" />
-                    <DataGridTextColumn Header="T2" Binding="{Binding T2_host}" Width="30" />
+                    <DataGridTextColumn Header="Kod" Binding="{Binding Code}"  />
+                    <DataGridTextColumn Header="Tarih" Binding="{Binding History}" />
+                    <DataGridTextColumn Header="Ev Sahibi" Binding="{Binding Own}" />
+                    <DataGridTextColumn Header="Konuk" Binding="{Binding Guest}" MinWidth="100"  />
+                    <DataGridTextColumn Header="1" Binding="{Binding One_guest}" MinWidth="35" />
+                    <DataGridTextColumn Header="X" Binding="{Binding X_game}" MinWidth="35" />
+                    <DataGridTextColumn Header="2" Binding="{Binding Two_guest}" MinWidth="35" />
+                    <DataGridTextColumn Header="T1" Binding="{Binding T1_host}" MinWidth="30" />
+                    <DataGridTextColumn Header="TX" Binding="{Binding TX_host}" MinWidth="30" />
+                    <DataGridTextColumn Header="T2" Binding="{Binding T2_host}" MinWidth="30" />
                     <DataGridTextColumn Header="+"  CellStyle ="{StaticResource DataGridCellStyle}"  Binding="{Binding TotalOptions}" Width="30" />
-                    <DataGridTextColumn Header="Min" Binding="{Binding MinOption}" Width="40" />
-                    <DataGridTextColumn Header="Lig" Binding="{Binding League}" Width="80" />
-                    <DataGridTemplateColumn Header="Durum" Width="90" >
+                    
+
+                    <DataGridTextColumn Header="Min" Binding="{Binding MinOption}" MinWidth="40" />
+                    <DataGridTextColumn Header="Lig" Binding="{Binding League}" MinWidth="80" />
+                    <DataGridTemplateColumn Header="Durum" Width="*" >
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -877,13 +876,21 @@
                     </DataGridTemplateColumn>
                     <!--<DataGridTextColumn Header="Durum" Binding="{Binding Cases}" Width="80" />-->
                 </DataGrid.Columns>
+                <DataGrid.RowStyle>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <EventSetter Event="MouseLeftButtonUp" Handler="RowClick"/>
+                    </Style>
+                </DataGrid.RowStyle>
+
                 <DataGrid.Resources>
                     <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
                     <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
                 </DataGrid.Resources>
+                
+                    
                 <DataGrid.RowDetailsTemplate x:Uid="test123">
                     <DataTemplate x:Name="testTemplete">
-                        <DataGrid x:Name="innerGrid" ItemsSource="{Binding}" Style="{StaticResource EfesDataGridStyle}" Margin="50,2,2,2" MinHeight="40" GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA">
+                            <DataGrid x:Name="innerGrid" ItemsSource="{Binding}" Style="{StaticResource EfesDataGridStyle}" Margin="50,2,2,2" MinHeight="40"  GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" Visibility="Collapsed" >
                             <DataGrid.ColumnHeaderStyle>
                                 <Style TargetType="DataGridColumnHeader">
                                     <Setter Property="Foreground" Value="White"></Setter>
@@ -952,12 +959,17 @@
                                     </Style.Triggers>
                                 </Style>
                             </DataGrid.ColumnHeaderStyle>
+                            <DataGrid.RowStyle>
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <EventSetter Event="MouseLeftButtonUp" Handler="InnerGridRowClick"/>
+                                </Style>
+                            </DataGrid.RowStyle>
                         </DataGrid>
+                      
                     </DataTemplate>
                 </DataGrid.RowDetailsTemplate>
             </DataGrid>
         </Border>
-     
             
             <Border x:Name="brdBottomGrid" BorderBrush="White"  BorderThickness="0" CornerRadius="0" Grid.Row="4" Grid.Column="2" Grid.RowSpan="1" Margin="5,0,5,1">
             <DataGrid ItemsSource="{Binding }" x:Name="dataGridUserDetails" Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14" GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" Cursor="Hand" AutoGenerateColumns="False" >
@@ -1030,13 +1042,13 @@
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Tarih" Binding="{Binding History}" Width="100" />
-                    <DataGridTextColumn Header="Kupon No" Binding="{Binding CuponNo}" Width="180" />
-                    <DataGridTextColumn Header="Tutar" Binding="{Binding Amount}" Width="100" />
-                    <DataGridTextColumn Header="Kullanici" Binding="{Binding UserName}" Width="105" />
-                    <DataGridTextColumn Header="Kazanc" Binding="{Binding Earnings}" Width="100" />
-                    <DataGridTextColumn Header="Kolon Sayisi" Binding="{Binding NoOfCupons}" Width="100" />
-                    <DataGridTextColumn Header="Max. Kazanc" Binding="{Binding MaxEarning}" Width="100" />
+                    <DataGridTextColumn Header="Tarih" Binding="{Binding History}"  />
+                    <DataGridTextColumn Header="Kupon No" Binding="{Binding CuponNo}"  />
+                    <DataGridTextColumn Header="Tutar" Binding="{Binding Amount}"  />
+                    <DataGridTextColumn Header="Kullanici" Binding="{Binding UserName}" />
+                    <DataGridTextColumn Header="Kazanc" Binding="{Binding Earnings}"  />
+                    <DataGridTextColumn Header="Kolon Sayisi" Binding="{Binding NoOfCupons}"  />
+                    <DataGridTextColumn Header="Max. Kazanc" Binding="{Binding MaxEarning}" Width="*" />
                    
                     <!--<DataGridTextColumn Header="Durum" Binding="{Binding Cases}" Width="80" />-->
                 </DataGrid.Columns>

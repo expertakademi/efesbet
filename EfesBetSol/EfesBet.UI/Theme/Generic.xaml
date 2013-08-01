@@ -610,8 +610,10 @@
     <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
     <Style x:Key="SlidingToggleButton" TargetType="{x:Type ToggleButton}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <!--<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>-->
+        <Setter Property="Background" Value="Green"/>
+        <Setter Property="Foreground" Value="Pink"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="1"/>
@@ -631,30 +633,19 @@
                             </ThicknessAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
-                    <Grid>
+                    <Grid >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="80" />
                         </Grid.ColumnDefinitions>
 
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="4" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        <Grid Grid.Column="1" Width="Auto" Background="{x:Null}">
-                            <Border BorderBrush="#D5D3D3" BorderThickness="1" CornerRadius="1">
-                                <Border.Background>
-                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                        <GradientStop Color="White" Offset="1"/>
-                                        <GradientStop Color="#D5D3D3"/>
-                                        <GradientStop Color="#D5D3D3" Offset="0.112"/>
-                                        <GradientStop Color="#D5D3D3" Offset="0.04"/>
-                                        <GradientStop Color="#D5D3D3" Offset="0.08"/>
-                                        <GradientStop Color="#D5D3D3" Offset="0.149"/>
-                                    </LinearGradientBrush>
-                                </Border.Background>
-                            </Border>
-                            <TextBlock TextWrapping="Wrap" Text="Aktif" d:LayoutOverrides="Width, Height" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Background="Red" Foreground="White"/>
-                            <TextBlock TextWrapping="Wrap" Text="Pasif" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Background="#0394E7" Foreground="White"/>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        <Grid Grid.Column="0" Grid.ColumnSpan="2" Width="Auto" Background="{x:Null}">
+                           
+                            <TextBlock TextWrapping="Wrap" Text="Aktif" d:LayoutOverrides="Width, Height" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,0,0" Background="Red" Foreground="White"/>
+                            <TextBlock TextWrapping="Wrap" Text="Pasif" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" Background="#0394E7" Foreground="White"/>
                             <Border x:Name="SlidingBorder" BorderBrush="#D5D3D3" BorderThickness="1" Width="40" HorizontalAlignment="Left" CornerRadius="1" Background="{TemplateBinding Background}">
-                                <Border BorderThickness="1">
+                                <Border BorderThickness="0">
                                     <Border.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="White" Offset="0" ></GradientStop>

@@ -69,10 +69,15 @@
     <Compile Include="Model\RateEstimationGuestModel.cs" />
     <Compile Include="Model\SubGridModel.cs" />
     <Compile Include="Model\UserModel.cs" />
+    <Compile Include="ViewModel\Command.cs" />
     <Compile Include="ViewModel\DateTimeMonthUCViewModel.cs" />
+    <Compile Include="ViewModel\NewUserPopupViewModel.cs" />
     <Compile Include="ViewModel\OwnGuestViewModel.cs" />
     <Compile Include="View\MenuPopup.xaml.cs">
       <DependentUpon>MenuPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewUserPopup.xaml.cs">
+      <DependentUpon>NewUserPopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\popup.xaml.cs">
       <DependentUpon>popup.xaml</DependentUpon>
@@ -104,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MenuPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewUserPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

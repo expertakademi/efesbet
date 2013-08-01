@@ -1,0 +1,18 @@
+D:\Shashi\Project\XMLInsert\XMLInsert\bin\Debug\XMLInsert.exe
+D:\Shashi\Project\XMLInsert\XMLInsert\bin\Debug\XMLInsert.pdb
+D:\Shashi\Project\XMLInsert\XMLInsert\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Shashi\Project\XMLInsert\XMLInsert\obj\x86\Debug\ImportScrapXMLData.FormImportScrapXMLData.resources
+D:\Shashi\Project\XMLInsert\XMLInsert\obj\x86\Debug\ImportScrapXMLData.Properties.Resources.resources
+D:\Shashi\Project\XMLInsert\XMLInsert\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Shashi\Project\XMLInsert\XMLInsert\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Shashi\Project\XMLInsert\XMLInsert\obj\x86\Debug\XMLInsert.exe
+D:\Shashi\Project\XMLInsert\XMLInsert\obj\x86\Debug\XMLInsert.pdb
+C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\obj\x86\Debug\XMLInsert.exe
+C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\obj\x86\Debug\XMLInsert.pdb
+C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XMLInsert.exe
+C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XMLInsert.pdb
+C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\obj\x86\Debug\ImportScrapXMLData.FormImportScrapXMLData.resources
+C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\obj\x86\Debug\ImportScrapXMLData.Properties.Resources.resources
+C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\obj\x86\Debug\GenerateResource.write.1.tlog

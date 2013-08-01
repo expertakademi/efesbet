@@ -20,7 +20,7 @@ namespace EfesBetGUI.Model
                     Code=766565,
                     History="17.04 17.00",
                     Own="D-Manchester Uld",
-                    Guest="Tekli",
+                    Guest="Tekl",
                     One_guest=2.15,
                     X_game=3.1,
                     Two_guest=3.04,

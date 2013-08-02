@@ -778,8 +778,12 @@
          
         </Grid>
         
+            
             <Border x:Name="brdCenterGrid" BorderBrush="White" BorderThickness="0" CornerRadius="0" Grid.Row="1" Grid.Column="2"  Grid.RowSpan="3" Margin="5,0,5,1">
-            <DataGrid ItemsSource="{Binding }" HorizontalAlignment="Stretch" Margin="1,0,1,0" x:Name="dataGridParent" Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14" GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" Cursor="Hand" AutoGenerateColumns="False" RowDetailsVisibilityMode="Visible"  >
+            <DataGrid ItemsSource="{Binding }" HorizontalAlignment="Stretch" Margin="1,0,1,0" x:Name="dataGridParent" 
+                      Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14" GridLinesVisibility="All" 
+                      HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" Cursor="Hand" AutoGenerateColumns="False" 
+                      RowDetailsVisibilityMode="Visible"  >
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -850,27 +854,27 @@
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Kod" Binding="{Binding Code}"  />
-                    <DataGridTextColumn Header="Tarih" Binding="{Binding History}" />
-                    <DataGridTextColumn Header="Ev Sahibi" Binding="{Binding Own}" />
-                    <DataGridTextColumn Header="Konuk" Binding="{Binding Guest}" MinWidth="100"  />
-                    <DataGridTextColumn Header="1" Binding="{Binding One_guest}" MinWidth="35" />
-                    <DataGridTextColumn Header="X" Binding="{Binding X_game}" MinWidth="35" />
-                    <DataGridTextColumn Header="2" Binding="{Binding Two_guest}" MinWidth="35" />
-                    <DataGridTextColumn Header="T1" Binding="{Binding T1_host}" MinWidth="30" />
-                    <DataGridTextColumn Header="TX" Binding="{Binding TX_host}" MinWidth="30" />
-                    <DataGridTextColumn Header="T2" Binding="{Binding T2_host}" MinWidth="30" />
-                    <DataGridTextColumn Header="+"  CellStyle ="{StaticResource DataGridCellStyle}"  Binding="{Binding TotalOptions}" Width="30" />
-                    
+                    <DataGridTextColumn Header="Kod" Binding="{Binding Code}"  Width="50*" />
+                    <DataGridTextColumn Header="Tarih" Binding="{Binding History}" Width="70*"/>
+                    <DataGridTextColumn Header="Ev Sahibi" Binding="{Binding Own}" Width="100*"/>
+                    <DataGridTextColumn Header="Konuk" Binding="{Binding Guest}" Width="50*"/>
+                    <DataGridTextColumn Header="1" Binding="{Binding One_guest}" Width="30*" />
+                    <DataGridTextColumn Header="X" Binding="{Binding X_game}" Width="30*" />
+                    <DataGridTextColumn Header="2" Binding="{Binding Two_guest}" Width="30*"/>
+                    <DataGridTextColumn Header="T1" Binding="{Binding T1_host}" Width="30*" />
+                    <DataGridTextColumn Header="TX" Binding="{Binding TX_host}" Width="30*" />
+                    <DataGridTextColumn Header="T2" Binding="{Binding T2_host}" Width="30*" />
+                    <DataGridTextColumn Header="+"  CellStyle ="{StaticResource DataGridCellStyle}"  Binding="{Binding TotalOptions}" Width="30*"/>
 
-                    <DataGridTextColumn Header="Min" Binding="{Binding MinOption}" MinWidth="40" />
-                    <DataGridTextColumn Header="Lig" Binding="{Binding League}" MinWidth="80" />
-                    <DataGridTemplateColumn Header="Durum" Width="*" >
+
+                    <DataGridTextColumn Header="Min" Binding="{Binding MinOption}" Width="30*" />
+                    <DataGridTextColumn Header="Lig" Binding="{Binding League}" Width="70*" />
+                    <DataGridTemplateColumn Header="Durum" Width="Auto" >
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <ToggleButton HorizontalAlignment="Center" x:Name="toggleBtn" VerticalAlignment="Center" Margin="0" Style="{StaticResource SlidingToggleButton}" BorderBrush="{x:Null}" IsChecked="{Binding ToggleBtn}" Background="#FF2F63FF" />
-                                </StackPanel>
+
+                                <ToggleButton  x:Name="toggleBtn" VerticalAlignment="Center" Margin="0" Style="{StaticResource SlidingToggleButton}" BorderBrush="{x:Null}" IsChecked="{Binding ToggleBtn}" Background="#FF2F63FF" />
+
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -1042,13 +1046,13 @@
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Tarih" Binding="{Binding History}"  />
-                    <DataGridTextColumn Header="Kupon No" Binding="{Binding CuponNo}"  />
-                    <DataGridTextColumn Header="Tutar" Binding="{Binding Amount}"  />
-                    <DataGridTextColumn Header="Kullanici" Binding="{Binding UserName}" />
-                    <DataGridTextColumn Header="Kazanc" Binding="{Binding Earnings}"  />
-                    <DataGridTextColumn Header="Kolon Sayisi" Binding="{Binding NoOfCupons}"  />
-                    <DataGridTextColumn Header="Max. Kazanc" Binding="{Binding MaxEarning}" Width="*" />
+                    <DataGridTextColumn Header="Tarih" Binding="{Binding History}" Width="20*" />
+                    <DataGridTextColumn Header="Kupon No" Binding="{Binding CuponNo}"  Width="20*" />
+                    <DataGridTextColumn Header="Tutar" Binding="{Binding Amount}" Width="20*" />
+                    <DataGridTextColumn Header="Kullanici" Binding="{Binding UserName}" Width="20*" />
+                    <DataGridTextColumn Header="Kazanc" Binding="{Binding Earnings}" Width="20*" />
+                    <DataGridTextColumn Header="Kolon Sayisi" Binding="{Binding NoOfCupons}"  Width="20*"/>
+                    <DataGridTextColumn Header="Max. Kazanc" Binding="{Binding MaxEarning}" Width="20*" />
                    
                     <!--<DataGridTextColumn Header="Durum" Binding="{Binding Cases}" Width="80" />-->
                 </DataGrid.Columns>

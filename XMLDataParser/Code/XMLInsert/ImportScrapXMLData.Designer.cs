@@ -33,7 +33,7 @@
             // 
             // btnInset
             // 
-            this.btnInset.Location = new System.Drawing.Point(140, 33);
+            this.btnInset.Location = new System.Drawing.Point(138, 91);
             this.btnInset.Name = "btnInset";
             this.btnInset.Size = new System.Drawing.Size(75, 23);
             this.btnInset.TabIndex = 0;
@@ -41,15 +41,15 @@
             this.btnInset.UseVisualStyleBackColor = true;
             this.btnInset.Click += new System.EventHandler(this.btnInset_Click);
             // 
-            // frmInsertXml
+            // FormImportScrapXMLData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(392, 366);
             this.Controls.Add(this.btnInset);
-            this.Name = "frmInsertXml";
-            this.Text = "Insert Xml";
+            this.Name = "FormImportScrapXMLData";
+            this.Text = "Import Xml  Data";
             this.ResumeLayout(false);
 
         }

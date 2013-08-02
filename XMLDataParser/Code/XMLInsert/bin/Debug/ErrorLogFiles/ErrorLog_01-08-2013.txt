@@ -1,6 +1,5 @@
- -------------------START-------------8/1/2013 4:19:33 PM
+ -------------------START-------------8/1/2013 6:38:50 PM
 Source : ReadXmlFile
-System.InvalidOperationException: Nested table 'Cube' which inherits its namespace cannot have multiple parent tables in different namespaces.
    at System.Data.DataRelation.CheckNamespaceValidityForNestedRelations(String ns)
    at System.Data.DataRelationCollection.AddCore(DataRelation relation)
    at System.Data.DataRelationCollection.DataSetRelationCollection.AddCore(DataRelation relation)
@@ -11,6 +10,6 @@ System.InvalidOperationException: Nested table 'Cube' which inherits its namespa
    at System.Data.DataSet.InferSchema(XmlDocument xdoc, String[] excludedNamespaces, XmlReadMode mode)
    at System.Data.DataSet.ReadXml(XmlReader reader, Boolean denyResolving)
    at System.Data.DataSet.ReadXml(String fileName)
-   at ImportScrapXMLData.BL.ReadXmlFile(String filePath) in C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\BL.cs:line 39
--------------------END-------------
+   at ImportScrapXMLData.BL.ReadXmlFile(String filePath) in C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\BL.cs:line 36
+-------------------END-------------8/1/2013 6:38:52 PM
  

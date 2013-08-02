@@ -14,14 +14,7 @@ namespace ImportScrapXMLData
         public void AddtoLogFile(string Message, string Source)
         {
 
-            //string LogPath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\Files\\";
-
-           // string LogPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "ErrorLogFiles");
-           // string LogPath = Environment.CurrentDirectory + @"/ErrorLogFiles/";
-            //string LogPath = AppDomain.CurrentDomain.BaseDirectory + @"/ErrorLogFiles/";
-           // string LogPath = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)+ @"\ErrorLog");
-
-            string LogPath = @"c:/XmlErrorLogFiles/";
+            string LogPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "ErrorLogFiles/");
             if (!Directory.Exists(LogPath ))
             {
                 Directory.CreateDirectory(LogPath);

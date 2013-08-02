@@ -30,14 +30,16 @@ namespace ImportScrapXMLData
         {
             try
             {
+                filePath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "futbol.xml");
 
-                // filePath="D:/GOPI/XMLInsert/XMLInsert/XML/futbol.xml";
-                //filePath = "C:/Documents and Settings/aspire/Desktop/XmlToDatabase/XMLInsert/XMLInsert/XML/futbol.xml";
-                filePath = " http://www.ecb.int/stats/eurofxref/eurofxref-daily.xml";
-               // filePath = " http://www.w3schools.com/xml/cd_catalog.xml";
-
-
-                objBL.ReadXmlFile(filePath);
+                if (File.Exists(filePath))
+                {
+                    objBL.ReadXmlFile(filePath);
+                }
+                else
+                {
+                    MessageBox.Show("Xml file not found");
+                }
             }
             catch (Exception ex)
             {

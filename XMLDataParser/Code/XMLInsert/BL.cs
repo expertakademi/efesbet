@@ -27,13 +27,13 @@ namespace ImportScrapXMLData
        // int count = 0;
         #endregion
 
+        #region Read Xml File
+        
         public void ReadXmlFile(string filePath)
         {
             try
             {
                 ds.ReadXml(filePath);
-
-
 
                 dt = ds.Tables[2];
                 ds.Tables[2].Columns.Add("MatchHome");
@@ -90,14 +90,16 @@ namespace ImportScrapXMLData
             }
             catch (Exception ex)
             {
-                errorLog.AddtoLogFile(ex.StackTrace.ToString(), "ReadXmlFile");
+                errorLog.AddtoLogFile(ex.ToString(), "ReadXmlFile");
 
             }
 
         }
+       
+        #endregion
 
-
-
+        #region Import Xml File into Database
+        
         public void ImportXmlFile(XmlInsertEL objInsertFile)
         {
             try
@@ -130,6 +132,8 @@ namespace ImportScrapXMLData
                 errorLog.AddtoLogFile(ex.ToString(), "ImportXmlFile");
             }
         }
+
+        #endregion
 
     }
 

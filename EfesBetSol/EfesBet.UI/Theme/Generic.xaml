@@ -641,10 +641,13 @@
 
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         <Grid Grid.Column="0" Grid.ColumnSpan="2" Width="Auto" Background="{x:Null}">
-                           
-                            <TextBlock TextWrapping="Wrap" Text="Aktif" d:LayoutOverrides="Width, Height" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,0,0" Background="Red" Foreground="White"/>
-                            <TextBlock TextWrapping="Wrap" Text="Pasif" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" Background="#0394E7" Foreground="White"/>
-                            <Border x:Name="SlidingBorder" BorderBrush="#D5D3D3" BorderThickness="1" Width="40" HorizontalAlignment="Left" CornerRadius="1" Background="{TemplateBinding Background}">
+                          
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                <TextBlock TextWrapping="Wrap" Text="Pasif" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" Background="#0394E7" Foreground="White" Width="40"/>
+
+                                <TextBlock TextWrapping="Wrap" Text="Aktif" d:LayoutOverrides="Width, Height" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,0,0" Background="Red" Foreground="White" Width="40"/>
+                            </StackPanel>
+                                <Border x:Name="SlidingBorder" BorderBrush="#D5D3D3" BorderThickness="1" Width="40" HorizontalAlignment="Left" CornerRadius="1" Background="{TemplateBinding Background}">
                                 <Border BorderThickness="0">
                                     <Border.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

@@ -72,3 +72,6 @@ C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\Theme\Test1.baml
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\NewUserPopup.baml
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\NewUserPopup.g.cs
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.BLL.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.BLL.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csprojResolveAssemblyReference.cache

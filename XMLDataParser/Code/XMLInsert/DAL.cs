@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace ImportScrapXMLData
 {
@@ -38,7 +39,7 @@ namespace ImportScrapXMLData
                 else
                 {
                     objConn = new SqlConnection();
-                    objConn.ConnectionString = "Data Source=192.168.1.125;Database=EfesBet_Back;User Id=edrdev;password=edr123 ";
+                    objConn.ConnectionString = ConfigurationManager.AppSettings["ConnectionString"].ToString();
                     objConn.Open();
                 }
             }

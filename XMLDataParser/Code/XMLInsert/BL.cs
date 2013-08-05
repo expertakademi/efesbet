@@ -5,6 +5,8 @@ using System.Text;
 using System.Data;
 using System.IO;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+using System.Configuration;
 
 
 namespace ImportScrapXMLData
@@ -14,8 +16,11 @@ namespace ImportScrapXMLData
     {
         #region Global variable declaration
 
-        LogManager errorLog = new LogManager();
+        // FileSystemWatcher objFileWatch = new FileSystemWatcher();
 
+        private System.IO.FileSystemWatcher objFileWatch;
+
+        LogManager errorLog = new LogManager();
         DAL objDAl = new DAL();
         XmlInsertEL objInsertEL = new XmlInsertEL();
         SqlCommand sqlCmd = new SqlCommand();
@@ -24,11 +29,11 @@ namespace ImportScrapXMLData
         DataSet ds = new DataSet();
         DataTable dtLg = new DataTable();
         DataTable dt = new DataTable("Matches");
-       // int count = 0;
+        // int count = 0;
         #endregion
 
         #region Read Xml File
-        
+
         public void ReadXmlFile(string filePath)
         {
             try
@@ -95,11 +100,11 @@ namespace ImportScrapXMLData
             }
 
         }
-       
+
         #endregion
 
         #region Import Xml File into Database
-        
+
         public void ImportXmlFile(XmlInsertEL objInsertFile)
         {
             try
@@ -134,6 +139,144 @@ namespace ImportScrapXMLData
         }
 
         #endregion
+
+
+
+        public void WatchFile()
+        {
+            try
+            {
+                objFileWatch = new System.IO.FileSystemWatcher();
+
+
+                string filePath = Helper.GetAppConfigValue("SourcePath");
+
+                //string filePath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "XmlFiles\\");
+
+                if (Directory.Exists(filePath))
+                {
+                    objFileWatch.Path = filePath;
+                    // objFileWatch = new FileSystemWatcher();
+                    //objFileWatch.IncludeSubdirectories = true;
+                   // objFileWatch.Changed += new FileSystemEventHandler(OnChanged);
+                    objFileWatch.Created += new FileSystemEventHandler(objFileWatch_Created);
+                    //objFileWatch.Deleted += new FileSystemEventHandler(OnChanged);
+                    //objFileWatch.Renamed += new RenamedEventHandler(OnRenamed);
+                    objFileWatch.EnableRaisingEvents = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                errorLog.AddtoLogFile(ex.ToString(), "WatchFile");
+            }
+        }
+
+        void objFileWatch_Created(object sender, FileSystemEventArgs e)
+        {
+
+            try
+            {
+                string sourcePath = Helper.GetAppConfigValue("SourcePath");
+                string targetPath = Helper.GetAppConfigValue("TargetPath");
+
+                if (!Directory.Exists(targetPath))
+                {
+                    Directory.CreateDirectory(targetPath);
+                }
+
+                if (Path.GetExtension(e.Name.ToString().ToUpper()) == ".XML")
+                {
+                    System.IO.File.Move(sourcePath + e.Name, targetPath + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss_") + e.Name);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                errorLog.AddtoLogFile(ex.ToString(), "File Move and Rename");
+            }
+        }
+
+
+
+        void OnChanged(object sender, FileSystemEventArgs e)
+        {
+
+            string LogPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "WatchFiles/");
+            if (!Directory.Exists(LogPath))
+            {
+                Directory.CreateDirectory(LogPath);
+            }
+            string filename = "WatchFileLog_" + DateTime.Now.ToString("dd-MM-yyyy") + ".txt";
+            string filepath = LogPath + filename;
+            if (File.Exists(filepath))
+            {
+                using (StreamWriter writer = new StreamWriter(filepath, true))
+                {
+                    writer.WriteLine("-------------------START-------------" + DateTime.Now);
+                    writer.WriteLine("File Path : " + e.FullPath);
+                    writer.WriteLine("Change Type : " + e.ChangeType);
+                    writer.WriteLine("File Name : " + e.Name);
+                    writer.WriteLine("Date and Time : " + DateTime.Now);
+                    writer.WriteLine("-------------------END-------------");
+                    writer.WriteLine(" ");
+                }
+            }
+            else
+            {
+                StreamWriter writer = File.CreateText(filepath);
+                writer.WriteLine("-------------------START-------------" + DateTime.Now);
+                writer.WriteLine("File Path : " + e.FullPath);
+                writer.WriteLine("Change Type : " + e.ChangeType);
+                writer.WriteLine("File Name : " + e.Name);
+                writer.WriteLine("Date and Time : " + DateTime.Now);
+                writer.WriteLine("-------------------END-------------");
+                writer.WriteLine(" ");
+                writer.Close();
+            }
+
+        }
+
+
+        void OnRenamed(object sender, RenamedEventArgs e)
+        {
+
+            string LogPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "WatchFiles/");
+            if (!Directory.Exists(LogPath))
+            {
+                Directory.CreateDirectory(LogPath);
+            }
+            string filename = "WatchFileLog_" + DateTime.Now.ToString("dd-MM-yyyy") + ".txt";
+            string filepath = LogPath + filename;
+            if (File.Exists(filepath))
+            {
+                using (StreamWriter writer = new StreamWriter(filepath, true))
+                {
+                    writer.WriteLine("-------------------START-------------" + DateTime.Now);
+                    writer.WriteLine("File Path : " + e.FullPath);
+                    writer.WriteLine("Change Type : " + e.ChangeType);
+                    writer.WriteLine("File Name : " + e.OldName);
+                    writer.WriteLine("Renamed to : " + e.Name);
+                    writer.WriteLine("Date and Time : " + DateTime.Now);
+                    writer.WriteLine("-------------------END-------------");
+                    writer.WriteLine(" ");
+                }
+            }
+            else
+            {
+                StreamWriter writer = File.CreateText(filepath);
+                writer.WriteLine("-------------------START-------------" + DateTime.Now);
+                writer.WriteLine("File Path : " + e.FullPath);
+                writer.WriteLine("Change Type : " + e.ChangeType);
+                writer.WriteLine("File Name : " + e.OldName);
+                writer.WriteLine("Renamed to : " + e.Name);
+                writer.WriteLine("Date and Time : " + DateTime.Now);
+                writer.WriteLine("-------------------END-------------");
+                writer.WriteLine(" ");
+                writer.Close();
+            }
+
+        }
 
     }
 

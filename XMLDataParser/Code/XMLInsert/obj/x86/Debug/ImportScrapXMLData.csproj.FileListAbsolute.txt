@@ -16,3 +16,15 @@ C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\obj\x
 C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\obj\x86\Debug\ImportScrapXMLData.Properties.Resources.resources
 C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XMLInsert.exe.config
+D:\Work Station\Work Station\EfesBet\Backup\Aug 5\XMLInsert\XMLInsert\bin\Debug\XMLInsert.exe.config
+D:\Work Station\Work Station\EfesBet\Backup\Aug 5\XMLInsert\XMLInsert\obj\x86\Debug\XMLInsert.exe
+D:\Work Station\Work Station\EfesBet\Backup\Aug 5\XMLInsert\XMLInsert\obj\x86\Debug\XMLInsert.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\XMLDataParser\Code\XMLInsert\bin\Debug\XMLInsert.exe.config
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\XMLDataParser\Code\XMLInsert\obj\x86\Debug\XMLInsert.exe
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\XMLDataParser\Code\XMLInsert\obj\x86\Debug\XMLInsert.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\XMLDataParser\Code\XMLInsert\bin\Debug\XMLInsert.exe
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\XMLDataParser\Code\XMLInsert\bin\Debug\XMLInsert.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\XMLDataParser\Code\XMLInsert\obj\x86\Debug\ImportScrapXMLData.FormImportScrapXMLData.resources
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\XMLDataParser\Code\XMLInsert\obj\x86\Debug\ImportScrapXMLData.Properties.Resources.resources
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\XMLDataParser\Code\XMLInsert\obj\x86\Debug\ImportScrapXMLData.csproj.GenerateResource.Cache

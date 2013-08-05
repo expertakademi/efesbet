@@ -223,6 +223,12 @@
     <Resource Include="Resource\Images\Tools.png" />
     <Resource Include="Resource\Images\TV.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EfesBet.BLL\EfesBet.BLL.csproj">
+      <Project>{2FF08DC2-F503-4161-A15A-160E305B487B}</Project>
+      <Name>EfesBet.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

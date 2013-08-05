@@ -33,7 +33,7 @@
             // 
             // btnInset
             // 
-            this.btnInset.Location = new System.Drawing.Point(138, 91);
+            this.btnInset.Location = new System.Drawing.Point(141, 99);
             this.btnInset.Name = "btnInset";
             this.btnInset.Size = new System.Drawing.Size(75, 23);
             this.btnInset.TabIndex = 0;

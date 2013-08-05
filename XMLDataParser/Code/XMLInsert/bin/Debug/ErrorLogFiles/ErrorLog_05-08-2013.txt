@@ -1,0 +1,9 @@
+ -------------------START-------------8/5/2013 4:11:16 PM
+Source : ImportXmlFile
+System.InvalidOperationException: ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at ImportScrapXMLData.BL.ImportXmlFile(XmlInsertEL objInsertFile) in D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\XMLDataParser\Code\XMLInsert\BL.cs:line 131
+-------------------END-------------8/5/2013 4:11:18 PM
+ 

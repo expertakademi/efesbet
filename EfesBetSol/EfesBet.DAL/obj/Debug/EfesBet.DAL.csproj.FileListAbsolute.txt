@@ -1,0 +1,4 @@
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.DAL\bin\Debug\EfesBet.DAL.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.DAL\bin\Debug\EfesBet.DAL.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.DAL\obj\Debug\EfesBet.DAL.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.DAL\obj\Debug\EfesBet.DAL.pdb

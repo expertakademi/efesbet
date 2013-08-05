@@ -21,7 +21,7 @@ namespace EfesBetGUI.ViewModel
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Command"/> class.
+        /// Initializes a new instance of the <see cref="Command"/> class. 
         /// </summary>
         /// <param name="parameterizedAction">The parameterized action.</param>
         /// <param name="canExecute">if set to <c>true</c> [can execute].</param>
@@ -33,7 +33,7 @@ namespace EfesBetGUI.ViewModel
         }
 
         /// <summary>
-        /// Executes the command.
+      /// Executes the command. 
         /// </summary>
         /// <param name="param">The param.</param>
         public virtual void DoExecute(object param)

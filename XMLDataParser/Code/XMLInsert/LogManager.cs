@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace ImportScrapXMLData
 {
@@ -14,8 +15,12 @@ namespace ImportScrapXMLData
         public void AddtoLogFile(string Message, string Source)
         {
 
-            string LogPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "ErrorLogFiles/");
-            if (!Directory.Exists(LogPath ))
+
+            //string LogPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "ErrorLogFiles/");//anidya put in app.config
+            //string LogPath =  "C:/ErrorLogFiles/";//anidya put in app.config
+            // string LogPath = Path.Combine(ConfigurationManager.AppSettings[" "].ToString(), "ErrorLogFiles/");
+           string LogPath = Convert.ToString(ConfigurationManager.AppSettings["LogFilePath"]);
+            if (!Directory.Exists(LogPath))
             {
                 Directory.CreateDirectory(LogPath);
             }
@@ -43,7 +48,6 @@ namespace ImportScrapXMLData
                 writer.Close();
             }
         }
-
 
     }
 }

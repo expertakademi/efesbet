@@ -19,18 +19,18 @@ namespace ImportScrapXMLData
         string filePath = string.Empty;
 
 
-        FileSystemWatcher fileWatch = new FileSystemWatcher();
-
         public FormImportScrapXMLData()
         {
             InitializeComponent();
+            objBL.WatchFile();
+
         }
 
         private void btnInset_Click(object sender, EventArgs e)
         {
             try
             {
-                filePath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "futbol.xml");
+                filePath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "XmlFiles/futbol.xml");
 
                 if (File.Exists(filePath))
                 {
@@ -38,6 +38,7 @@ namespace ImportScrapXMLData
                 }
                 else
                 {
+
                     MessageBox.Show("Xml file not found");
                 }
             }
@@ -46,5 +47,6 @@ namespace ImportScrapXMLData
                 errorLog.AddtoLogFile(ex.ToString(), "InsertButtonClick_Form1");
             }
         }
+    
     }
 }

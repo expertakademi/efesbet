@@ -1,0 +1,308 @@
+-------------------START-------------8/3/2013 10:33:59 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 10:33:59 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 10:33:59 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\New Text Document.txt
+Change Type : Deleted
+File Name : New Text Document.txt
+Date and Time : 8/3/2013 10:33:59 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 10:34:41 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 10:34:41 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 10:39:13 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 10:39:13 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 10:40:15 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 10:40:15 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 10:42:42 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 10:42:42 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 10:47:42 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 10:47:42 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 10:55:39 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 10:55:39 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 10:56:40 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 10:56:40 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 10:57:04 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Changed
+File Name : futbol.xml
+Date and Time : 8/3/2013 10:57:04 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 10:57:04 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Changed
+File Name : futbol.xml
+Date and Time : 8/3/2013 10:57:04 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 10:57:04 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Changed
+File Name : futbol.xml
+Date and Time : 8/3/2013 10:57:04 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:17:57 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:17:57 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:23:17 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:23:17 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:23:26 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Changed
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:23:26 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:23:26 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Changed
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:23:26 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:23:26 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Changed
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:23:26 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:25:30 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:25:30 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:25:38 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Changed
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:25:38 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:25:38 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Changed
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:25:38 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:25:38 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Changed
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:25:38 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:27:27 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:27:27 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:34:20 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:34:20 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:34:43 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\2.txt
+Change Type : Changed
+File Name : 2.txt
+Date and Time : 8/3/2013 11:34:43 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:34:43 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\2.txt
+Change Type : Changed
+File Name : 2.txt
+Date and Time : 8/3/2013 11:34:43 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:34:43 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\2.txt
+Change Type : Changed
+File Name : 2.txt
+Date and Time : 8/3/2013 11:34:43 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:34:46 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\2.txt
+Change Type : Deleted
+File Name : 2.txt
+Date and Time : 8/3/2013 11:34:46 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:38:17 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Changed
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:38:17 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:38:17 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Changed
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:38:17 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:38:17 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Changed
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:38:17 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:38:17 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Changed
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:38:17 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:41:46 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\futbol.xml
+Change Type : Deleted
+File Name : futbol.xml
+Date and Time : 8/3/2013 11:41:46 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:41:46 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\Copy of futbol.xml
+Change Type : Deleted
+File Name : Copy of futbol.xml
+Date and Time : 8/3/2013 11:41:46 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:41:46 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\Copy of Copy of futbol.xml
+Change Type : Deleted
+File Name : Copy of Copy of futbol.xml
+Date and Time : 8/3/2013 11:41:46 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:53:42 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\Copy (4) of futbol.xml
+Change Type : Changed
+File Name : Copy (4) of futbol.xml
+Date and Time : 8/3/2013 11:53:42 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:53:42 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\Copy (4) of futbol.xml
+Change Type : Changed
+File Name : Copy (4) of futbol.xml
+Date and Time : 8/3/2013 11:53:42 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:53:42 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\Copy (4) of futbol.xml
+Change Type : Changed
+File Name : Copy (4) of futbol.xml
+Date and Time : 8/3/2013 11:53:42 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:55:39 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\Copy of futbol.xml
+Change Type : Deleted
+File Name : Copy of futbol.xml
+Date and Time : 8/3/2013 11:55:39 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:55:39 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\Copy (2) of futbol.xml
+Change Type : Deleted
+File Name : Copy (2) of futbol.xml
+Date and Time : 8/3/2013 11:55:39 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:55:39 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\Copy (3) of futbol.xml
+Change Type : Deleted
+File Name : Copy (3) of futbol.xml
+Date and Time : 8/3/2013 11:55:39 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:55:39 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\Copy (4) of futbol.xml
+Change Type : Deleted
+File Name : Copy (4) of futbol.xml
+Date and Time : 8/3/2013 11:55:39 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:55:39 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\Copy (5) of futbol.xml
+Change Type : Deleted
+File Name : Copy (5) of futbol.xml
+Date and Time : 8/3/2013 11:55:39 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:56:13 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\Copy of futbol.xml
+Change Type : Deleted
+File Name : Copy of futbol.xml
+Date and Time : 8/3/2013 11:56:13 AM
+-------------------END-------------
+ 
+-------------------START-------------8/3/2013 11:57:15 AM
+File Path : C:\Documents and Settings\aspire\Desktop\XmlToDatabase\XMLInsert\XMLInsert\bin\Debug\XmlFiles\Copy of futbol.xml
+Change Type : Deleted
+File Name : Copy of futbol.xml
+Date and Time : 8/3/2013 11:57:15 AM
+-------------------END-------------
+ 

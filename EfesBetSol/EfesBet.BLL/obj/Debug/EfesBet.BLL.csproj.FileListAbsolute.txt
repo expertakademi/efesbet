@@ -1,0 +1,7 @@
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.BLL\bin\Debug\EfesBet.BLL.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.BLL\bin\Debug\EfesBet.BLL.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.BLL\obj\Debug\EfesBet.BLL.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.BLL\obj\Debug\EfesBet.BLL.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.BLL\bin\Debug\EfesBet.DAL.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.BLL\bin\Debug\EfesBet.DAL.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.BLL\obj\Debug\EfesBet.BLL.csprojResolveAssemblyReference.cache

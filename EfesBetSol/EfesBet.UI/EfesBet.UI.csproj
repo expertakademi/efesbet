@@ -39,6 +39,10 @@
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -69,10 +73,14 @@
     <Compile Include="Model\RateEstimationGuestModel.cs" />
     <Compile Include="Model\SubGridModel.cs" />
     <Compile Include="Model\UserModel.cs" />
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModel\Command.cs" />
     <Compile Include="ViewModel\DateTimeMonthUCViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\NewUserPopupViewModel.cs" />
     <Compile Include="ViewModel\OwnGuestViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\WorkspaceViewModel.cs" />
     <Compile Include="View\MenuPopup.xaml.cs">
       <DependentUpon>MenuPopup.xaml</DependentUpon>
     </Compile>
@@ -147,6 +155,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -227,6 +236,10 @@
     <ProjectReference Include="..\EfesBet.BLL\EfesBet.BLL.csproj">
       <Project>{2FF08DC2-F503-4161-A15A-160E305B487B}</Project>
       <Name>EfesBet.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EfesBet.Entities\EfesBet.Entities.csproj">
+      <Project>{1CF80BBB-93BE-4ECF-8BF8-2EC91030ECFC}</Project>
+      <Name>EfesBet.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -27,6 +27,7 @@ namespace EfesBetGUI
     public partial class MainWindow : Window
     {
         OwnGuestViewModel vmSK = new OwnGuestViewModel();
+        MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
         popup pop = new popup();
         GridLength colfirstOrgPos, colLastOrgPos;
         DataTable dt = new DataTable();
@@ -36,8 +37,6 @@ namespace EfesBetGUI
         int isOpen = 0;
 
         DataGrid innerDataGrid = new DataGrid();
-
-
         OwnGuestViewModel ownguest = new ViewModel.OwnGuestViewModel();
 
         public MainWindow()
@@ -58,7 +57,7 @@ namespace EfesBetGUI
           
 
             #region -- ViewModel --
-            vmSK = new OwnGuestViewModel();
+            //vmSK = new OwnGuestViewModel();
             this.DataContext = vmSK;
             #endregion
             image1.VerticalAlignment = System.Windows.VerticalAlignment.Center;
@@ -67,8 +66,8 @@ namespace EfesBetGUI
             colLastOrgPos = grdLastCol.Width;
             spLeft.IsEnabled = false;
             spRight.IsEnabled = false;
-            this.dataGridParent.DataContext = ownguest.GuestHostTotalList;
-            this.dataGridUserDetails.DataContext = ownguest.UserList;
+            //this.dataGridParent.DataContext = ownguest.GuestHostTotalList; 
+            //this.dataGridUserDetails.DataContext = ownguest.UserList; 
             //this.dataGridParent.RowDetailsVisibilityChanged += new EventHandler<DataGridRowDetailsEventArgs>(dataGridParent_RowDetailsVisibilityChanged);
             //this.dataGridParent.MouseRightButtonUp += new MouseButtonEventHandler(dataGridParent_MouseRightButtonUp);
             //this.dataGridParent.MouseLeftButtonUp += new MouseButtonEventHandler(dataGridParent_MouseLeftButtonUp);
@@ -76,6 +75,7 @@ namespace EfesBetGUI
             this.dgrdLeftBottom.MouseLeftButtonUp += new MouseButtonEventHandler(dgrdLeftBottom_MouseLeftButtonUp);
             this.dgrdLeftBottom.SizeChanged += new SizeChangedEventHandler(dgrdLeftBottom_SizeChanged);
             this.brdOyna.MouseLeftButtonUp += new MouseButtonEventHandler(brdOyna_MouseLeftButtonUp);
+            this.DataContext = mainWindowViewModel;
         }
 
 
@@ -124,13 +124,10 @@ namespace EfesBetGUI
             }
             catch (Exception)
             {
-
+                //
             }
 
         }
-
-
-
         private void InnerGridRowClick(object sender, RoutedEventArgs e)
         {
             RateEstimationGuest objRateEst = new RateEstimationGuest();
@@ -168,28 +165,28 @@ namespace EfesBetGUI
 
             User objUser = new User();
 
-            if (dataGridUserDetails.Items.Count>0)
-            {
-                int num = ownguest.UserList.Count-1;
+            //if (dataGridUserDetails.Items.Count>0)
+            //{
+            //    int num = ownguest.UserList.Count-1;
 
 
-                string str = ownguest.UserList[num].CuponNo.Substring(0, 14);
-                int numcheck = Convert.ToInt32(ownguest.UserList[num].CuponNo.Substring(14,4));
+            //    string str = ownguest.UserList[num].CuponNo.Substring(0, 14);
+            //    int numcheck = Convert.ToInt32(ownguest.UserList[num].CuponNo.Substring(14,4));
 
-                //foreach (User item in ownguest.UserList[0])
-               // {
-                objUser.History = ownguest.UserList[num].History;
-                objUser.CuponNo = ownguest.UserList[num].CuponNo.Substring(0,14) + (Convert.ToInt32( ownguest.UserList[num].CuponNo.Substring(14,4))+1213 );
-                objUser.Amount = ownguest.UserList[num].Amount;
-                objUser.UserName = ownguest.UserList[num].UserName;
-                objUser.Earnings = ownguest.UserList[num].Earnings;
-                objUser.NoOfCupons = ownguest.UserList[num].NoOfCupons+1;
-                objUser.MaxEarning = ownguest.UserList[num].MaxEarning;
-             // }
+            //    //foreach (User item in ownguest.UserList[0])
+            //   // {
+            //    objUser.History = ownguest.UserList[num].History;
+            //    objUser.CuponNo = ownguest.UserList[num].CuponNo.Substring(0,14) + (Convert.ToInt32( ownguest.UserList[num].CuponNo.Substring(14,4))+1213 );
+            //    objUser.Amount = ownguest.UserList[num].Amount;
+            //    objUser.UserName = ownguest.UserList[num].UserName;
+            //    objUser.Earnings = ownguest.UserList[num].Earnings;
+            //    objUser.NoOfCupons = ownguest.UserList[num].NoOfCupons+1;
+            //    objUser.MaxEarning = ownguest.UserList[num].MaxEarning;
+            // // }
 
-            }
-            ownguest.UserList.Add(objUser);
-            this.dataGridUserDetails.DataContext = ownguest.UserList;
+            //}
+            //ownguest.UserList.Add(objUser);
+            //this.dataGridUserDetails.DataContext = ownguest.UserList;
 
            // dataGridUserDetails.Items.Add(objUser);
             /*  */

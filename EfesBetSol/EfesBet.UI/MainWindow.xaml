@@ -4,11 +4,17 @@
         xmlns:vmSahibiKonuk="clr-namespace:EfesBetGUI.ViewModel"
         xmlns:DateTimeUC="clr-namespace:EfesBetGUI.View.UserControls"        
         xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         Title="MainWindow" >
     <Window.Resources>
         <ResourceDictionary Source="Theme/Generic.xaml">
         </ResourceDictionary>
     </Window.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height=".05*"></RowDefinition>
@@ -780,7 +786,7 @@
         
             
             <Border x:Name="brdCenterGrid" BorderBrush="White" BorderThickness="0" CornerRadius="0" Grid.Row="1" Grid.Column="2"  Grid.RowSpan="3" Margin="5,0,5,1">
-            <DataGrid ItemsSource="{Binding }" HorizontalAlignment="Stretch" Margin="1,0,1,0" x:Name="dataGridParent" 
+            <DataGrid ItemsSource="{Binding MatchObsCollection}" HorizontalAlignment="Stretch" Margin="1,0,1,0" x:Name="dataGridParent" 
                       Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14" GridLinesVisibility="All" 
                       HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" Cursor="Hand" AutoGenerateColumns="False" 
                       RowDetailsVisibilityMode="Visible"  >
@@ -854,21 +860,21 @@
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Kod" Binding="{Binding Code}"  Width="50*" />
-                    <DataGridTextColumn Header="Tarih" Binding="{Binding History}" Width="70*"/>
-                    <DataGridTextColumn Header="Ev Sahibi" Binding="{Binding Own}" Width="100*"/>
-                    <DataGridTextColumn Header="Konuk" Binding="{Binding Guest}" Width="50*"/>
-                    <DataGridTextColumn Header="1" Binding="{Binding One_guest}" Width="30*" />
-                    <DataGridTextColumn Header="X" Binding="{Binding X_game}" Width="30*" />
-                    <DataGridTextColumn Header="2" Binding="{Binding Two_guest}" Width="30*"/>
-                    <DataGridTextColumn Header="T1" Binding="{Binding T1_host}" Width="30*" />
-                    <DataGridTextColumn Header="TX" Binding="{Binding TX_host}" Width="30*" />
-                    <DataGridTextColumn Header="T2" Binding="{Binding T2_host}" Width="30*" />
-                    <DataGridTextColumn Header="+"  CellStyle ="{StaticResource DataGridCellStyle}"  Binding="{Binding TotalOptions}" Width="30*"/>
+                    <DataGridTextColumn Header="Kod" Binding="{Binding MatchNo}"  Width="50*" />
+                    <DataGridTextColumn Header="Tarih" Binding="{Binding MatchDate}" Width="70*"/>
+                    <DataGridTextColumn Header="Ev Sahibi" Binding="{Binding LeagueName}" Width="100*"/>
+                    <DataGridTextColumn Header="Konuk" Binding="{Binding LeagueName}" Width="50*"/>
+                    <DataGridTextColumn Header="1" Binding="{Binding MatchNo}" Width="30*" />
+                    <DataGridTextColumn Header="X" Binding="{Binding MatchNo}" Width="30*" />
+                    <DataGridTextColumn Header="2" Binding="{Binding MatchNo}" Width="30*"/>
+                    <DataGridTextColumn Header="T1" Binding="{Binding MatchNo}" Width="30*" />
+                    <DataGridTextColumn Header="TX" Binding="{Binding MatchNo}" Width="30*" />
+                    <DataGridTextColumn Header="T2" Binding="{Binding MatchNo}" Width="30*" />
+                    <DataGridTextColumn Header="+"  CellStyle ="{StaticResource DataGridCellStyle}"  Binding="{Binding MatchNo}" Width="30*"/>
 
 
-                    <DataGridTextColumn Header="Min" Binding="{Binding MinOption}" Width="30*" />
-                    <DataGridTextColumn Header="Lig" Binding="{Binding League}" Width="70*" />
+                    <DataGridTextColumn Header="Min" Binding="{Binding MatchNo}" Width="30*" />
+                    <DataGridTextColumn Header="Lig" Binding="{Binding LeagueName}" Width="70*" />
                     <DataGridTemplateColumn Header="Durum" Width="Auto" >
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -878,7 +884,7 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <!--<DataGridTextColumn Header="Durum" Binding="{Binding Cases}" Width="80" />-->
+                    
                 </DataGrid.Columns>
                 <DataGrid.RowStyle>
                     <Style TargetType="{x:Type DataGridRow}">
@@ -1046,15 +1052,14 @@
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Tarih" Binding="{Binding History}" Width="20*" />
+                    <DataGridTextColumn Header="Tarih" Binding="{Binding MatchId}" Width="20*" />
                     <DataGridTextColumn Header="Kupon No" Binding="{Binding CuponNo}"  Width="20*" />
                     <DataGridTextColumn Header="Tutar" Binding="{Binding Amount}" Width="20*" />
                     <DataGridTextColumn Header="Kullanici" Binding="{Binding UserName}" Width="20*" />
                     <DataGridTextColumn Header="Kazanc" Binding="{Binding Earnings}" Width="20*" />
                     <DataGridTextColumn Header="Kolon Sayisi" Binding="{Binding NoOfCupons}"  Width="20*"/>
-                    <DataGridTextColumn Header="Max. Kazanc" Binding="{Binding MaxEarning}" Width="20*" />
-                   
-                    <!--<DataGridTextColumn Header="Durum" Binding="{Binding Cases}" Width="80" />-->
+                    <DataGridTextColumn Header="Max. Kazanc" Binding="{Binding MaxEarning}" Width="20*" />                 
+                    
                 </DataGrid.Columns>
                 <DataGrid.Resources>
                     <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>

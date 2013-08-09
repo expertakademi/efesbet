@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using EfesBetGUI.ViewModel;
 
 namespace EfesBetGUI.View
 {
@@ -18,39 +19,39 @@ namespace EfesBetGUI.View
     /// </summary>
     public partial class test : Window
     {
-        public static RoutedCommand CustomRoutedCommand = new RoutedCommand();
-        
+        MainWindowViewModel v = new MainWindowViewModel();
         public test()
         {
             InitializeComponent();
-            StackPanel CustomCommandStackPanel = new StackPanel();
-            Button CustomCommandButton = new Button();
-            CustomCommandStackPanel.Children.Add(CustomCommandButton);
+            this.DataContext = v;
+            //StackPanel CustomCommandStackPanel = new StackPanel();
+            //Button CustomCommandButton = new Button();
+            //CustomCommandStackPanel.Children.Add(CustomCommandButton);
 
-            CustomCommandButton.Command = CustomRoutedCommand;
-            CommandBinding customCommandBinding = new CommandBinding(CustomRoutedCommand, ExecutedCustomCommand, CanExecuteCustomCommand);
+            //CustomCommandButton.Command = CustomRoutedCommand;
+            //CommandBinding customCommandBinding = new CommandBinding(CustomRoutedCommand, ExecutedCustomCommand, CanExecuteCustomCommand);
         }
-        private void ExecutedCustomCommand(object sender,
-    ExecutedRoutedEventArgs e)
-        {
-            MessageBox.Show("Custom Command Executed");
-        }
-        // CanExecuteRoutedEventHandler that only returns true if 
-        // the source is a control.  
-        private void CanExecuteCustomCommand(object sender,
-            CanExecuteRoutedEventArgs e)
-        {
-            Control target = e.Source as Control;
+    //    private void ExecutedCustomCommand(object sender,
+    //ExecutedRoutedEventArgs e)
+    //    {
+    //        MessageBox.Show("Custom Command Executed");
+    //    }
+    //    // CanExecuteRoutedEventHandler that only returns true if 
+    //    // the source is a control.  
+    //    private void CanExecuteCustomCommand(object sender,
+    //        CanExecuteRoutedEventArgs e)
+    //    {
+    //        Control target = e.Source as Control;
 
-            if (target != null)
-            {
-                e.CanExecute = true;
-            }
-            else
-            {
-                e.CanExecute = false;
-            }
-        }
+    //        if (target != null)
+    //        {
+    //            e.CanExecute = true;
+    //        }
+    //        else
+    //        {
+    //            e.CanExecute = false;
+    //        }
+    //    }
         /* */
     }
 }

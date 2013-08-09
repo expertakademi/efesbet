@@ -4,6 +4,8 @@ using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Windows;
+using EfesBetGUI.View;
+using EfesBetGUI.ViewModel;
 
 namespace EfesBetGUI
 {
@@ -11,14 +13,14 @@ namespace EfesBetGUI
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
-    {
-        //protected override void OnStartup(StartupEventArgs e)
-        //{
-        //    base.OnStartup(e);
-        //    MainWindow mainWindow = new MainWindow();
-        //    //ProductViewModel VM = new ProductViewModel();
-        //    //window.DataContext = VM;
-        //    mainWindow.Show();
-        //}
+    {        
+        MainWindowViewModel mainWindowVM = new MainWindowViewModel();
+        MainWindow mainWindow = new MainWindow();
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);            
+            mainWindow.DataContext = mainWindowVM;            
+            mainWindow.Show();
+        }
     }
 }

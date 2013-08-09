@@ -40,12 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MatchBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EfesBet.DAL\EfesBet.DAL.csproj">
       <Project>{A95BC794-E72C-4CAF-9C3D-ACADE9DCD03D}</Project>
       <Name>EfesBet.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EfesBet.Entities\EfesBet.Entities.csproj">
+      <Project>{1CF80BBB-93BE-4ECF-8BF8-2EC91030ECFC}</Project>
+      <Name>EfesBet.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

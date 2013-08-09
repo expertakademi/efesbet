@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfesBet.DAL", "EfesBet.DAL\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfesBet.Entities", "EfesBet.Entities\EfesBet.Entities.csproj", "{1CF80BBB-93BE-4ECF-8BF8-2EC91030ECFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfesBet.DataContract", "EfesBet.DataContract\EfesBet.DataContract.csproj", "{1429FDC4-617A-4BEE-84D7-E4A854F61134}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,16 @@ Global
 		{1CF80BBB-93BE-4ECF-8BF8-2EC91030ECFC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1CF80BBB-93BE-4ECF-8BF8-2EC91030ECFC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1CF80BBB-93BE-4ECF-8BF8-2EC91030ECFC}.Release|x86.ActiveCfg = Release|Any CPU
+		{1429FDC4-617A-4BEE-84D7-E4A854F61134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1429FDC4-617A-4BEE-84D7-E4A854F61134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1429FDC4-617A-4BEE-84D7-E4A854F61134}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1429FDC4-617A-4BEE-84D7-E4A854F61134}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1429FDC4-617A-4BEE-84D7-E4A854F61134}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1429FDC4-617A-4BEE-84D7-E4A854F61134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1429FDC4-617A-4BEE-84D7-E4A854F61134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1429FDC4-617A-4BEE-84D7-E4A854F61134}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1429FDC4-617A-4BEE-84D7-E4A854F61134}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1429FDC4-617A-4BEE-84D7-E4A854F61134}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -26,7 +26,7 @@ namespace EfesBetGUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        OwnGuestViewModel vmSK = new OwnGuestViewModel();
+        //OwnGuestViewModel vmSK = new OwnGuestViewModel();
         MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
         popup pop = new popup();
         GridLength colfirstOrgPos, colLastOrgPos;
@@ -37,11 +37,11 @@ namespace EfesBetGUI
         int isOpen = 0;
 
         DataGrid innerDataGrid = new DataGrid();
-        OwnGuestViewModel ownguest = new ViewModel.OwnGuestViewModel();
+        MainWindowViewModel ownguest = new ViewModel.MainWindowViewModel();
 
         public MainWindow()
         {
-            InitializeComponent();//
+            InitializeComponent();
 
          DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0,0,1), DispatcherPriority.Normal, delegate
          {
@@ -58,7 +58,7 @@ namespace EfesBetGUI
 
             #region -- ViewModel --
             //vmSK = new OwnGuestViewModel();
-            this.DataContext = vmSK;
+            this.DataContext = mainWindowViewModel;
             #endregion
             image1.VerticalAlignment = System.Windows.VerticalAlignment.Center;
             image2.VerticalAlignment = System.Windows.VerticalAlignment.Center;
@@ -84,7 +84,7 @@ namespace EfesBetGUI
             try
             {
                 var row = (DataGridRow)sender;
-                row.DataContext = ownguest.SubGridItemList;
+                //row.DataContext = ownguest.SubGridItemList;
 
                 string value = dataGridParent.CurrentColumn.Header.ToString();
                 if (value == "+")
@@ -97,7 +97,7 @@ namespace EfesBetGUI
                         if (tb.Visibility == Visibility.Collapsed)
                         {
                             tb.Visibility = Visibility.Visible;
-                            tb.DataContext = ownguest.SubGridItemList;
+                            //tb.DataContext = ownguest.SubGridItemList;
                             row.DetailsVisibility = Visibility.Visible;
 
                             DispatcherTimer dispTimer = new DispatcherTimer(new TimeSpan(0, 0, 30), DispatcherPriority.Normal, delegate
@@ -303,7 +303,7 @@ namespace EfesBetGUI
 
                     tb.Visibility = Visibility.Visible;
 
-                    tb.DataContext = ownguest.SubGridItemList;
+                    //tb.DataContext = ownguest.SubGridItemList;
 
                     innerDataGrid = e.DetailsElement as DataGrid;
                     //innerDataGrid.DataContext = ownguest.SubGridItemList;

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EfesBetGUI.Entity
 {
-    class RateEstimationGuest
+    public class RateEstimationGuest
     {
         public int No { get; set; }
         public int Code { get; set; }

@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EfesBet.DataContract\EfesBet.DataContract.csproj">
+      <Project>{1429FDC4-617A-4BEE-84D7-E4A854F61134}</Project>
+      <Name>EfesBet.DataContract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EfesBet.Entities\EfesBet.Entities.csproj">
       <Project>{1CF80BBB-93BE-4ECF-8BF8-2EC91030ECFC}</Project>
       <Name>EfesBet.Entities</Name>

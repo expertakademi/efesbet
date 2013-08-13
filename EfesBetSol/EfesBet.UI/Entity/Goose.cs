@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EfesBetGUI.Entity
 {
-    class Goose
+    public class Goose
     {
         public double KB { get; set; }
         public double MaxGoose { get; set; }

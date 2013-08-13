@@ -7,6 +7,8 @@ using System.Data;
 using System.Configuration;
 using EfesBet.Entities;
 using System.Data.SqlTypes;
+using EfesBet.DataContract;
+
 
 namespace EfesBet.DAL
 {
@@ -50,16 +52,16 @@ namespace EfesBet.DAL
         }
         #endregion
         #region -- Methods ----
-        List<Match> listMatch = new List<Match>();
-        Match match = new Match();
+        List<GetMatchDetailsDC> listMatch = new List<GetMatchDetailsDC>();
+        GetMatchDetailsDC match = new GetMatchDetailsDC();
         /// <summary>
         /// gets the contents of the 
         /// </summary>
         /// <returns></returns>
-        public List<Match> GetMatch()
+        public List<GetMatchDetailsDC> GetMatch()
         {
             objConn = GetConnection();
-            listMatch = new List<Match>();
+            listMatch = new List<GetMatchDetailsDC>();
             SqlCommand cmd = new SqlCommand("GetMatchDetails",objConn);
             //SqlDataAdapter ad = new SqlDataAdapter();
             //DataTable dt = new DataTable();
@@ -72,7 +74,7 @@ namespace EfesBet.DAL
             {
                 while (reader.Read())
                 {
-                    match = new Match();
+                    match = new GetMatchDetailsDC();
                     if (reader["MatchNo"] != null)
                     {
                         match.MatchNo = Convert.ToInt32(reader["MatchNo"]);
@@ -86,7 +88,8 @@ namespace EfesBet.DAL
                         match.MatchDate = Convert.ToDateTime(reader["MatchDate"]);
 
                     if (!string.IsNullOrEmpty(reader["LeagueName"].ToString()))
-                        match.LeagueName = reader["LeagueName"].ToString();                  
+                        match.LeagueName = reader["LeagueName"].ToString();
+                    //
                     //
                     listMatch.Add(match);
                 }
@@ -94,7 +97,7 @@ namespace EfesBet.DAL
             return listMatch;
         }
         #endregion
-        /*  */
+        /*     */
         //
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EfesBetGUI.Entity
 {
-    class OddsResult
+    public class OddsResult
     {
         public int Kod { get; set; }
         public string Sahibi { get; set; }

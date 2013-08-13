@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EfesBetGUI.Entity
 {
-    class SubGridItem
+    public class SubGridItem
     {
         public int Kod { get; set; }
         public string Alt_Secenakler { get; set; }     

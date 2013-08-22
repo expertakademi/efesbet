@@ -56,7 +56,6 @@ D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.BLL.pdb
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.Entities.pdb
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.DAL.pdb
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csprojResolveAssemblyReference.cache
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\Theme\Generic.baml
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\Theme\Test1.baml
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\MenuPopup.baml
@@ -82,3 +81,4 @@ D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.exe.config
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.DataContract.dll
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.DataContract.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csprojResolveAssemblyReference.cache

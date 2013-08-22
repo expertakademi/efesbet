@@ -19,11 +19,11 @@ namespace EfesBetGUI.View
     /// </summary>
     public partial class test : Window
     {
-        MainWindowViewModel v = new MainWindowViewModel();
+        //MainWindowViewModel v = new MainWindowViewModel();
         public test()
         {
             InitializeComponent();
-            this.DataContext = v;
+            //this.DataContext = v;
             //StackPanel CustomCommandStackPanel = new StackPanel();
             //Button CustomCommandButton = new Button();
             //CustomCommandStackPanel.Children.Add(CustomCommandButton);

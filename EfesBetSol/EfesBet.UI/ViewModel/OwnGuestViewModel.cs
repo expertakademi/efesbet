@@ -25,17 +25,13 @@ namespace EfesBetGUI.ViewModel
             if (PropertyChanged != null)
                 PropertyChanged(this,
                     new PropertyChangedEventArgs(propertyName));
-        }
-        
-
-        
-
-
+        }   
 
         #region INotifyPropertyChanged Members
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
+        /**/
     }
 }

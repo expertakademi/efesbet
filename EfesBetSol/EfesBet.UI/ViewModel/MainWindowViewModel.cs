@@ -9,22 +9,57 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using EfesBetGUI.EfesBetServiceReference;
 using EfesBet.DataContract;
+using System.Windows.Threading;
+using System.Threading;
+using System.Diagnostics;
+using System.Collections;
+using System.Threading.Tasks;
 
 namespace EfesBetGUI.ViewModel
 {
     public class MainWindowViewModel:WorkspaceViewModel,INotifyCollectionChanged
     {        
         RelayCommand _loadCommand;
+        
         MatchBLL matchBLL = new MatchBLL();
         EfesBetServiceReference.EfesBetClient proxy = new EfesBetClient();
+        public ICommand DoSomethingCommand { get; set; }
         public MainWindowViewModel()
         {
+            
+            DoSomethingCommand = new AsyncDelegateCommand(
+                () => Load(), null, null,
+                (ex) => Debug.WriteLine(ex.Message));
+            //DispatcherTimer timer = new DispatcherTimer();
+            //timer.Interval = new TimeSpan(0, 0, 10);
+            //timer.Start();
+            //timer.Tick += new EventHandler(timer_Tick);
             _matchObsCollection = new ObservableCollection<EfesBet.DataContract.GetMatchDetailsDC>();
             
-            Load();
-           
+            PopulateSahibiKonuk();
             _matchObsCollection.CollectionChanged += new NotifyCollectionChangedEventHandler(_matchObsCollection_CollectionChanged);
+            TestAsync();
         }
+        public MainWindowViewModel(SynchronizationContext context)
+        {
+            
+        }
+        #region Asynchronous Call         
+        private async void TestAsync()
+        {
+            
+            ObservableCollection<EfesBet.DataContract.GetMatchDetailsDC> _matchObsCollection = await AccessTheWebAsync();
+        }
+        private async Task<ObservableCollection<EfesBet.DataContract.GetMatchDetailsDC>> AccessTheWebAsync()
+        {            
+            matchList = new List<GetMatchDetailsDC>();            
+            foreach (EfesBet.DataContract.GetMatchDetailsDC match in matchList)
+            {
+                _matchObsCollection.Add(match);
+            }
+            return _matchObsCollection;
+        }  
+        #endregion
         /// <summary>
         /// This will get called when the collection is changed(for reference see http://stackoverflow.com/questions/1427471/observablecollection-not-noticing-when-item-in-it-changes-even-with-inotifyprop)
         /// </summary>
@@ -38,20 +73,20 @@ namespace EfesBetGUI.ViewModel
         {
             base.OnPropertyChanged(propertyName);
         }
-        public ICommand LoadCommand
-        {
-            get
-            {
-                if (_loadCommand == null)
-                {
-                    _loadCommand = new RelayCommand(
-                        param => this.Load(),
-                        param => this.CanLoad
-                        );
-                }
-                return _loadCommand; 
-            }
-        }
+        //public ICommand LoadCommand
+        //{
+        //    get
+        //    {
+        //        if (_loadCommand == null)
+        //        {
+        //            _loadCommand = new RelayCommand(
+        //                param => this.Load(),
+        //                param => this.CanLoad
+        //                );
+        //        }
+        //        return _loadCommand; 
+        //    }
+        //}
         List<EfesBet.DataContract.GetMatchDetailsDC> matchList;
         ObservableCollection<EfesBet.DataContract.GetMatchDetailsDC> _matchObsCollection;
 
@@ -63,25 +98,37 @@ namespace EfesBetGUI.ViewModel
                 _matchObsCollection = value;
                 OnPropertyChanged("MatchObsCollection");
             }
-        }
+        }        
+        //
+        
         public void Load()
-        {
-            matchList = new List<GetMatchDetailsDC>();
-            matchList = proxy.GetMatch().ToList();
+        {            
+            //matchList = new List<GetMatchDetailsDC>();
+            //matchList = proxy.GetMatch().ToList();
+            //foreach (EfesBet.DataContract.GetMatchDetailsDC match in matchList)
+            //{
+
+            //    //context.Send(   AddMatchItem, null);*
+            //    //context.Post(delegate { AddMatchItem(match); }, null);
+            //    //uiContext.Send(x => _matchObsCollection.Add(match),null);
+            //}
             
-            
-            foreach (EfesBet.DataContract.GetMatchDetailsDC match in matchList)
-            {
-                _matchObsCollection.Add(match);
-            }
-            //ajebaje code
-            PopulateSahibiKonuk();
         }
+
+        void AddMatchItem(Object state)
+        {
+            _matchObsCollection.Add((EfesBet.DataContract.GetMatchDetailsDC)state);
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            //Load(); 
+            PopulateSahibiKonuk();
+        }        
         bool CanLoad
         {
             get { return true; }
         }
-
 
         #region INotifyCollectionChanged Members
 
@@ -90,22 +137,31 @@ namespace EfesBetGUI.ViewModel
         #endregion
 
         #region Old coding
+        
         EfesBetGUI.Model.OwnGuestModel ownGuestModel = new EfesBetGUI.Model.OwnGuestModel();
-        EfesBetGUI.Model.GuestHostModel guestHostModel = new EfesBetGUI.Model.GuestHostModel();
+        EfesBetGUI.Model.GuestHostModel guestHostModel = new EfesBetGUI.Model.GuestHostModel();//for parent datagrid
         EfesBetGUI.Model.MaxGooseModel maxGooseModel = new EfesBetGUI.Model.MaxGooseModel();
         EfesBetGUI.Model.SubGridModel subGridModel = new EfesBetGUI.Model.SubGridModel();
         EfesBetGUI.Model.RateEstimationGuestModel rateEstimationGuestModel = new EfesBetGUI.Model.RateEstimationGuestModel();
         EfesBetGUI.Model.UserModel objUserModel = new EfesBetGUI.Model.UserModel();
         private ObservableCollection<EfesBetGUI.Entity.SubGridItem> _subGridItemList;
+        public IEnumerable SubGridItems
+        {
+            get { return SubGridItemList; }
+        }
         public ObservableCollection<EfesBetGUI.Entity.SubGridItem> SubGridItemList
         {
             get
             {
                 return _subGridItemList;
-            }
+            }//
             set
             {
-                _subGridItemList = value;
+                if (_subGridItemList != value)
+                {
+                    _subGridItemList = value;
+                    OnPropertyChanged("SubGridItemList");
+                }
             }
         }
         private ObservableCollection<EfesBetGUI.Entity.RateEstimationGuest> _rateEstimationGuestList;
@@ -178,8 +234,8 @@ namespace EfesBetGUI.ViewModel
         public void PopulateSahibiKonuk()
         {
             //get the value of 
-            _sahibiKonukList = ownGuestModel.sahibikonukList;
-            _guestHostList = guestHostModel.guestHostList;
+            _sahibiKonukList = ownGuestModel.sahibikonukList;            
+            //_guestHostList = guestHostModel.guestHostList;
             _maxGooseList = maxGooseModel.GooseList;
             _rateEstimationGuestList = rateEstimationGuestModel.RateEstimationList;
             _subGridItemList = subGridModel.SubGridItemList;
@@ -198,5 +254,11 @@ namespace EfesBetGUI.ViewModel
             }
         }
         #endregion
+
+        public void UpdateEvent()
+        {
+            
+        }
+        
     }
 }

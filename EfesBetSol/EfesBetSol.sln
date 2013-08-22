@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfesBet.UI", "EfesBet.UI\EfesBet.UI.csproj", "{4DCECAAE-4841-46D9-BF53-D41A7B6055BE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{41856CE9-7E32-4352-8FDE-9DE730915AB5} = {41856CE9-7E32-4352-8FDE-9DE730915AB5}

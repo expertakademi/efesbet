@@ -18,6 +18,11 @@ using System.ComponentModel;
 using System.Windows.Controls.Primitives;
 using EfesBetGUI.Entity;
 using System.Windows.Threading;
+using System.Collections.ObjectModel;
+using EfesBet.DataContract;
+using EfesBetGUI.EfesBetServiceReference;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace EfesBetGUI
 {
@@ -35,19 +40,22 @@ namespace EfesBetGUI
         int getSelectedIndex = -1;
         int checkGridState = 0;
         int isOpen = 0;
-
         DataGrid innerDataGrid = new DataGrid();
-        MainWindowViewModel ownguest = new ViewModel.MainWindowViewModel();
+        EfesBetServiceReference.EfesBetClient proxy = new EfesBetClient();
+       
+        
 
         public MainWindow()
         {
+
+            
             InitializeComponent();
 
-         DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0,0,1), DispatcherPriority.Normal, delegate
-         {
-             this.txtTime.Text = DateTime.Now.ToString("HH:mm");
-             this.txtDate.Text = DateTime.Now.Day.ToString();
-         }, this.Dispatcher);
+             DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0,0,1), DispatcherPriority.Normal, delegate
+             {
+                 this.txtTime.Text = DateTime.Now.ToString("HH:mm");
+                 this.txtDate.Text = DateTime.Now.Day.ToString();
+             }, this.Dispatcher);
 
             this.Height = SystemParameters.MaximizedPrimaryScreenHeight;
             this.Width = SystemParameters.MaximizedPrimaryScreenWidth;
@@ -76,20 +84,37 @@ namespace EfesBetGUI
             this.dgrdLeftBottom.SizeChanged += new SizeChangedEventHandler(dgrdLeftBottom_SizeChanged);
             this.brdOyna.MouseLeftButtonUp += new MouseButtonEventHandler(brdOyna_MouseLeftButtonUp);
             this.DataContext = mainWindowViewModel;
+            _matchObsCollection = new ObservableCollection<GetMatchDetailsDC>();
+
+            BindMatchGridinAsync();
         }
 
+        private void NormalWaydone()
+        {
+            
+        }
+        List<EfesBet.DataContract.GetMatchDetailsDC> matchList;
+        ObservableCollection<EfesBet.DataContract.GetMatchDetailsDC> _matchObsCollection;
 
+        public ObservableCollection<EfesBet.DataContract.GetMatchDetailsDC> MatchObsCollection
+        {
+            get { return _matchObsCollection; }
+            set
+            {
+                _matchObsCollection = value;                
+            }
+        }
+        
+        
         private void RowClick(object sender, RoutedEventArgs e)
         {
             try
             {
                 var row = (DataGridRow)sender;
                 //row.DataContext = ownguest.SubGridItemList;
-
                 string value = dataGridParent.CurrentColumn.Header.ToString();
                 if (value == "+")
                 {
-
                     if (isOpen == 0)
                     {
                         // row.DetailsVisibility = row.DetailsVisibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
@@ -152,10 +177,6 @@ namespace EfesBetGUI
             dgrdLeftBottom.Items.Add(objRateEst);
 
         }
-
-
-
-
 
         void brdOyna_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -412,20 +433,9 @@ namespace EfesBetGUI
         }
 
 
-        test t = new test();
+        
 
-        void miAxleTools_Click(object sender, RoutedEventArgs e)
-        {
-            //t.ShowDialog();
-            pop.Visibility = Visibility.Visible;
-        }
-
-
-
-
-
-
-
+        
         private void image1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (grdFirstCol.Width == new GridLength(0.00))
@@ -453,7 +463,10 @@ namespace EfesBetGUI
             //newUserPopup.ShowDialog();
         }
 
-
+        private void miAxleTools_Click(object sender, RoutedEventArgs e)
+        {
+            pop.Visibility = Visibility.Visible;
+        }
 
 
 
@@ -482,8 +495,35 @@ namespace EfesBetGUI
         //}
 
 
+        #region Asynchrous Testing Done by Lalit
+        private async void BindMatchGridinAsync()
+        {
+            ObservableCollection<EfesBet.DataContract.GetMatchDetailsDC> _matchObsCollection = await BindMatchGridAsync(); 
+        }
+        
+        async Task<ObservableCollection<EfesBet.DataContract.GetMatchDetailsDC>> BindMatchGridAsync()
+        {
+            await Task.Run(() => 
+                {
+                    BindMatchGrid();
+                });
+            return null;
+        }  
+        #endregion
 
-
+        void BindMatchGrid()
+        {
+            BindMatchGridDel bindDel = new BindMatchGridDel(BindMatchGridData);
+            matchList = new List<GetMatchDetailsDC>();
+            dataGridParent.Dispatcher.BeginInvoke(bindDel, null); 
+            matchList = proxy.GetMatch().ToList();           
+            dataGridParent.Dispatcher.BeginInvoke(bindDel, null);             
+        }
+        public delegate void BindMatchGridDel();
+        void BindMatchGridData()
+        {
+            dataGridParent.ItemsSource = matchList;
+        }
 
     }
 }

@@ -1,0 +1,1026 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+
+    <Style x:Key="EfesBorderSearchTextBox" TargetType="Border">
+        <Setter Property="CornerRadius" Value="5"></Setter>
+        <Setter Property="BorderBrush" Value="LightGray"></Setter>
+        <Setter Property="BorderThickness" Value="2"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+        <Setter Property="Background" Value="WhiteSmoke"></Setter>
+    </Style>
+    <Style x:Key="EfesBorderDateTimeUC" TargetType="Border">
+        <Setter Property="CornerRadius" Value="5"></Setter>
+        <Setter Property="BorderBrush" Value="LightGray"></Setter>
+        <Setter Property="BorderThickness" Value="2"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+        <Setter Property="Background" Value="WhiteSmoke"></Setter>
+    </Style>
+
+    <Style x:Key="EfesBlueGridViewHeader" TargetType="{x:Type GridViewColumnHeader}">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0.0" Color="#0394E7" />
+                    <GradientStop Offset="1.0" Color="#0394E7" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Padding" Value="0, 0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    </Style>
+
+    <LinearGradientBrush x:Key="Siyah" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#393F44" Offset="0" />
+        <GradientStop Color="#5B646D" Offset="0.49" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="BlueSiyah" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#0394E7" Offset="0" />
+        <GradientStop Color="#0394E7" Offset="0.49" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ASiyah" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#4D555B" Offset="0" />
+        <GradientStop Color="#6F7A86" Offset="0.49" />
+    </LinearGradientBrush>
+    <Style x:Key="EfesClockDateTime" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <Style x:Key="EfesInputTextbox" TargetType="TextBox">
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Padding" Value="6,6,6,0" />
+        <Setter Property="Foreground" Value="#333333" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}" x:Name="Bd" BorderBrush="#B6BAC1"  BorderThickness="0.5" CornerRadius="2.2">
+                        <ScrollViewer x:Name="PART_ContentHost"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd" />
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                        <Trigger Property="Width" Value="Auto">
+                            <Setter Property="MinWidth" Value="100"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ClubTextstyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <Style x:Key="EfesDataGridStyle" TargetType="DataGrid">
+
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="Background" Value="#FFFFFF" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="GridLinesVisibility" Value="Horizontal" />
+        <Setter Property="RowHeight" Value="21" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="#444444" />
+        <Setter Property="BorderBrush" Value="#DADADA" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="HorizontalGridLinesBrush" Value="#DADADA" />
+        <Setter Property="RowHeaderWidth" Value="0" />
+        <Setter Property="CanUserResizeColumns" Value="False" />
+        
+    </Style>
+    <Style x:Key="TabloBaslik2" TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="MinWidth" Value="0" />
+        <Setter Property="MinHeight" Value="28" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="BackgroundBorder" BorderThickness="0" 
+                              Background="{StaticResource Siyah}" 
+                              BorderBrush="{StaticResource Siyah}" 
+                              Grid.ColumnSpan="2" />
+                        <ContentPresenter Margin="6,3,6,3" VerticalAlignment="Center" />
+                        <Path x:Name="SortArrow" Visibility="Collapsed" Data="M0,0 L1,0 0.5,1 z" Stretch="Fill" 
+                            Grid.Column="1" Width="8" Height="6" Fill="White" Margin="0,0,8,0" 
+                            VerticalAlignment="Center" RenderTransformOrigin="0.5,0.4" />
+                        <Rectangle Width="1" Fill="#AAC377" HorizontalAlignment="Right" Grid.ColumnSpan="2" />
+
+                        <Rectangle Width="1" Margin="0,0,1,0" Fill="#425B10" 
+                                 HorizontalAlignment="Right" Grid.ColumnSpan="2" />
+                        <Thumb x:Name="PART_LeftHeaderGripper" Visibility="Hidden" HorizontalAlignment="Left" 
+                             />
+                        <Thumb x:Name="PART_RightHeaderGripper" Visibility="Hidden" HorizontalAlignment="Right" 
+                             />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="SortDirection" Value="{x:Null}">
+                            <Setter TargetName="BackgroundBorder" Property="Background" 
+                                  Value="{DynamicResource Siyah}" />
+                            <Setter TargetName="BackgroundBorder" Property="BorderBrush"  
+                                  Value="Transparent" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True" />
+                                <Condition Property="SortDirection" Value="{x:Null}" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="BackgroundBorder" 
+                                  Value="{StaticResource ASiyah}" />
+                            <Setter Property="BorderBrush" TargetName="BackgroundBorder" 
+                                  Value="{StaticResource ASiyah}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="true" />
+                                <Condition Property="SortDirection" Value="{x:Null}" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="BackgroundBorder" Property="Background" 
+                                  Value="{StaticResource ASiyah}" />
+                            <Setter TargetName="BackgroundBorder" Property="BorderBrush" 
+                                  Value="{StaticResource ASiyah}" />
+                        </MultiTrigger>
+
+                        <Trigger Property="SortDirection" Value="Ascending">
+                            <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="SortArrow" Property="RenderTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="180" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="SortDirection" Value="Descending">
+                            <Setter TargetName="SortArrow" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="DisplayIndex" Value="0">
+                            <Setter Property="Visibility" Value="Collapsed" 
+                                  TargetName="PART_LeftHeaderGripper"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <LinearGradientBrush x:Key="MaviBeyaz" EndPoint="0.5,0.2" StartPoint="0.5,0">
+        <GradientStop Color="#FFFFFF" Offset="0" />
+        <GradientStop Color="#0394E7" Offset="0.2" />
+    </LinearGradientBrush>
+
+    <Style x:Key="EfesBetDropDown" TargetType="ComboBox">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF000000"/>
+                    <GradientStop Color="#FF0B0B0B" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Margin" Value="5,3,5,0"></Setter>
+    </Style>
+
+    <Style x:Key="EfesBetCheckBox" TargetType="CheckBox">
+        <Setter Property="Background" Value="#FF0B0B0B"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Margin" Value="5,1,5,0"></Setter>
+    </Style>
+    <Style x:Key="EfesBetTextBox" TargetType="TextBox">
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Margin" Value="5,3,5,0"></Setter>
+    </Style>
+    <Style x:Key="EfesRightTopCornerStackPanelStyle" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="#DADADA" />
+        <Setter Property="Width" Value="170" />
+        <Setter Property="BorderThickness" Value="0.5" />
+        <Setter Property="Padding" Value="2" />
+    </Style>
+    <Style x:Key="EfesRightTopCornerCheckBoxStyle" TargetType="{x:Type CheckBox}">
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Foreground" Value="#444" />
+        <Setter Property="Margin" Value="0,5,0,0" />
+    </Style>
+    <Style x:Key="EfesBetTextBoxNew" TargetType="TextBox">
+        <!--<Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Foreground" Value="Black"/>-->
+
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Height" Value="22"/>
+    </Style>
+    <Style x:Key="EfesBetCheckBoxNew" TargetType="CheckBox">
+        <Setter Property="Background" Value="#FF0B0B0B"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+    <Style x:Key="EfesBetTextBlockNew" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+    <Style x:Key="EfesBetDropDownNew" TargetType="ComboBox">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF000000"/>
+                    <GradientStop Color="#FF0B0B0B" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+    <Style x:Key="EfesBetButtonNew" TargetType="Button">
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Background" Value="#FF0B0B0B"/>
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="20"/>
+    </Style>
+    <Style x:Key="EfesBetTextBlock" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Margin" Value="5,3,5,0"></Setter>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+
+    <Style x:Key="EfesBetMandatoryTextBlock" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Margin" Value="5,3,5,0"></Setter>
+        <Setter Property="Foreground" Value="Red"/>
+    </Style>
+
+    <Style x:Key="EfesBetMandatoryButton" TargetType="Button">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Margin" Value="5,3,5,0"></Setter>
+        <Setter Property="Foreground" Value="Red"/>
+    </Style>
+    <Style x:Key="EfesBetCrossTabTextBlock" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Margin" Value="5,3,5,0"></Setter>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+    <Style x:Key="EfesBetRptTextBlock" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+    <Style x:Key="EfesBetTextBlockBold" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Margin" Value="5,3,5,0"></Setter>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+    <Style x:Key="EfesBetBlueThemeHeaderBorderBackGroundColor" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,0" StartPoint="0,0">
+                    <GradientStop Color="#0564a6"/>
+                    <GradientStop Color="#0564a6" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+    <Style x:Key="EfesBetBlueThemeHeaderStackPanelBackGroundColor" TargetType="StackPanel">
+        <Setter Property="Background" Value="#0564a6"/>
+    </Style>
+    <Style x:Key="EfesBetBlueThemeDetailsGroupBorderColor" TargetType="Border">
+        <Setter Property="Background" >
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,0" StartPoint="0,0">
+                    <GradientStop Color="#FFFFFF"/>
+                    <GradientStop Color="#FFFFFF"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush" Value="#0564A6"/>
+        <Setter Property="BorderThickness" Value=".5"/>
+    </Style>
+
+    <Style x:Key="EfesBetBlueThemeUserInformationBackGroundColor" TargetType="Border">
+        <Setter Property="Background" >
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,0" StartPoint="0,0">
+                    <GradientStop Color="#dee3e7"/>
+                    <GradientStop Color="#dee3e7"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush" Value="#0564A6"/>
+        <Setter Property="BorderThickness" Value=".5"/>
+    </Style>
+
+    <Style x:Key="EfesBetBlueThemeDetailsGroupBorderBackGroundColor" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,0.7" StartPoint="0,0">
+                    <GradientStop Color="#a9cae0" Offset="0.350" />
+                    <GradientStop Color="#a9cae0" Offset="0.700"  />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CornerRadius" Value="5,5,5,5"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style x:Key="EfesBetBlueThemeDetailsTabBorderBackGroundColor" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,0.7" StartPoint="0,0">
+                    <GradientStop Color="#a9cae0" Offset="0.350" />
+                    <GradientStop Color="#a9cae0" Offset="0.700"  />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CornerRadius" Value="0,0,0,0"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style x:Key="EfesBetBlueThemeMainPageBackGround" TargetType="Border">
+        <Setter Property="Background" Value="#ffffff"/>
+    </Style>
+    <Style x:Key="EfesBetBlueThemeHeaderGridBackGroundColor" TargetType="Grid">
+        <Setter Property="Background" Value="#0564a6"/>
+    </Style>
+    <Style x:Key="EfesBetHeaderTextBlock" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#FFFFFBFB"/>
+        <Setter Property="Margin" Value="5,5,0,0"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
+    <Style x:Key="EfesBetDetailHeaderTextBlock" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#0564A6"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+    </Style>
+    <Style x:Key="EfesBetBoldTextBlock" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+    </Style>
+    <Style x:Key="EfesBetTabTextBlock" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="#0564a6"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+    </Style>
+    <Style x:Key="EfesBetDetailsTextBlock" TargetType="TextBlock">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+    </Style>
+    <Style x:Key="EfesBetDetailsNormalTextBlock" TargetType="TextBlock">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+    </Style>
+    <Style x:Key="EfesBetNormalTextBlock" TargetType="TextBlock">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+    <Style x:Key="EfesBetSyncBoldTextBlock" TargetType="TextBlock">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style x:Key="EfesBetSyncUserTextBlock" TargetType="TextBlock">
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="#dee3e7"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+    <Style x:Key="EfesBetMainHeaderTextBlock" TargetType="TextBlock">
+        <!--<Setter Property="TextWrapping" Value="Wrap"/>-->
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <Style x:Key="EfesBetUserInfoTextBlock" TargetType="TextBlock">
+        <Setter Property="TextWrapping" Value="NoWrap"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontSize" Value="10"/>
+    </Style>
+
+    <Style x:Key="EfesBetEditExpanderHeaderPathStyle" TargetType="Path">
+        <Setter Property="Height" Value="20"></Setter>
+        <Setter Property="Stretch" Value="Fill"></Setter>
+        <Setter Property="StrokeLineJoin" Value="Round"></Setter>
+        <Setter Property="Stroke" Value="#FF1976B9"></Setter>
+        <Setter Property="Fill" Value="#FF1976B9"></Setter>
+    </Style>
+    <Style x:Key="EfesBetEditExpanderHeaderStackPanelStyle" TargetType="StackPanel">
+        <Setter Property="Width" Value="275"></Setter>
+        <Setter Property="Orientation" Value="Horizontal"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+
+    </Style>
+    <Style x:Key="EfesBetEditExpanderHeaderTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Margin" Value="15,0,0,0"></Setter>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+
+    </Style>
+    <Style x:Key="EfesBetEditExpanderHeaderImageStyle" TargetType="Image">
+        <Setter Property="Margin" Value="15,0,0,0"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Width" Value="16"/>
+        <Setter Property="Height" Value="16"/>
+        <Setter Property="Stretch" Value="None"/>
+        <Setter Property="Cursor" Value="Hand"/>
+
+    </Style>
+    <Style x:Key="EfesBetEntityExpanderHeaderImageStyle" TargetType="Image">
+        <Setter Property="Margin" Value="15,0,0,0"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Width" Value="16"/>
+        <Setter Property="Height" Value="16"/>
+        <Setter Property="Stretch" Value="Uniform"/>
+    </Style>
+    <Style x:Key="EfesBetEditExpanderHeaderBorderStyle" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,0" StartPoint="0,0">
+                    <GradientStop Color="#0564a6"/>
+                    <GradientStop Color="#0564a6" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Height" Value="20"/>
+    </Style>
+    <Style x:Key="EfesBetFollowUPHeaderBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="SkyBlue"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+    <Style x:Key="EfesBetFollowUPHeaderTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="DarkBlue"/>
+        <Setter Property="TextWrapping" Value="NoWrap"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>
+    <Style x:Key="EfesBetFollowUPHeaderImageStyle" TargetType="Image">
+        <Setter Property="VerticalAlignment" Value="Top"></Setter>
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Stretch" Value="None"/>
+
+    </Style>
+    <Style x:Key="EfesBetUDFCategoryCheckBox" TargetType="CheckBox">
+        <Setter Property="Background" Value="#FF0B0B0B"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+    <Style x:Key="Baslik2" TargetType="TextBlock">
+        <Setter Property="Background" Value="{StaticResource MaviBeyaz}" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Padding" Value="0,8,0,0" />
+    </Style>
+    <Style x:Key="Carpi" TargetType="TextBlock">
+        <Setter Property="Background" Value="{StaticResource MaviBeyaz}" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="Foreground" Value="#606973" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Padding" Value="40,8,0,0" />
+        <Setter Property="Cursor" Value="Hand" />
+    </Style>
+    <Style x:Key="Input1" TargetType="{x:Type TextBox}">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Height" Value="20" />
+        <Setter Property="Padding" Value="3,3,0,0" />
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+    </Style>
+
+
+    <Style x:Key="Flat">
+        <Setter Property="Control.Background" Value="{x:Null}" />
+        <Setter Property="Control.BorderBrush" Value="{x:Null}" />
+        <Style.Triggers>
+            <Trigger Property="Control.IsMouseOver" Value="True">
+                <Setter Property="Control.Background" Value="{x:Null}" />
+                <Setter Property="Control.BorderBrush" Value="{x:Null}" />
+                <Setter Property="Control.FontWeight" Value="Bold" />
+            </Trigger>
+            <Trigger Property="Control.IsFocused" Value="True">
+                <Setter Property="Control.FontWeight" Value="Bold" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
+    <Style x:Key="SlidingToggleButton" TargetType="{x:Type ToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <!--<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>-->
+        <Setter Property="Background" Value="Green"/>
+        <Setter Property="Foreground" Value="Pink"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="ToggleOn">
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="SlidingBorder">
+                                <EasingThicknessKeyFrame KeyTime="0:0:0.1" Value="15,0,0,0"/>
+                                <EasingThicknessKeyFrame KeyTime="0:0:0.2" Value="40,0,0,0"/>
+                            </ThicknessAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="ToggleOff">
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="SlidingBorder">
+                                <EasingThicknessKeyFrame KeyTime="0:0:0.1" Value="0"/>
+                            </ThicknessAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="80" />
+                        </Grid.ColumnDefinitions>
+
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        <Grid Grid.Column="0" Grid.ColumnSpan="2" Width="Auto" Background="{x:Null}">
+                          
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                <TextBlock TextWrapping="Wrap" Text="Pasif" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" Background="#0394E7" Foreground="White" Width="40"/>
+
+                                <TextBlock TextWrapping="Wrap" Text="Aktif" d:LayoutOverrides="Width, Height" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,0,0" Background="Red" Foreground="White" Width="40"/>
+                            </StackPanel>
+                                <Border x:Name="SlidingBorder" BorderBrush="#D5D3D3" BorderThickness="1" Width="40" HorizontalAlignment="Left" CornerRadius="1" Background="{TemplateBinding Background}">
+                                <Border BorderThickness="0">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="White" Offset="0" ></GradientStop>
+                                            <GradientStop Color="#E6E5E5" Offset="0.5" ></GradientStop>
+                                            <GradientStop Color="#E6E5E5" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Border>
+
+                        </Grid>
+                        <Border x:Name="DisabledBorder" BorderBrush="{x:Null}" BorderThickness="1" Grid.ColumnSpan="2" CornerRadius="1" Background="White" Opacity="0" IsHitTestVisible="False"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Trigger.ExitActions>
+                                <BeginStoryboard x:Name="ToggleOff_BeginStoryboard" Storyboard="{StaticResource ToggleOff}"/>
+                            </Trigger.ExitActions>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource ToggleOn}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#ADADAD"/>
+                            <Setter Property="Opacity" TargetName="DisabledBorder" Value="0.35"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush" Value="#FF2F63FF"/>
+    </Style>
+
+
+
+
+    <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}" >
+        <Setter Property="Foreground" Value="Red"/>
+        <Style.Triggers>
+            
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Foreground" Value="Blue"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="BoarderStyle" TargetType="{x:Type Border}" >
+       
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="True">
+                <Setter Property="Background" Value="#59B223"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="BorderBrush" Value="White"/>
+                <Setter Property="BorderThickness" Value="1"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="#C7EDC8"/>
+                <Setter Property="Cursor" Value="None"/>
+
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <!--  Tooltip Style    -->
+
+    <Style x:Key="{x:Type ToolTip}" TargetType="ToolTip">
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="HasDropShadow" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToolTip">
+                    <Border HorizontalAlignment="Center" VerticalAlignment="Top"  Padding="0,0,0,0" BorderThickness="0" Background="Transparent" >
+                       
+                                <Grid Background="#00000000" Margin="0,0,0,0">
+                                <Rectangle Fill="#696667" StrokeThickness="0"  HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Width="12" Height="12" Margin="10,-12,0,0">
+                                        <Rectangle.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform Angle="45" />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Rectangle.RenderTransform>
+                                    </Rectangle>
+                                <Border BorderBrush="#696667" Margin="0,10,0,0" Background="#696667" Padding="5" CornerRadius="3">
+                                        <!-- StackPanel holds children of the menu. This is set by IsItemsHost=True -->
+                                        <StackPanel>
+                                            <TextBlock FontFamily="Tahoma" FontSize="11" Text="{TemplateBinding Content}" Foreground="#FFFFFFFF" />
+                                        </StackPanel>
+
+                                    </Border>
+                                </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <!-- ************************* Menu  Styles Start ******************************* -->
+
+    <!--  Hepsi Sub Menu Style    -->
+
+    <Style x:Key="HepsiSubMenuStyle" TargetType="{x:Type MenuItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MenuItem}">
+                    <Grid x:Name="Border"  Width="Auto" VerticalAlignment="Center">
+                        <!-- ContentPresenter to show an Icon if needed -->
+                        <ContentPresenter  x:Name="Icon" VerticalAlignment="Top" ContentSource="Icon" HorizontalAlignment="Center"  />
+
+                        <!-- Content for the menu text etc -->
+
+                        <ContentPresenter 
+                                x:Name="HeaderHost"
+                                RecognizesAccessKey="True"
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Bottom" 
+                                ContentSource="Header">
+                        </ContentPresenter>
+
+                        <!-- Content for the menu IGT -->
+                        <ContentPresenter 
+                            Width="80" Height="90" 
+                                x:Name="IGTHost"
+                                ContentSource="InputGestureText"
+                                VerticalAlignment="Center"/>
+
+                        <!-- The Popup is the body of the menu which expands down or across depending on the level of the item -->
+                        <Popup IsOpen="{Binding Path=IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" Placement="Right" x:Name="SubMenuPopup" Focusable="false" PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
+                            <Grid x:Name="SubMenu" Grid.IsSharedSizeScope="True" Background="Red" Cursor="Hand">
+                                <!-- StackPanel holds children of the menu. This is set by IsItemsHost=True -->
+                                <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle" Orientation="Horizontal"/>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+
+                    <!-- These triggers re-configure the four arrangements of MenuItem to show different levels of menu via Role -->
+                    <ControlTemplate.Triggers>
+                        <!-- Role = TopLevelHeader : this is the root menu item in a menu; the Popup expands down -->
+                        <Trigger Property="Role" Value="TopLevelHeader">
+                            <Setter Property="Placement" Value="Bottom" TargetName="SubMenuPopup"/>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Icon"/>
+                        </Trigger>
+                        <!-- Using the system colors for the Menu Highlight and IsEnabled-->
+                        <Trigger Property="IsHighlighted" Value="true">
+                            <Setter Property="Background" Value="#C91C1F" TargetName="Border"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Settings sub Menu Style -->
+
+    <Style x:Key="SettingsSubMenuStyle" TargetType="{x:Type MenuItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MenuItem}">
+                    <Grid x:Name="Border"  Width="Auto" VerticalAlignment="Center"  HorizontalAlignment="Left"  Background="Black">
+                        <!-- ContentPresenter to show an Icon if needed -->
+                        <ContentPresenter  x:Name="Icon" VerticalAlignment="Center" ContentSource="Icon" HorizontalAlignment="Center"  />
+                        <!-- Content for the menu text etc -->
+                        <ContentPresenter 
+                            x:Name="HeaderHost"
+                            RecognizesAccessKey="True"
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Center" 
+                            ContentSource="Header">
+                        </ContentPresenter>
+
+                        <!-- Content for the menu IGT -->
+                        <ContentPresenter 
+                                x:Name="IGTHost"
+                                ContentSource="InputGestureText"
+                                Width="120" 
+                                VerticalAlignment="Center"/>
+
+                        <!-- The Popup is the body of the menu which expands down or across depending on the level of the item -->
+                        <Grid Margin="-90,35,0,0" Background="White" HorizontalAlignment="Left" >
+                            <Popup HorizontalAlignment="Left" IsOpen="{Binding Path=IsSubmenuOpen,  RelativeSource={RelativeSource TemplatedParent}}"  Placement="Absolute"  x:Name="SubMenuPopup" Focusable="false">
+                                <Grid Margin="0,0,0,0"  Background="White"  >
+                                    <Grid  Margin="0,0,0,0" Width="120"  Background="#00000000" Name="grdSettingsSubMenu" Visibility="Visible" >
+                                        <Grid Margin="0" Background="#00000000" >
+                                            <Rectangle Fill="Black" StrokeThickness="0" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" Width="10" Height="10" Margin="0,2,10,0" VerticalAlignment="Top">
+                                                <Rectangle.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform/>
+                                                        <SkewTransform/>
+                                                        <RotateTransform Angle="45"/>
+                                                        <TranslateTransform/>
+                                                    </TransformGroup>
+                                                </Rectangle.RenderTransform>
+                                            </Rectangle>
+                                            <Border BorderBrush="Black" Margin="0,5,0,0" BorderThickness="0"  VerticalAlignment="Center" Padding="0,5,0,5" Background="Black">
+                                                <!-- StackPanel holds children of the menu. This is set by IsItemsHost=True -->
+                                                <StackPanel IsItemsHost="True"    Background="Black"  KeyboardNavigation.DirectionalNavigation="Cycle" Orientation="Vertical"/>
+                                            </Border>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </Grid>
+
+                    <!-- These triggers re-configure the four arrangements of MenuItem to show different levels of menu via Role -->
+                    <ControlTemplate.Triggers>
+                        <!-- Role = TopLevelHeader : this is the root menu item in a menu; the Popup expands down -->
+                        <Trigger Property="Role" Value="TopLevelHeader">
+                            <Setter Property="Placement" Value="Bottom" TargetName="SubMenuPopup"/>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Icon"/>
+                        </Trigger>
+                        <!-- Using the system colors for the Menu Highlight and IsEnabled-->
+                        <Trigger Property="IsHighlighted" Value="true">
+                            <Setter Property="Background" Value="#3B3B3B" TargetName="Border"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--  Bakiyem Sub Menu Style    -->
+
+    <Style x:Key="BakiyemSubMenuStyle" TargetType="{x:Type MenuItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MenuItem}">
+                    <Grid x:Name="Border"  Width="Auto" VerticalAlignment="Center"  Background="Black">
+                        <!-- ContentPresenter to show an Icon if needed -->
+                        <ContentPresenter  x:Name="Icon" VerticalAlignment="Center" ContentSource="Icon"  />
+                        <!-- Content for the menu text etc -->
+
+                        <ContentPresenter 
+                            x:Name="HeaderHost"
+                            RecognizesAccessKey="True"
+                            VerticalAlignment="Center" 
+                            
+                                ContentSource="Header">
+                        </ContentPresenter>
+
+                        <!-- Content for the menu IGT -->
+                        <ContentPresenter 
+                                x:Name="IGTHost"
+                            Height="35"
+                                ContentSource="InputGestureText"
+                                VerticalAlignment="Center"/>
+
+                        <!-- The Popup is the body of the menu which expands down or across depending on the level of the item -->
+                        <Grid Margin="0,0,0,0" Background="White" HorizontalAlignment="Left" >
+                            <Popup HorizontalAlignment="Left" IsOpen="{Binding Path=IsSubmenuOpen,  RelativeSource={RelativeSource TemplatedParent}}"  Placement="Absolute"  x:Name="SubMenuPopup" Focusable="false">
+                                <Grid Margin="0,0,0,0"  Background="White"  >
+                                    <Grid  Margin="0,-8,0,0" Width="110"  Background="#00000000" Name="grdSettingsSubMenu" Visibility="Visible" >
+                                        <Grid Background="#00000000" Margin="0,0,0,0">
+                                            <Rectangle Fill="Black" StrokeThickness="0" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Width="10" Height="10" Margin="10,-5,0,0">
+                                                <Rectangle.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform />
+                                                        <SkewTransform />
+                                                        <RotateTransform Angle="45" />
+                                                        <TranslateTransform />
+                                                    </TransformGroup>
+                                                </Rectangle.RenderTransform>
+                                            </Rectangle>
+                                            <Border BorderBrush="Black" Margin="0,15,0,0" Background="Black">
+                                                <!-- StackPanel holds children of the menu. This is set by IsItemsHost=True -->
+                                                <StackPanel IsItemsHost="True"   Background="Black"  KeyboardNavigation.DirectionalNavigation="Cycle"  Orientation="Horizontal"/>
+
+
+                                            </Border>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </Grid>
+
+                    <!-- These triggers re-configure the four arrangements of MenuItem to show different levels of menu via Role -->
+                    <ControlTemplate.Triggers>
+                        <!-- Role = TopLevelHeader : this is the root menu item in a menu; the Popup expands down -->
+                        <Trigger Property="Role" Value="TopLevelHeader">
+                            <Setter Property="Placement" Value="Bottom" TargetName="SubMenuPopup"/>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Icon"/>
+                        </Trigger>
+                        <!-- Using the system colors for the Menu Highlight and IsEnabled-->
+                        <Trigger Property="IsHighlighted" Value="true">
+                            <Setter Property="Background" Value="#3B3B3B" TargetName="Border"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  Common Menu Style    -->
+
+    <Style x:Key="CommonMenuStyle" TargetType="{x:Type MenuItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MenuItem}">
+                    <Grid x:Name="Border"  Width="Auto" VerticalAlignment="Center"  Background="Black">
+                        <!-- ContentPresenter to show an Icon if needed -->
+                        <ContentPresenter  x:Name="Icon" VerticalAlignment="Center" ContentSource="Icon"  />
+                        <!-- Content for the menu text etc -->
+
+                        <ContentPresenter 
+                            x:Name="HeaderHost"
+                            RecognizesAccessKey="True"
+                            VerticalAlignment="Center" 
+                            
+                                ContentSource="Header">
+                        </ContentPresenter>
+
+                        <!-- Content for the menu IGT -->
+                        <ContentPresenter 
+                                x:Name="IGTHost"
+                            Height="35"
+                                ContentSource="InputGestureText"
+                                VerticalAlignment="Center"/>
+
+                        <!-- The Popup is the body of the menu which expands down or across depending on the level of the item -->
+                        <Grid Margin="0,0,0,0" Background="White" HorizontalAlignment="Left" >
+                            <Popup HorizontalAlignment="Left" IsOpen="{Binding Path=IsSubmenuOpen,  RelativeSource={RelativeSource TemplatedParent}}"  Placement="Absolute"  x:Name="SubMenuPopup" Focusable="false">
+                                <Grid Margin="0,0,0,0"  Background="White"  >
+                                    <Grid  Margin="0,-8,0,0" Width="110"  Background="#00000000" Name="grdSettingsSubMenu" Visibility="Visible" >
+                                        <Grid Background="#00000000" Margin="0,0,0,0">
+                                            <Rectangle Fill="Black" StrokeThickness="0" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Width="10" Height="10" Margin="10,-5,0,0">
+                                                <Rectangle.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform />
+                                                        <SkewTransform />
+                                                        <RotateTransform Angle="45" />
+                                                        <TranslateTransform />
+                                                    </TransformGroup>
+                                                </Rectangle.RenderTransform>
+                                            </Rectangle>
+                                            <Border BorderBrush="Black" Margin="0,15,0,0" Background="Black">
+                                                <!-- StackPanel holds children of the menu. This is set by IsItemsHost=True -->
+                                                <StackPanel IsItemsHost="True"   Background="Black"  KeyboardNavigation.DirectionalNavigation="Cycle"  Orientation="Horizontal"/>
+
+
+                                            </Border>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </Grid>
+
+                    <!-- These triggers re-configure the four arrangements of MenuItem to show different levels of menu via Role -->
+                    <ControlTemplate.Triggers>
+                        <!-- Role = TopLevelHeader : this is the root menu item in a menu; the Popup expands down -->
+                        <Trigger Property="Role" Value="TopLevelHeader">
+                            <Setter Property="Placement" Value="Bottom" TargetName="SubMenuPopup"/>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Icon"/>
+                        </Trigger>
+                        <!-- Using the system colors for the Menu Highlight and IsEnabled-->
+                        <Trigger Property="IsHighlighted" Value="true">
+                            <Setter Property="Background" Value="#3B3B3B" TargetName="Border"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ************************* Menu  Styles End ******************************* -->
+
+
+</ResourceDictionary>

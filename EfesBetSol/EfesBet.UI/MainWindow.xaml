@@ -787,7 +787,7 @@
         
             
             <Border x:Name="brdCenterGrid" BorderBrush="White" BorderThickness="0" CornerRadius="0" Grid.Row="1" Grid.Column="2"  Grid.RowSpan="3" Margin="5,0,5,1">
-            <DataGrid HorizontalAlignment="Stretch" Margin="16,15,-14,-15" x:Name="dataGridParent" 
+            <DataGrid HorizontalAlignment="Stretch" Margin="0" x:Name="dataGridParent" 
                       Style="{StaticResource EfesDataGridStyle}" FrozenColumnCount="14" GridLinesVisibility="All" 
                       HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" Cursor="Hand" AutoGenerateColumns="False" 
                       RowDetailsVisibilityMode="Visible"  >

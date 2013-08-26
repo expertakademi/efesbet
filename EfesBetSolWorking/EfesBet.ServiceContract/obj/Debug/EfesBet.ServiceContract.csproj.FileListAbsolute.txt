@@ -1,7 +1,0 @@
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.ServiceContract\bin\Debug\EfesBet.ServiceContract.dll
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.ServiceContract\bin\Debug\EfesBet.ServiceContract.pdb
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.ServiceContract\bin\Debug\EfesBet.DataContract.dll
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.ServiceContract\bin\Debug\EfesBet.DataContract.pdb
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.ServiceContract\obj\Debug\EfesBet.ServiceContract.csprojResolveAssemblyReference.cache
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.ServiceContract\obj\Debug\EfesBet.ServiceContract.dll
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.ServiceContract\obj\Debug\EfesBet.ServiceContract.pdb

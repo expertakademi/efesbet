@@ -1,4 +1,0 @@
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Entities\bin\Debug\EfesBet.Entities.dll
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Entities\bin\Debug\EfesBet.Entities.pdb
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Entities\obj\Debug\EfesBet.Entities.dll
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Entities\obj\Debug\EfesBet.Entities.pdb

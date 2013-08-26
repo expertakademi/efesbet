@@ -1,61 +1,7 @@
-D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.exe
-D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.pdb
-D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.exe
-D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.pdb
-D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\MainWindow.g.cs
-D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\App.g.cs
-D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI_MarkupCompile.cache
-D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI_MarkupCompile.lref
-D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\MainWindow.baml
-D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.g.resources
-D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.Properties.Resources.resources
-D:\Work Station\Work Station\EfesBet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csproj.GenerateResource.Cache
-=======
-C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.exe
-C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.pdb
-C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.exe
-C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.pdb
-C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csprojResolveAssemblyReference.cache
-C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\MainWindow.g.cs
-C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\App.g.cs
-C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI_MarkupCompile.cache
-C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI_MarkupCompile.lref
-C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\MainWindow.baml
-C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.g.resources
-C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.Properties.Resources.resources
-C:\Users\Ali Kayahan\Desktop\EFES\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csproj.GenerateResource.Cache
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.exe
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.pdb
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\Theme\Generic.baml
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\MenuPopup.baml
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\popup.baml
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\test.baml
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\UserControls\DateTimeMonth.baml
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\MainWindow.g.cs
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\MenuPopup.g.cs
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\popup.g.cs
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\test.g.cs
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\UserControls\DateTimeMonth.g.cs
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\App.g.cs
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI_MarkupCompile.cache
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI_MarkupCompile.lref
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.exe
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.pdb
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\MainWindow.baml
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.g.resources
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.Properties.Resources.resources
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\GenerateResource.write.1.tlog
-C:\Documents and Settings\aspire\Desktop\Documents\EfesBetSol\EfesBet.UI\obj\x86\Debug\Theme\Test1.baml
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.exe
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.pdb
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.BLL.dll
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.Entities.dll
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.DAL.dll
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.BLL.pdb
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.Entities.pdb
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.DAL.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.exe.config
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.exe
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csprojResolveAssemblyReference.cache
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\Theme\Generic.baml
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\Theme\Test1.baml
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\MenuPopup.baml
@@ -70,15 +16,19 @@ D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\App.g.cs
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI_MarkupCompile.cache
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI_MarkupCompile.lref
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.exe
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.BLL.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.DataContract.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.Entities.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.DAL.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.BLL.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.DataContract.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.Entities.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.DAL.pdb
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\MainWindow.baml
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\NewUserPopup.baml
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\View\test.baml
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.g.resources
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.Properties.Resources.resources
 D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csproj.GenerateResource.Cache
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.exe
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBetGUI.pdb
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBetGUI.exe.config
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.DataContract.dll
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\bin\Debug\EfesBet.DataContract.pdb
-D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.UI\obj\x86\Debug\EfesBet.UI.csprojResolveAssemblyReference.cache

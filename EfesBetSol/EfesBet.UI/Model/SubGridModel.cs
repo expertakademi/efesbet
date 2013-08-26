@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 namespace EfesBetGUI.Model
 {
     
-    class SubGridModel
+    public class SubGridModel
     {
         public ObservableCollection<SubGridItem> SubGridItemList = new ObservableCollection<SubGridItem>();
         public SubGridModel()

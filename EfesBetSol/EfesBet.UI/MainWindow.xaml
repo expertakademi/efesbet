@@ -903,7 +903,7 @@
                     
                 <DataGrid.RowDetailsTemplate x:Uid="test123">
                     <DataTemplate x:Name="testTemplete">
-                        <DataGrid x:Name="innerGrid" ItemsSource="{Binding SubGridItems}" Style="{StaticResource EfesDataGridStyle}" Margin="50,2,2,2" MinHeight="40"  GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" Visibility="Collapsed" >
+                        <DataGrid x:Name="innerGrid" ItemsSource="{Binding }" Style="{StaticResource EfesDataGridStyle}" Margin="50,2,2,2" MinHeight="40"  GridLinesVisibility="All" HorizontalGridLinesBrush="#DADADA" VerticalGridLinesBrush="#DADADA" Visibility="Collapsed" >
                             <DataGrid.ColumnHeaderStyle>
                                 <Style TargetType="DataGridColumnHeader">
                                     <Setter Property="Foreground" Value="White"></Setter>

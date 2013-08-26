@@ -23,6 +23,7 @@ using EfesBet.DataContract;
 using EfesBetGUI.EfesBetServiceReference;
 using System.Threading.Tasks;
 using System.Threading;
+using EfesBetGUI.Model;
 
 namespace EfesBetGUI
 {
@@ -32,6 +33,7 @@ namespace EfesBetGUI
     public partial class MainWindow : Window
     {
         //OwnGuestViewModel vmSK = new OwnGuestViewModel();
+        SubGridModel subGridModel = new SubGridModel();
         MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
         popup pop = new popup();
         GridLength colfirstOrgPos, colLastOrgPos;
@@ -41,28 +43,20 @@ namespace EfesBetGUI
         int checkGridState = 0;
         int isOpen = 0;
         DataGrid innerDataGrid = new DataGrid();
-        EfesBetServiceReference.EfesBetClient proxy = new EfesBetClient();
-       
+        EfesBetServiceReference.EfesBetClient proxy = new EfesBetClient();     
         
-
         public MainWindow()
-        {
-
-            
+        {            
             InitializeComponent();
-
              DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0,0,1), DispatcherPriority.Normal, delegate
              {
                  this.txtTime.Text = DateTime.Now.ToString("HH:mm");
                  this.txtDate.Text = DateTime.Now.Day.ToString();
              }, this.Dispatcher);
-
             this.Height = SystemParameters.MaximizedPrimaryScreenHeight;
             this.Width = SystemParameters.MaximizedPrimaryScreenWidth;
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            this.miAxleTools.Click += new RoutedEventHandler(miAxleTools_Click);
-
-          
+            this.miAxleTools.Click += new RoutedEventHandler(miAxleTools_Click);          
 
             #region -- ViewModel --
             //vmSK = new OwnGuestViewModel();
@@ -111,20 +105,20 @@ namespace EfesBetGUI
             try
             {
                 var row = (DataGridRow)sender;
-                //row.DataContext = ownguest.SubGridItemList;
+                row.DataContext = subGridModel.SubGridItemList;
                 string value = dataGridParent.CurrentColumn.Header.ToString();
                 if (value == "+")
                 {
                     if (isOpen == 0)
                     {
-                        // row.DetailsVisibility = row.DetailsVisibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
+                        row.DetailsVisibility = row.DetailsVisibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
                         FrameworkElement tb = GetTemplateChildByName(row, "innerGrid");
                         if (tb.Visibility == Visibility.Collapsed)
                         {
                             tb.Visibility = Visibility.Visible;
-                            //tb.DataContext = ownguest.SubGridItemList;
+                            tb.DataContext = subGridModel.SubGridItemList;
+                            //innerDataGrid.ItemsSource = subGridModel.SubGridItemList;
                             row.DetailsVisibility = Visibility.Visible;
-
                             DispatcherTimer dispTimer = new DispatcherTimer(new TimeSpan(0, 0, 30), DispatcherPriority.Normal, delegate
                             {
                                 tb.Visibility = Visibility.Collapsed;
@@ -155,36 +149,38 @@ namespace EfesBetGUI
         }
         private void InnerGridRowClick(object sender, RoutedEventArgs e)
         {
-            RateEstimationGuest objRateEst = new RateEstimationGuest();
+            //Aug 24 I have commented this code 
+            //RateEstimationGuest objRateEst = new RateEstimationGuest();
 
-            if (dataGridParent.SelectedItems.Count > 0)
-            {
-                isOpen = 1;
+            //if (dataGridParent.SelectedItems.Count > 0)
+            //{
+            //    isOpen = 1;
 
-                foreach (GuestHost item in dataGridParent.SelectedItems)
-                {
-                    objRateEst.No = dgrdLeftBottom.Items.Count + 1;
-                    //objRateEst.No = 3;
-                    objRateEst.Code = Convert.ToInt32(item.Code.ToString().Substring(1));
-                    objRateEst.MyProperty = 4542;
-                    objRateEst.Host = item.Own;
-                    objRateEst.Guest = item.Guest;
-                    objRateEst.Tip = item.MinOption;
-                    objRateEst.Estimate = item.T1_host;
-                    objRateEst.Rate = item.T2_host;
-                }
-            }
-            dgrdLeftBottom.Items.Add(objRateEst);
+            //    foreach (GuestHost item in dataGridParent.SelectedItems)
+            //    {
+            //        objRateEst.No = dgrdLeftBottom.Items.Count + 1;
+            //        //objRateEst.No = 3;
+            //        objRateEst.Code = Convert.ToInt32(item.Code.ToString().Substring(1));
+            //        objRateEst.MyProperty = 4542;
+            //        objRateEst.Host = item.Own;
+            //        objRateEst.Guest = item.Guest;
+            //        objRateEst.Tip = item.MinOption;
+            //        objRateEst.Estimate = item.T1_host;
+            //        objRateEst.Rate = item.T2_host;
+            //    }
+            //}
+            //dgrdLeftBottom.Items.Add(objRateEst);
 
         }
 
         void brdOyna_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
+            //I have commented this code the following three lines of code on Aug 24 
+            //NewUserPopup newUserPopup = new NewUserPopup();
+            //newUserPopup.ShowDialog();
+            //User objUser = new User();
 
-            NewUserPopup newUserPopup = new NewUserPopup();
-            newUserPopup.ShowDialog();
 
-            User objUser = new User();
 
             //if (dataGridUserDetails.Items.Count>0)
             //{
@@ -454,9 +450,8 @@ namespace EfesBetGUI
         private void textBlockOyna_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             //NewUserPopup newUserPopup = new NewUserPopup();
-            //newUserPopup.ShowDialog();
+            //newUserPopup.ShowDialog(); 
         }
-
         private void brdOyna_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             //NewUserPopup newUserPopup = new NewUserPopup();
@@ -475,10 +470,10 @@ namespace EfesBetGUI
         //    if (((System.Windows.Controls.DataGrid)(sender)).CurrentColumn.Header.ToString() == "+")
         //    {
 
-
+        
         //    }
         //}
-
+        //
 
 
 
@@ -495,12 +490,11 @@ namespace EfesBetGUI
         //}
 
 
-        #region Asynchrous Testing Done by Lalit
+        #region Asynchrous Operation Done by Lalit
         private async void BindMatchGridinAsync()
         {
             ObservableCollection<EfesBet.DataContract.GetMatchDetailsDC> _matchObsCollection = await BindMatchGridAsync(); 
-        }
-        
+        }        
         async Task<ObservableCollection<EfesBet.DataContract.GetMatchDetailsDC>> BindMatchGridAsync()
         {
             await Task.Run(() => 
@@ -508,16 +502,15 @@ namespace EfesBetGUI
                     BindMatchGrid();
                 });
             return null;
-        }  
-        #endregion
-
+        }
         void BindMatchGrid()
         {
             BindMatchGridDel bindDel = new BindMatchGridDel(BindMatchGridData);
             matchList = new List<GetMatchDetailsDC>();
-            dataGridParent.Dispatcher.BeginInvoke(bindDel, null); 
-            matchList = proxy.GetMatch().ToList();           
-            dataGridParent.Dispatcher.BeginInvoke(bindDel, null);             
+            //dataGridParent.Dispatcher.BeginInvoke(bindDel, null);
+            matchList = proxy.GetMatch().ToList();
+            
+            dataGridParent.Dispatcher.BeginInvoke(bindDel, null);
         }
         public delegate void BindMatchGridDel();
         void BindMatchGridData()
@@ -525,5 +518,7 @@ namespace EfesBetGUI
             dataGridParent.ItemsSource = matchList;
         }
 
+        #endregion  
+        /* */
     }
 }

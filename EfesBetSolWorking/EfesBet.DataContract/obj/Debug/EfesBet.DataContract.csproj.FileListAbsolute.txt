@@ -1,0 +1,4 @@
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.DataContract\bin\Debug\EfesBet.DataContract.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.DataContract\bin\Debug\EfesBet.DataContract.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.DataContract\obj\Debug\EfesBet.DataContract.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.DataContract\obj\Debug\EfesBet.DataContract.pdb

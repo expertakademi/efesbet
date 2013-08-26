@@ -1,0 +1,13 @@
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Service\bin\EfesBet.Service.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Service\bin\EfesBet.Service.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Service\bin\EfesBet.BLL.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Service\bin\EfesBet.DataContract.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Service\bin\EfesBet.ServiceContract.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Service\bin\EfesBet.DAL.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Service\bin\EfesBet.BLL.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Service\bin\EfesBet.DataContract.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Service\bin\EfesBet.ServiceContract.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Service\bin\EfesBet.DAL.pdb
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Service\obj\Debug\EfesBet.Service.csprojResolveAssemblyReference.cache
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Service\obj\Debug\EfesBet.Service.dll
+D:\Work Station\Work Station\EfesBet\GitRepository\efesbet\EfesBetSol\EfesBet.Service\obj\Debug\EfesBet.Service.pdb
